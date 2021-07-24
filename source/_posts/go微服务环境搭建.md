@@ -63,6 +63,13 @@ replace github.com/lucas-clemente/quic-go => github.com/lucas-clemente/quic-go v
 最后以上的问题都采用一种策略，删除原有go版本并且下载go1.14.11版本得到了解决，之后执行命令`go get -u github.com/micro/go-micro`
 就是go的版本不要使用go1.15
 
+
+## consul集群搭建
+[参考博主文章](http://www.sivan.tech/2021/05/17/consul集群搭建/)
+
+
+
+
 # 租房网搭建环境：
 
 
@@ -72,7 +79,6 @@ replace github.com/lucas-clemente/quic-go => github.com/lucas-clemente/quic-go v
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn,direct
 ```
-
 
 ## 安装protoc
 1. [下载可执行文件](https://github.com/protocolbuffers/protobuf/releases)

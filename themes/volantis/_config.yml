@@ -344,7 +344,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_0990_gaitubao_3852x2738.jpg
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG
       shape: rectangle # circle, rectangle
       url: /about/
       title: 逸如风

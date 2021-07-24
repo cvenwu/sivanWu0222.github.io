@@ -13,7 +13,7 @@ valine:
 
 
 {% gallery %}
-![ecLGa6](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/ecLGa6.png)
+![ecLGa6](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG)
 {% endgallery %}
 
 ### 关于我
@@ -38,6 +38,10 @@ valine:
 {% endgallery %}
 
 {% timeline 实践经历  %}
+
+{% timenode 2021.05 - now %}
+阿里云计算有限公司 - 云网络
+{% endtimenode %}
 
 {% timenode 2019.09 - now %}
 教育大数据应用技术国家工程实验室 - 认知计算实验室
@@ -269,9 +273,5 @@ valine:
 
 
 {% endtimeline %}
-
-
-
-{% ghcard sivanWu0222, theme=vue %}
 
 
