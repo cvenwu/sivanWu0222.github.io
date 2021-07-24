@@ -94,6 +94,9 @@ func main() {
 2. 使用编写好的`Dockerfile`构建镜像
    1. 执行命令：`docker build -t first_go .`：`-t` 后面指定的是打包出来的镜像名字`first_go` 并且`.`表示从当前目录下的`Dockerfile`进行构建
 
+> 什么是Dockerfile：Dockerfile 文件是用于定义 Docker 镜像生成流程的配置文件，文件内容是一条条指令，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建；这些指令应用于基础镜像并最终创建一个新的镜像。你可以认为用于快速创建自定义的 Docker 镜像
+
+
 之前的Dockerfile
 ```
 FROM golang:1.14 as mod
@@ -142,11 +145,12 @@ CMD ["./main"]
 ## References
 
 
-1. [使用 Docker 构建 Go 应用](https://basefas.github.io/2019/09/24/%E4%BD%BF%E7%94%A8%20Docker%20%E6%9E%84%E5%BB%BA%20Go%20%E5%BA%94%E7%94%A8/)
-2. [Docker命令大全](https://www.runoob.com/docker/docker-command-manual.html)
-3. [Docker build 命令](https://www.runoob.com/docker/docker-build-command.html)
-4. [Docker 将go项目打包成Docker镜像](https://www.cnblogs.com/aaronthon/p/13494839.html)
-5. [Docker镜像推送（push）到Docker Hub](https://blog.csdn.net/u013258415/article/details/80050956/)
-6. [如何将自己的镜像上传到Docker hub上](https://blog.csdn.net/qq_39629343/article/details/80158275)
-7. [docker中的命令参数（小白常用）](https://www.cnblogs.com/JMLiu/p/10277482.html)
-8. [curl命令使用](https://mp.weixin.qq.com/s/N-_jsA6eoM0f_7LCM-il5A)
+1. [将Golang应用部署到Docker](https://eddycjy.gitbook.io/golang/di-3-ke-gin/golang-docker#chuang-jian-chao-xiao-de-golang-jing-xiang)：讲解了docker镜像依赖的配置文件以及docker镜像中如何与我们的mysql镜像进行连接
+2. [使用 Docker 构建 Go 应用](https://basefas.github.io/2019/09/24/%E4%BD%BF%E7%94%A8%20Docker%20%E6%9E%84%E5%BB%BA%20Go%20%E5%BA%94%E7%94%A8/)
+3. [Docker命令大全](https://www.runoob.com/docker/docker-command-manual.html)
+4. [Docker build 命令](https://www.runoob.com/docker/docker-build-command.html)
+5. [Docker 将go项目打包成Docker镜像](https://www.cnblogs.com/aaronthon/p/13494839.html)
+6. [Docker镜像推送（push）到Docker Hub](https://blog.csdn.net/u013258415/article/details/80050956/)
+7. [如何将自己的镜像上传到Docker hub上](https://blog.csdn.net/qq_39629343/article/details/80158275)
+8. [docker中的命令参数（小白常用）](https://www.cnblogs.com/JMLiu/p/10277482.html)
+9. [curl命令使用](https://mp.weixin.qq.com/s/N-_jsA6eoM0f_7LCM-il5A)

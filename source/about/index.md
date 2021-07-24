@@ -217,59 +217,39 @@ valine:
 正如巴尔扎克在人间喜剧中所言，革新者全靠了不起的信心支持，才有勇气在不可知的天地中前进。（But as Balzac said in The Human Comedy: The innovator is supported by great confidence. To have the courage to move forward in the unknown.）
 {% endtimenode %}
 {% timenode  %}
-
+我现在之所以这么努力，我就是希望，能够在我飞黄腾达的时候，你还没有谈婚论嫁，我希望一切，还来得及。
 {% endtimenode %}
 {% timenode  %}
-
+总有一忍，值得你期待，值得你全力以赴。
 {% endtimenode %}
 {% timenode  %}
-
+须知少时凌云志，曽许人间第一流。
 {% endtimenode %}
 {% timenode  %}
-
+在繁华中自律，在落魄中自愈，谋生的路上不抛弃良知，某次的路上不丢失尊严。
 {% endtimenode %}
 {% timenode  %}
-
+梦想一旦开始，便无法停止，那一刻就是我们热爱的理由，年轻这个借口不知道还能用多久。
 {% endtimenode %}
 {% timenode  %}
-
+意志足够坚定，没有什么不可以。
 {% endtimenode %}
 {% timenode  %}
-
+樱花落下的速度是每秒五厘米，我该用什么样的速度才能与你相遇。
 {% endtimenode %}
 {% timenode  %}
-
+樱花落下的速度是每秒五厘米，我该用什么样的速度才能与你相遇。
 {% endtimenode %}
 {% timenode  %}
-
+樱花落下的速度是每秒五厘米，我该用什么样的速度才能与你相遇。
 {% endtimenode %}
 {% timenode  %}
-
+你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
 {% endtimenode %}
 {% timenode  %}
-
+你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
 {% endtimenode %}
-{% timenode  %}
 
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
 
 
 {% endtimeline %}
