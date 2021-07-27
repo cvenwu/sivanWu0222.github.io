@@ -28,6 +28,8 @@ date: 2099-09-15 19:43:00
 
 密码样式的文本：{% psw 这里没有验证码 %}
 
+<!-- more -->
+
 ## span
 
 各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。

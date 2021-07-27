@@ -238,18 +238,17 @@ valine:
 樱花落下的速度是每秒五厘米，我该用什么样的速度才能与你相遇。
 {% endtimenode %}
 {% timenode  %}
-樱花落下的速度是每秒五厘米，我该用什么样的速度才能与你相遇。
-{% endtimenode %}
-{% timenode  %}
-樱花落下的速度是每秒五厘米，我该用什么样的速度才能与你相遇。
-{% endtimenode %}
-{% timenode  %}
 你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
 {% endtimenode %}
 {% timenode  %}
 你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
 {% endtimenode %}
+{% timenode  %}
 
+{% endtimenode %}
+{% timenode  %}
+
+{% endtimenode %}
 
 
 {% endtimeline %}

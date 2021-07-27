@@ -154,3 +154,4 @@ CMD ["./main"]
 7. [如何将自己的镜像上传到Docker hub上](https://blog.csdn.net/qq_39629343/article/details/80158275)
 8. [docker中的命令参数（小白常用）](https://www.cnblogs.com/JMLiu/p/10277482.html)
 9. [curl命令使用](https://mp.weixin.qq.com/s/N-_jsA6eoM0f_7LCM-il5A)
+10. [Docker 创建镜像、修改、上传镜像](https://www.cnblogs.com/lsgxeva/p/8746644.html)
