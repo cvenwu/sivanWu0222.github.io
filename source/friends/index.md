@@ -5,10 +5,9 @@ index: true
 ---
 
 
-## 一些技术大牛或团队
+## 一些技术团队
 {% sitegroup %}
-{% site 飞雪无情, url=https://www.flysnow.org/archives/, screenshot=https://i.loli.net/2020/08/21/VuSwWZ1xAeUHEBC.jpg, avatar=https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png, description=Go各种框架教程等 %}
-{% site 极客兔兔, url=https://geektutu.com/, screenshot=https://i.loli.net/2020/08/21/Vzbu3i8fXs6Nh5Y.jpg, avatar=https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg, description=golang从零实现系列教程 %}
+
 {% site 致力于分享Go语言编程, url=https://mojotv.cn/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xaBP8n.png, avatar=https://mojotv.cn/assets/image/logo01.png, description=致力于分享Go语言编程 %}
 {% site 美团技术团队, url=https://tech.meituan.com/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/oOZmdm.png, avatar=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/4VfVoN.png, description=美团技术团队 %}
 
@@ -29,8 +28,9 @@ index: true
 
 {% site 曹春晖(Go<<语言高级编程>>作者), url=https://xargin.com/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xnYQaG.png, avatar=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xYaCT5.png, description=Go夜读中的滴滴大佬, github: https://github.com/cch123 %}
 
-{% site 柴树杉晖(《Go语言高级编程》《Go语法树入门》《WebAssembly标准入门》作者), url=https://github.com/chai2010, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/J9cDhD.png, avatar=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/J4ralm.png, description=蚂蚁杭州（云原生工程系统） %}
+{% site 柴树杉(《Go语言高级编程》《Go语法树入门》《WebAssembly标准入门》作者), url=https://github.com/chai2010, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/J9cDhD.png, avatar=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/J4ralm.png, description=蚂蚁杭州（云原生工程系统） %}
 
+{% site 敖小剑(dapr contributor), url=https://github.com/skyao, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/YBybni.png, avatar=https://skyao.io/author/admin/avatar_hu9a83e0c939e89f8fc21c055e7cf31202_45777_250x250_fill_q75_box_center.jpg, description=微服务专家 %}
 
 {% site 无闻老师, url=https://github.com/unknwon, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/qcgxar.png, avatar=https://avatars.githubusercontent.com/u/2946214?v=4, description=无闻老师 %}
 
@@ -52,6 +52,9 @@ index: true
 
 {% site mohuishou, url=https://lailin.xyz/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/GGlenY.png, avatar=https://avatars.githubusercontent.com/u/15172509?v=4, description=, github:https://github.com/mohuishou %}
 
+{% site 飞雪无情, url=https://www.flysnow.org/archives/, screenshot=https://i.loli.net/2020/08/21/VuSwWZ1xAeUHEBC.jpg, avatar=https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png, description=Go各种框架教程等 %}
+
+{% site 极客兔兔, url=https://geektutu.com/, screenshot=https://i.loli.net/2020/08/21/Vzbu3i8fXs6Nh5Y.jpg, avatar=https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg, description=golang从零实现系列教程 %}
 
 {% site 泫(深圳腾讯音乐), url=https://blog.cugxuan.cn/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gROkXJ.png, avatar=https://image.cugxuan.cn/avater.jpg, description=本科地大硕士华科大佬 %}
 
