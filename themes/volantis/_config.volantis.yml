@@ -119,11 +119,11 @@ article:
       # ----------------
       # 相关文章，需要安装插件 (for layout: post)
       # npm i hexo-related-popular-posts
-      related_posts:
-        enable: true
-        max_count: 10
-      donate:
-        enable: false
+      # related_posts:
+      #   enable: true
+      #   max_count: 10
+      # donate:
+      #   enable: false
     bottom_meta: [updated, tags, btns, share]
     meta_library:
       author:

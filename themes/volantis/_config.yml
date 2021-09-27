@@ -147,13 +147,13 @@ article:
       # ----------------
       # 相关文章，需要安装插件 (for layout: post)
       # npm i hexo-related-popular-posts
-      related_posts:
-        enable: true
-        title: 相关文章
-        icon: fas fa-bookmark
-        max_count: 5
-        # 设为空则不使用文章头图
-        placeholder_img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
+      # related_posts:
+      #   enable: true
+      #   title: 相关文章
+      #   icon: fas fa-bookmark
+      #   max_count: 5
+      #   # 设为空则不使用文章头图
+      #   placeholder_img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
       # ----------------
       # 版权声明组件 (for layout: post)
       copyright:
