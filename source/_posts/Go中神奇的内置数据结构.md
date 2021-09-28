@@ -16,7 +16,7 @@ tags:
 date: 2021-09-26 09:26:17
 summary:
 ---
-> 本节内容是自己学习 [empGo高级工程师实战营](https://class.imooc.com/sale/golive) 课程中 **神奇的内置数据结构**一节所做的笔记
+> 本节内容是自己学习 [Go高级工程师实战营](https://class.imooc.com/sale/golive) 课程中 **神奇的内置数据结构**一节所做的笔记
 
 ## 概览
 
