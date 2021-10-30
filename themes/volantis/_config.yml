@@ -46,13 +46,16 @@ navbar:
     - name: 关于
       icon: fas fa-info-circle
       url: about/
-    - name: 分享
-      icon: fas fa-share
-      rows:
-        - name: 热门文章
-          icon: fas fa-fire
-        - name: 面试问题之TopK系列
-          url: http://www.sivan.tech/2020/09/12/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E4%B9%8BTop%20K%E7%B3%BB%E5%88%97/
+    - name: 摄影展
+      icon: fas fa-camera
+      url: pictures/
+    # - name: 分享
+    #   icon: fas fa-share
+    #   rows:
+    #     - name: 热门文章
+    #       icon: fas fa-fire
+    #     - name: 面试问题之TopK系列
+    #       url: http://www.sivan.tech/2020/09/12/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E4%B9%8BTop%20K%E7%B3%BB%E5%88%97/
         # - name: ValueX：实用的安全对象类型转换库
         #   url: blog/2019-08-29-valuex/
         # - name: 心率管家 App 的设计与开发
