@@ -10,7 +10,7 @@ sidebar:
   - tagcloud
   - category
 categories:
-  - go
+  - Golang
 tags:
   - 框架
   - orm
@@ -77,6 +77,9 @@ func main() {
 ```
 
 {% endfolding %}
+
+
+<!-- more -->
 
 ### 数据库对表的操作
 
