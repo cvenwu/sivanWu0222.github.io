@@ -32,6 +32,8 @@ date: 2020-06-04 09:22:19
 3. 直接在项目文件夹下的.vscode中的settings.json文件中进行配置![image-20200604092936231](https://gitee.com/yirufeng/images/raw/master/img/image-20200604092936231.png)
 
 
+<!-- more -->
+
 
 # 创建Django或者Flask开发环境
 

@@ -11,6 +11,8 @@ valine:
 
 广埠屯断水停电大学在读研究生
 
+爱好电子设备以及电音
+
 {% gallery %}
 ![ecLGa6](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG)
 {% endgallery %}
@@ -227,7 +229,7 @@ valine:
 你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
 {% endtimenode %}
 {% timenode  %}
-你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
+
 {% endtimenode %}
 {% timenode  %}
 

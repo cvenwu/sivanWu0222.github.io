@@ -17,6 +17,6 @@ date: 2020-05-22 10:31:26
 
 [参考](https://www.jianshu.com/p/bb7c19c5fc47)
 
-redis-server 是服务端启动程序
-redis-cli 是客户端启动程序
+1. redis-server 是服务端启动程序
+2. redis-cli 是客户端启动程序
 
