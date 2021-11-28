@@ -121,17 +121,4 @@ JWT的执行流程如下：
 [JWT-GO中间件使用参考](https://studygolang.com/articles/13062)
 
 
-{% note info, note info 默认主题色，适合中性的信息 %}
-{% noteblock, 标题（可选） %}
-
-Windows 10不是為所有人設計,而是為每個人設計
-
-{% endnoteblock %}
-
-{% folding green, 查看代码测试 %}
-
-{% endfolding %}
-
-
-
 

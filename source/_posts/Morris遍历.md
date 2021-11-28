@@ -14,7 +14,7 @@ categories:
 tags:
   - Morris遍历
   - 树
-date: 2021-11-27 14:58:54
+date: 2017-11-27 14:58:54
 summary:
 ---
 
@@ -68,6 +68,8 @@ func MorrisPreOrderTraverse(root *TreeNode) []int {
 }
 ```
 {% endfolding %}
+
+<!-- more -->
 
 ### Morris中序遍历：
 
