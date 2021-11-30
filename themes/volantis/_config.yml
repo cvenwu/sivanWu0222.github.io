@@ -337,7 +337,7 @@ comments:
 ############################### Sidebar ############################### > start
 sidebar:
   # 主页、分类、归档等独立页面
-  for_page: [blogger, webinfo, tagcloud, category]
+  for_page: [blogger, webinfo, feedback, category, tagcloud]
   layout: docs/post #这类文章页面
   for_post: [toc]
   # 侧边栏组件库
@@ -362,6 +362,51 @@ sidebar:
           url: https://github.com/sivanWu0222/
         # - icon: fas fa-headphones-alt
         #   url: /
+    #---------------文本列表
+    wiki-hexo-theme:
+      class: list
+      display: [desktop, mobile] # [desktop, mobile]
+      header:
+        icon: fas fa-chevron-left
+        title: Hexo Themes
+        url: /wiki/
+      rows:
+        - name: Volantis for Hexo
+          url: /wiki/volantis/
+        - name: Resume for Hexo
+          url: /wiki/resume/
+    #---------------网格
+    feedback:
+      class: grid
+      display: [desktop, mobile]
+      header:
+        icon: fas fa-calendar
+        title: 总结
+        url: https://github.com/volantis-x/hexo-theme-volantis
+      fixed: true # 固定宽度
+      rows:
+        - name: 摄影展
+          icon: fas fa-camera
+          url: /pictures
+        - name: 算法 
+          icon: fas fa-book
+          url: http://www.sivan.tech/AlgoBook/#/
+        - name: 面经
+          icon: fas fa-book 
+          url: http://www.sivan.tech/BasicCompu/#/
+    #---------------一些比较牛逼的项目展示
+    repos:
+      class: text
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fab fa-github
+        title: 点个赞吧
+        url: https://github.com/sivanWu0222/
+      content:
+        - '您的赞对我来说很重要，如果您喜欢本主题，希望能够给下面的项目点个赞来支持一下。'
+        - '[<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png" height="50px">](http://www.sivan.tech/BasicCompu/#/)'
+        - '[<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/fd537d5c-1b03-46d8-836c-96073ba1c165_200x200.png" height="50px">](http://www.sivan.tech/AlgoBook/#/)'
+        # - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/inspire/logo.png" height="50px">](https://github.com/xaoxuu/Inspire)'
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:
@@ -608,6 +653,48 @@ plugins:
     animation: nprogress # nprogress, circle
     banUrl:              # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
       # - /artitalk/     # artitalk 不支持 pjax
+  # 消息提示
+  message:
+    enable: true
+    icon:     # 默认图标，支持对图标添加颜色，可选值：see：/source/css/_style/_plugins/fontcolor.styl
+      default: fas fa-info-circle light-blue
+      quection: fas fa-question-circle light-blue
+    time:     # 默认持续时间
+      default: 5000
+      quection: 20000
+    position: 'topRight'                 # 弹出位置 可选值：topRight, bottomRight, bottomLeft, topLeft, topCenter, bottomCenter, center
+    transitionIn: 'bounceInLeft'         # 弹窗打开动画 可选值：bounceInLeft, bounceInRight, bounceInUp, bounceInDown, fadeIn, fadeInDown, fadeInUp, fadeInLeft, fadeInRight, flipInX
+    transitionOut: 'fadeOutRight'        # 弹窗关闭动画 可选值：fadeOut, fadeOutUp, fadeOutDown, fadeOutLeft, fadeOutRight, flipOutX
+    titleColor: 'var(--color-text)'      # 标题颜色
+    messageColor: 'var(--color-text)'    # 消息颜色
+    backgroundColor: 'var(--color-card)' # 默认背景色
+    zindex: 2147483647                   # 层级
+    copyright:                           # 是否在复制时弹出版权提示，影响范围：ctrl+c、代码块复制按钮、右键复制选项
+      enable: true
+      title: '知识共享许可协议'
+      message: '请遵守 CC BY-NC-SA 4.0 协议。'
+      icon: 'far fa-copyright light-blue'
+    aplayer:                              # 是否开启音乐通知；播放、暂停、失败 时的图标
+      enable: true
+      play: fas fa-play
+      pause: fas fa-pause
+    rightmenu:                            # 是否开启右键模块的消息通知
+      enable: true
+  # 幻灯片
+  parallax:
+    enable: true
+    position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
+    shuffle: true         # shuffle playlist
+    duration: 10000       # Duration (ms)
+    fade: 1500            # fade duration (ms) (Not more than 1500)
+    images:               # For personal use only. At your own risk if used for commercial purposes !!!
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg
+      - https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg
 
 
   # Artitalk https://artitalk.js.org
@@ -825,7 +912,7 @@ custom_css:
   navbar:
     height: 64px
     width: auto # auto, max
-    effect: [shadow, blur] # [shadow, floatable, blur]
+    effect: [shadow, blur, floatable] # [shadow, floatable, blur]
   sidebar:
     effect: [blur] # [shadow, floatable, blur]
   body:
