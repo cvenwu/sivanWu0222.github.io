@@ -1,0 +1,2967 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.0.0.alpha.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+      
+        <meta name="robots" content="index,follow">
+      
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+
+  <!-- 页面元数据 -->
+  
+  <title>逸如风的个人博客</title>
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css">
+
+    
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  <!-- 脚本懒加载函数 -->
+  <script>
+  function loadScript(src, cb) {
+    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+    var script = document.createElement('script');
+    script.setAttribute('type','text/javascript');
+    if (cb) script.onload = cb;
+    script.setAttribute('src', src);
+    HEAD.appendChild(script);
+  }
+  //https://github.com/filamentgroup/loadCSS
+  !function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
+  </script>
+  <script id="loadcss"></script>
+</head>
+
+<body>
+  <header class="l_header always shadow blur floatable "  >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-blog fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/pictures/
+                  
+                  
+                  
+                    id="pictures"
+                  >
+                  <i class='fas fa-camera fa-fw'></i>摄影展
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-blog fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/pictures/
+                  
+                  
+                  
+                    id="pictures"
+                  >
+                  <i class='fas fa-camera fa-fw'></i>摄影展
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+  
+    
+    
+        <div class='cover-wrapper  featured' style="display: none;">
+          
+            <div class='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png'/>
+    
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-blog fa-fw'></i><p>博客</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/sivanWu0222"
+              
+              
+              id="https:githubcomsivanWu0222">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="http://www.sivan.tech/AlgoBook/"
+              
+              
+              id="http:wwwsivantechAlgoBook">
+              <i class='fas fa-book fa-fw'></i><p>算法</p>
+            </a>
+          
+            <a href="/projects/"
+              
+              
+              id="projects">
+              <i class='fas fa-tags fa-fw'></i><p>项目</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">false</div> 
+  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path"></div> 
+  <div id="pjax-comment-placeholder"></div> 
+</div> 
+ 
+ 
+<script> 
+  // 处理封面 此时 jquery 还没加载 
+  if ("full" == "none") { // 移除封面 
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
+  } else { 
+    if ("full" == "half") { // 半屏 
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
+      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
+    } else if ("full" == "full") { // 全屏 
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
+      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
+    } 
+    document.getElementsByClassName('cover-wrapper')[0].style.display = ""; 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
+  } 
+</script> 
+ 
+
+        
+        
+
+<div class='l_main'>
+  
+  <section class="post-list">
+    
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+          
+            
+              <div class='post-wrapper'>
+                <div class="post post-v3 white-box reveal shadow">
+  
+  
+    <div class='pin'>
+      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
+    </div>
+  
+  
+  
+    
+    <h2 class="article-title" pin>
+      <a href="/2099/09/15/demo/">
+        Demo
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p><a target="_blank" rel="noopener" href="https://volantis.js.org/v5/page-settings/">文章头部frot-matter编写参考</a></p>
+<p>所有样式来源于：<a target="_blank" rel="noopener" href="https://volantis.js.org/v5/tag-plugins/">https://volantis.js.org/v5/tag-plugins/</a></p>
+<h2 id="text"><a href="#text" class="headerlink" title="text"></a>text</h2><p>带 <u>下划线</u> 的文本；带 <emp>着重号</emp> 的文本；带 <wavy>波浪线</wavy> 的文本；带 <del>删除线</del> 的文本</p>
+<p>键盘样式的文本：<kbd>⌘</kbd> + <kbd>D</kbd></p>
+<p>密码样式的文本：<psw>这里没有验证码</psw></p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2099-09-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/demo/">demo</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2099/09/15/demo/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+              </div>
+            
+          
+        
+          
+            
+              <div class='post-wrapper'>
+                <div class="post post-v3 white-box reveal shadow">
+  
+  
+    <div class='pin'>
+      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
+    </div>
+  
+  
+  
+    
+    <h2 class="article-title" pin>
+      <a href="/2099/06/06/LeetCode%E7%B3%BB%E5%88%97-%E5%88%B7%E9%A2%98%E8%AE%B0/">
+        (LeetCode系列)刷题记
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <ol>
+<li><a href="http://www.sivan.tech/GitBook/">在线阅读</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sivanWu0222/GitBook">查看对应源码</a></li>
+</ol>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2099-06-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/LeetCode/">LeetCode</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2099/06/06/LeetCode%E7%B3%BB%E5%88%97-%E5%88%B7%E9%A2%98%E8%AE%B0/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+              </div>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+              <div class='post-wrapper'>
+                <div class="post post-v3 white-box reveal shadow">
+  
+  
+    <div class='pin'>
+      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
+    </div>
+  
+  
+  
+    
+    <h2 class="article-title" pin>
+      <a href="/2021/04/07/%E9%A5%B6%E5%A4%A7%E6%96%87%E7%AB%A0%E6%B1%87%E6%80%BB/">
+        饶大文章汇总
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="饶大文章汇总"><a href="#饶大文章汇总" class="headerlink" title="饶大文章汇总"></a>饶大文章汇总</h2><h3 id="Go语言"><a href="#Go语言" class="headerlink" title="Go语言"></a>Go语言</h3><details ><summary> <p>深度解密系列</p> </summary>
+              <div class='content'>
+              <ul><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/MTZ0C9zYsNrb8wyIm2D8BA">深度解密Go语言之Slice</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/mXOU8TElP8bbqaybRKN8eA">深度解密Go语言之sync.map</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/90Evbi5F5sA1IM5Ya5Tp8w">深度解密Go语言之channel</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/GpVy1eB5Cz_t-dhVC6BJNw">深度解密Go语言之context</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OO-kwB4Fp_FnCaNXwGJoEw">深度解密Go语言之unsafe</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/2CDpE5wfoiNXm1agMAq4wA">深度解密Go语言之map</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Hke0mSCEa4ga_GS_LUp78A">深度解密Go语言之反射</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/EbxkBokYBajkCR-MazL0ZA">深度解密Go语言之关于 interface 的 10 个问题</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/rpCf5vm9xYFXjmR98vanfQ">深度解密Go语言之scheduler</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/QiqoZeew3348OzU0tJ8XxA">深度解密Go语言之pprof</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/O8EY0M4_Rt_0BLCcM8OwFw">深度解密Go语言之sync.pool</a></li></ul>
+              </div>
+            </details>
+
+<details ><summary> <p>Go语言其他</p> </summary>
+              <div class='content'>
+              <ul><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/JOjUWp15JbEu54VJHY8i_A">三足鼎立 —— GPM 到底是什么？（一）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/3xXU_O8-ZiA1Tk1nCnkODA">开天辟地 —— Go scheduler 初始化（二）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ipeLbEnKJ9BkOVtJv6ft0w">粉墨登场 —— main goroutine 的诞生（三）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/sGR_VF13Czd9VuvHb-96iA">偷天换日 —— g0 栈和用户栈如何完成切换？（四）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/pRCWOKlI48soY0deOWoSEw">新官上任 —— Go sheduler 开始调度循环（五）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/kwKqrT4BoeheM9MvSh-rLw">千难万险 —— goroutine 从生到死（六）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/QFmh0wq50H9-4ZrtEknpCQ">生生世世 —— schedule 的轮回（七）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/6sNtrdlKtwfJIvBA8UPnKg">锲而不舍 —— M 是怎样找工作的？（八）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/msJaDVyC-9ZbOef_wNac3A">忠于职守 —— sysmon 线程到底做了什么？（九）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Npbxth4AJxwO2g4bBx9lnA">意犹未尽 —— GPM 的状态流转（十）</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/cE_q1LWapFFGYlphZJP-Cw">Golang error 的突围</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/o2oMMh0PF5ZSoYD0XOBY2Q">Go GC 20 问</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/rgMT3fHMM4n9wSxCupDZyg">defer 链如何被遍历执行</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jYVbA3kIp85J06BB1vT_iA">defer 的前世今生</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ie8niOb_0C9z2kACNvWCtg">聊聊 g0</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/nib0OD-LvNG57JAs4vB9RA">Go 协作与抢占</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ENKV234bolS8UWd73JtRnQ">Go Modules 的智障版本选择</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/PFAQOa1rYAl4YcSmGmEnQQ">惊！空 struct 地址竟然不相等</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/7gaSxmA1aqfxfbGpMeZK-A">fasthttp 快在哪里</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/A5GXxb9J6IT-jA3eQOzyCw">深度阅读之《Concurrency in Go》(内含饶大微信和内推)</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/1tmexuy59NS8FGYU0LRRqQ">在 Go 语言中 Patch 非导出函数</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fr-5v-jU4rCGqMCYSpDjfg">极端情况下收缩 Go 进程的线程数</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jAUfqu-5nbs8hcua_F7ueQ">Go channel 的妙用</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/iXIf87-jjNrczai_bJXeGQ">[译]提案：在Go语言中增加对持久化内存的支持</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/g5AZxFOS9kwnAPmb3e3OUQ">那些年曹大写过的博客</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OtkBEOxAWkwEu01PYbWY2w">Go http client 连接池不复用的问题</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/db--Gd4mUf2bs1hGwo5M_A">Go pprof 快速分析 CPU 高负载问题</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/9FFp0-cj4raPhdUUpSy4Og">Go 语言应用之 template</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Rewl0DKnq6CY53m5D3G2qw">Go 程序是怎样跑起来的</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/r9yC78exkDbXs7Et2pC5PA">曹大谈内存重排</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Hm8egXrdFr5c4-v--VFOtg">图解Go语言内存分配</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ashgWyb-w4fT47xX60yNFA">Golang之变量去哪儿</a></li><li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/txj7jQNki_8zIArb9kSHeg">Golang之轻松化解defer的温柔陷阱</a></li></ul>
+              </div>
+            </details>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-04-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%B1%87%E6%80%BB/">汇总</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/04/07/%E9%A5%B6%E5%A4%A7%E6%96%87%E7%AB%A0%E6%B1%87%E6%80%BB/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+              </div>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    
+      
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/12/22/docsify%E6%96%87%E6%A1%A3%E6%90%AD%E5%BB%BA/">
+        docsify文档搭建
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        文章头部frot-matter编写参考
+所有样式来源于：https://xaoxuu.com/wiki/volantis/tag-plugins/
+issue标签参考
+
+
+
+相册一行一图
+              
+            
+
+一行多图
+              
+            
+
+多行多图
+              
+            
+
+
+githu...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-12-22</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/12/22/docsify%E6%96%87%E6%A1%A3%E6%90%AD%E5%BB%BA/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/12/07/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/">
+        收藏的项目
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hellogithub.com/">https://hellogithub.com/</a> 上有很多精选各种语言的开源项目，比如前端，Go，C等等</p>
+</blockquote>
+<ol>
+<li>GitHub 上一本开源的前端技术书籍:《前端内参》。该书共有 11 章，覆盖了技术面试、JavaScript 特性解析、数据结构与算法、主流框架、开发工具、编程范式、设计原则与编程范式等内容。<ul>
+<li>在线阅读：<a target="_blank" rel="noopener" href="https://coffe1891.gitbook.io/frontend-hard-mode-interview/">https://coffe1891.gitbook.io/frontend-hard-mode-interview/</a></li>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/coffe1891/frontend-hard-mode-interview/">https://github.com/coffe1891/frontend-hard-mode-interview/</a></li>
+</ul>
+</li>
+<li>如果你是刚开始学前端的同学，又在找练手的项目，不妨来看下这个 GitHub 项目：50projects50days。该项目一共含有 50 个纯使用 HTML、CSS 和 JavaScript 实现的小 Demo，这当中有加载动画、时钟主题、密码生成器、动画倒计时、在线绘图等多个小应用。<ul>
+<li>GitHub：github.com/bradtraversy/50projects50days</li>
+</ul>
+</li>
+<li>Map of Javascript，<strong>开源的 JavaScript、数据结构与算法知识图谱</strong>。可用于日常工作或学习时的查漏补缺（高清大图见 GitHub Repo）。<ul>
+<li>GitHub：github.com/mechaniac/Map-of-Javascript</li>
+</ul>
+</li>
+<li>GitHub 上一个基于 Vue3.x + TypeScript 的在线演示文稿应用：PPTist。还原了大部分 PPT 常用功能，支持文字、图片、形状、线条、图表、表格等 6 种最常用的元素类型。每种元素都拥有高度可编辑能力，同时支持丰富的快捷键和右键菜单，尽可能还原本地桌面应用的使用体验。<ul>
+<li>GitHub：<a target="_blank" rel="noopener" href="http://github.com/pipipi-pikachu/PPTist">github.com/pipipi-pikachu/PPTist</a></li>
+<li>在线体验：<a target="_blank" rel="noopener" href="https://pptist.gitee.io/?continueFlag=c834cfc92861a26ce476694beae63ff8">https://pptist.gitee.io/?continueFlag=c834cfc92861a26ce476694beae63ff8</a></li>
+</ul>
+</li>
+<li>微软在 GitHub 开源了一份 Web 开发教程：《给初学者看的 Web 开发教程》（Web Development for Beginners）。课时为期 12 周，共 24 节，主要讲解 JavaScript、CSS、HTML 相关的基础知识，并通过开发打字游戏、浏览器扩展、太空游戏等多个项目，带你了解 Web 开发的整体流程。为了让开发者可以更为充分的吸收课程知识，每节课均附有课前课后测验、课程说明、<strong>草图笔记</strong>、项目挑战、作业任务等内容。<ul>
+<li>GitHub：github.com/microsoft/Web-Dev-For-Beginners</li>
+</ul>
+</li>
+<li>一款开源的单词记忆与英语肌肉记忆锻炼软件：Qwerty Learner。主要将英语单词的记忆与键盘输入的肌肉记忆相结合，可在背诵单词的同时巩固肌肉记忆。此外，该软件还为程序员内置了计算机常用单词库与 API，方便大家练习工作中常用的单词、提高输入速度。<ul>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/Kaiyiwing/qwerty-learner">https://github.com/Kaiyiwing/qwerty-learner</a></li>
+</ul>
+</li>
+<li>GitHub 上一个前端知识库：CSS Protips，里面收集并整理了 CSS 相关的一些开发及使用技巧。<ul>
+<li>GitHub：github.com/AllThingsSmitty/css-protips</li>
+</ul>
+</li>
+<li>前不久，国外开发者 bedimcode 在 GitHub 开源了一个万圣节网站：Responsive Halloween Website 🎃，并附带了完整的项目开发教程。该网站主要具备响应式布局、滚动动画、移动端优化、多平台设备兼容等特点。整体设计风格优雅、简洁，感兴趣的同学可以拿去练练手<ul>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/bedimcode/responsive-halloween-website">https://github.com/bedimcode/responsive-halloween-website</a></li>
+</ul>
+</li>
+<li><strong>剑指前端 Offer:</strong> <a target="_blank" rel="noopener" href="https://github.com/hzfe/awesome-interview">https://github.com/hzfe/awesome-interview</a></li>
+<li>GitHub 上一个开源的音乐网站管理系统：Music Website，实现了歌单、播放器、用户及音乐管理等常用功能。前端基于 Vue，后端采用 Spring Boot + MyBatis + MySQL 进行实现，作者为该项目提供了项目实现文档，感兴趣的同学可以看下。<ul>
+<li>GitHub：github.com/Yin-Hongwei/music-website</li>
+</ul>
+</li>
+<li>GitHub 上一个基于 Go 与 Typescript 开发的看板开源软件：taskcafe。支持对任务进行筛选过滤、打标签、添加截止日期、分配成员、制定流程等操作。<ul>
+<li>GitHub：github.com/JordanKnott/taskcafe</li>
+</ul>
+</li>
+<li>GitHub 上看到一款颜值颇高的第三方网易云播放器：YesPlayMusic。基于 Vue.js 全家桶开发，内置所有音乐播放器基础功能，支持 MV 播放、暗黑模式、自定义快捷键等功能。<ul>
+<li>GitHub：github.com/qier222/YesPlayMusic </li>
+</ul>
+</li>
+<li>《图解 React 源码系列》，作者将通过大量配图，把 react 原理表述清楚。主要包含 React 基础概念、运行核心、数据管理、交互、高频算法等内容。<ul>
+<li>GitHub：github.com/7kms/react-illustration-series</li>
+</ul>
+</li>
+<li>分享 GitHub 上一本开源的前端技术书籍：《带你入门前端工程》，主要记录作者在近两年来，在前端工程师实践经验和学习心得方面的总结。书中大部分内容以理论知识 + 代码示例 + 图片进行讲解，部分章节会提供实践教程。<ul>
+<li>GitHub：github.com/woai3c/introduction-to-front-end-engineering</li>
+</ul>
+</li>
+<li>一个值得前端开发者收藏学习的 GitHub 项目：Browser 2020。里面收集了浏览器中一些较为冷门，却异常实用的接口，如商品支付、社交网络分享、消息推送、视频画中画、剪切板、AR 预览、用户身份凭证管理等多种接口。如果你想给自己的 Web 项目加点新功能，或许可以在上面找找灵感。<ul>
+<li>GitHub：github.com/luruke/browser-2020</li>
+</ul>
+</li>
+<li>推荐 GitHub 上一本开源的前端书籍：《深入理解 TypeScript》（TypeScript Deep Dive）。该书将从基础到深入，全面阐述 TypeScript 的各种魔法，并结合实际场景用例，让你更深入的理解 TypeScript。<ul>
+<li>中文版：github.com/jkchao/typescript-book-chinese</li>
+<li>原文版：github.com/basarat/typescript-book</li>
+</ul>
+</li>
+<li>OnlineJudge，青岛大学开源的一款在线评测系统，基于 Python 与 Vue 编写而成。<ul>
+<li>GitHub：github.com/QingdaoU/OnlineJudge</li>
+<li>主要拥有以下特性：<ul>
+<li>基于 Docker，真正一键部署；</li>
+<li>前后端分离，模块化编程，微服务；</li>
+<li>ACM/OI 两种比赛模式、实时/非实时评判；</li>
+<li>丰富的可视化图表；</li>
+<li>支持 Template Problem，可添加函数题甚至填空题；</li>
+<li>管理员权限划分；</li>
+<li>多语言支持；</li>
+<li>Markdown &amp; MathJax 支持；</li>
+<li>比赛用户 IP 限制 (CIDR ranges)。
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E8%B5%84%E6%BA%90/">资源</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/12/07/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/11/30/%E6%B1%82%E5%B9%B3%E6%96%B9%E6%A0%B9/">
+        求平方根
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="方法一：二分"><a href="#方法一：二分" class="headerlink" title="方法一：二分"></a>方法一：二分</h2><ul>
+<li>时间复杂度：O(logN)</li>
+<li>空间复杂度：O(1) </li>
+</ul>
+<p>注意点：</p>
+<ol>
+<li><code>mid*mix &gt; x</code>的时候容易溢出，改成<code>mid &gt; x/mid</code></li>
+<li><code>mid := (l+r)&gt;&gt;1</code>的时候也容易溢出，改成<code>mid := l + (r-l)&gt;&gt;1</code></li>
+</ol>
+<details green><summary> <p>不保留小数</p> </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不保留小数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Sqrt</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> x &lt;= <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	l, r := <span class="number">1</span>, x<span class="number">-1</span></span><br><span class="line">	<span class="keyword">for</span> l &lt;= r &#123;</span><br><span class="line">		mid := l + (r-l)&gt;&gt;<span class="number">1</span></span><br><span class="line">		<span class="keyword">if</span> mid &gt; x/mid &#123;</span><br><span class="line">			r = mid - <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> mid &lt; x/mid &#123;  <span class="comment">//Tips:写成x/mid用来确认不会溢出</span></span><br><span class="line">			l = mid + <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> mid</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> r</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/11/30/%E6%B1%82%E5%B9%B3%E6%96%B9%E6%A0%B9/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/11/30/%E6%B1%82%E4%B8%A4%E9%A2%97%E6%A0%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BA%A4%E7%82%B9/">
+        微软最后一面-求两颗树的第一个交点
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="求两棵树的第一个交点"><a href="#求两棵树的第一个交点" class="headerlink" title="求两棵树的第一个交点"></a>求两棵树的第一个交点</h2><blockquote>
+<p>首先判断两棵树是否相交，可以根据判断两个链表是否相交扩展而来，如果相交的话，将第1个链表的末尾指向第1个链表的头部将会成环，因此借鉴这种思路</p>
+</blockquote>
+<p>自己的思路如下：<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/KlYSSU.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/KlYSSU.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="KlYSSU"></p>
+<h3 id="验证两棵树是否相交"><a href="#验证两棵树是否相交" class="headerlink" title="验证两棵树是否相交"></a>验证两棵树是否相交</h3><p>思路：Morris先序遍历，遍历第1棵树的时候将叶节点的左指针指向root1，然后遍历root2，如果发现某一个节点左指针指向第1个树根，说明相交，<strong>包含了两个树中有一个是子树的情况</strong></p>
+<p>时间复杂度：O(N)<br>空间复杂度：O(1)</p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-11-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/11/30/%E6%B1%82%E4%B8%A4%E9%A2%97%E6%A0%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BA%A4%E7%82%B9/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/11/27/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%97%AE%E9%A2%98/">
+        彻底解决解决两个链表相交的问题
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>两个链表相交涉及到关于链表的一系列问题：其中包含了如下子问题，并且涉及到了大量的算法思想，比如快慢指针</p>
+</blockquote>
+<ol>
+<li>判断链表是否有环</li>
+<li>链表有环的情况下找到环的入口节点</li>
+<li>判断两个链表是否相交</li>
+<li>相交的情况下找到相交时候的第一个节点</li>
+</ol>
+<h2 id="对应的7种情况"><a href="#对应的7种情况" class="headerlink" title="对应的7种情况"></a>对应的7种情况</h2><p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/6aSs8P.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/6aSs8P.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="6aSs8P"></p>
+<h2 id="解决代码"><a href="#解决代码" class="headerlink" title="解决代码"></a>解决代码</h2><div class="note info"><p>执行测试命令：<code>go test -v intersection_test.go intersection.go -test.run TestIntersection</code></p></div>
+
+<details blue><summary> <p>解决代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> InterviewCoding</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @Author: yirufeng</span></span><br><span class="line"><span class="comment"> * @Date: 2021/11/25 8:21 上午</span></span><br><span class="line"><span class="comment"> * @Email: yirufeng@foxmail.com</span></span><br><span class="line"><span class="comment"> * @GitHub: https://www.github.com/sivanWu0222</span></span><br><span class="line"><span class="comment"> * @Desc:</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> LinkedListNode <span class="keyword">struct</span> &#123;</span><br><span class="line">	Val  <span class="keyword">int</span></span><br><span class="line">	Next *LinkedListNode</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">题目：返回两个链表相交的节点</span></span><br><span class="line"><span class="comment">步骤：</span></span><br><span class="line"><span class="comment">1. 明确题目中的意思，两个链表有无环，是否一定相交(如果不一定的话，我们需要判断是否相交，只有在相交的情况下我们才可以返回相交的第一个节点)</span></span><br><span class="line"><span class="comment">2. 分情况进行讨论：</span></span><br><span class="line"><span class="comment">	2.1 有环</span></span><br><span class="line"><span class="comment">		2.1.1 一定相交：</span></span><br><span class="line"><span class="comment">			直接找到相交的节点即可</span></span><br><span class="line"><span class="comment">		2.1.2 不一定相交：</span></span><br><span class="line"><span class="comment">			首先判断是否相交</span></span><br><span class="line"><span class="comment">			相交的时候，找到相交的第一个节点并返回</span></span><br><span class="line"><span class="comment">	2.2 无环</span></span><br><span class="line"><span class="comment">		2.2.1 一定相交：</span></span><br><span class="line"><span class="comment">		2.2.2 不一定相交：</span></span><br><span class="line"><span class="comment">			首先判断是否相交</span></span><br><span class="line"><span class="comment">			相交的时候，找到相交的第一个节点并返回</span></span><br><span class="line"><span class="comment">	2.3 1个有环1个无环，说明一定不会相交，直接返回Nil就可以了</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//返回两个链表的相交节点，如果不相交返回Nil，否则返回相交的第一个节点</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Intersection</span><span class="params">(l1, l2 *LinkedListNode)</span> *<span class="title">LinkedListNode</span></span> &#123;</span><br><span class="line">	<span class="comment">//如果有一个为空，直接说明不相交</span></span><br><span class="line">	<span class="keyword">if</span> l1 == <span class="literal">nil</span> || l2 == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断两个链表是否有环，如果有环就返回环的起始节点</span></span><br><span class="line">	startOfl1Ring, startOfl2Ring := startNodeOfRing(l1), startNodeOfRing(l2)</span><br><span class="line">	<span class="comment">//如果1个有1个没有，说明白不相交，直接返回nil</span></span><br><span class="line">	<span class="keyword">if</span> ((startOfl1Ring == <span class="literal">nil</span>) &amp;&amp; (startOfl2Ring != <span class="literal">nil</span>)) || ((startOfl1Ring != <span class="literal">nil</span>) &amp;&amp; (startOfl2Ring == <span class="literal">nil</span>)) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> ret *LinkedListNode</span><br><span class="line">	<span class="keyword">if</span> startOfl1Ring != <span class="literal">nil</span> &#123; <span class="comment">//如果有环</span></span><br><span class="line">		ret = findIntersectionNodeWhenBothHaveCycle(l1, l2, startOfl1Ring, startOfl2Ring)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">//如果没有环：此时就转换为我们正常的题解了</span></span><br><span class="line">		ret = findIntersectionNodeWhenBothNoCycle(l1, l2)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当两个链表都没有环的时候，找到两个链表的相交节点(可能相交，可能不相交)</span></span><br><span class="line"><span class="comment">//三种解法去找出第一个相交的节点</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findIntersectionNodeWhenBothNoCycle</span><span class="params">(l1, l2 *LinkedListNode)</span> *<span class="title">LinkedListNode</span></span> &#123;</span><br><span class="line">	<span class="comment">//1. 获得第1个链表第2个链表的长度以及各自链表的最后一个节点</span></span><br><span class="line">	l1Length, l2Length := <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">	l1LastNode, l2LastNode := l1, l2</span><br><span class="line">	<span class="keyword">for</span> l1LastNode.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		l1Length, l1LastNode = l1Length+<span class="number">1</span>, l1LastNode.Next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> l2LastNode.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		l2Length, l2LastNode = l2Length+<span class="number">1</span>, l2LastNode.Next</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断各自最后一个节点是否相等，如果不相等，说明不相交，直接返回nil</span></span><br><span class="line">	<span class="keyword">if</span> l1LastNode != l2LastNode &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//先走长度差</span></span><br><span class="line">	l1LastNode, l2LastNode = l1, l2</span><br><span class="line">	<span class="keyword">if</span> l1Length &gt; l2Length &#123;</span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; l1Length-l2Length; i++ &#123;</span><br><span class="line">			l1LastNode = l1LastNode.Next</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; l2Length-l1Length; i++ &#123;</span><br><span class="line">			l2LastNode = l2LastNode.Next</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//然后一起走，如果中途相等直接返回</span></span><br><span class="line">	<span class="keyword">for</span> l1LastNode != l2LastNode &#123;</span><br><span class="line">		l1LastNode, l2LastNode = l1LastNode.Next, l2LastNode.Next</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> l1LastNode</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当两个链表都有环的时候，找到两个链表的相交节点(可能相交，可能不相交(各自有一个自己的环))</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findIntersectionNodeWhenBothHaveCycle</span><span class="params">(l1, l2, startOfl1Ring, startOfl2Ring *LinkedListNode)</span> *<span class="title">LinkedListNode</span></span> &#123;</span><br><span class="line">	<span class="comment">//判断两个链表是否有环的时候我们可以找到链表有环时候环的第一个节点</span></span><br><span class="line">	<span class="comment">//如果两个环的起始节点都相同，此时问题转变为l1的起始节点到自己拥有环的开始节点和l2的起始节点到自己拥有环的开始节点的第一个相交节点</span></span><br><span class="line">	<span class="keyword">if</span> startOfl1Ring == startOfl2Ring &#123;</span><br><span class="line">		l1Temp, l2Temp := l1, l2</span><br><span class="line">		<span class="comment">//转变为求两个无环单链表的相交节点</span></span><br><span class="line">		<span class="keyword">var</span> l1TempLength, l2TempLength <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> l1Temp != startOfl1Ring &#123;</span><br><span class="line">			l1Temp, l1TempLength = l1Temp.Next, l1TempLength+<span class="number">1</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> l2Temp != startOfl2Ring &#123;</span><br><span class="line">			l2Temp, l2TempLength = l2Temp.Next, l2TempLength+<span class="number">1</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//长的先走</span></span><br><span class="line">		<span class="keyword">if</span> l1TempLength &gt; l2TempLength &#123;</span><br><span class="line">			<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; l1TempLength-l2TempLength; i++ &#123;</span><br><span class="line">				l1Temp = l1Temp.Next</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; l2TempLength-l1TempLength; i++ &#123;</span><br><span class="line">				l2Temp = l2Temp.Next</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//此时一起走</span></span><br><span class="line">		<span class="keyword">for</span> l1Temp != l2Temp &#123;</span><br><span class="line">			l1Temp, l2Temp = l1Temp.Next, l2Temp.Next</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> l1Temp</span><br><span class="line"></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">//如果两个环的起始节点不同，让其中一个环开始走，走到起始节点为止，如果中途会出现和另外一个环起始节点相同，说明相交，否则各自成环</span></span><br><span class="line">		l1Temp := startOfl1Ring.Next</span><br><span class="line">		<span class="keyword">for</span> l1Temp != startOfl1Ring &#123;</span><br><span class="line">			<span class="keyword">if</span> l1Temp == startOfl2Ring &#123;</span><br><span class="line">				<span class="keyword">return</span> startOfl2Ring</span><br><span class="line">			&#125;</span><br><span class="line">			l1Temp = l1Temp.Next</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回链表是否有环，如果有的话直接返回true，否则返回false</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">startNodeOfRing</span><span class="params">(head *LinkedListNode)</span> *<span class="title">LinkedListNode</span></span> &#123;</span><br><span class="line">	fast, slow := head, head</span><br><span class="line">	<span class="keyword">for</span> fast != <span class="literal">nil</span> &amp;&amp; fast.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		fast, slow = fast.Next.Next, slow.Next</span><br><span class="line">		<span class="comment">//说明此时相遇，表明有环</span></span><br><span class="line">		<span class="keyword">if</span> fast == slow &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//这里是第二个注意点，这里不仅仅要判断fast是否为空，还要判断fast.Next是否为空，</span></span><br><span class="line">	<span class="comment">//因为让链表停止上面for循环的有两个条件：1. fast为空 2. fast.Next为空</span></span><br><span class="line">	<span class="comment">//判断一下是因为fast为空或者fast.Next为空还是fast==slow退出的</span></span><br><span class="line">	<span class="keyword">if</span> fast == <span class="literal">nil</span> || fast.Next == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//走到这里说明有环，此时让fast指向head,然后fast与slow每次都走一步，一起相遇的时候返回即可</span></span><br><span class="line">	fast = head</span><br><span class="line">	<span class="keyword">for</span> fast != slow &#123;</span><br><span class="line">		fast, slow = fast.Next, slow.Next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> fast</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+<details blue><summary> <p>测试代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> InterviewCoding</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;testing&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @Author: yirufeng</span></span><br><span class="line"><span class="comment"> * @Date: 2021/11/25 11:05 上午</span></span><br><span class="line"><span class="comment"> * @Email: yirufeng@foxmail.com</span></span><br><span class="line"><span class="comment"> * @GitHub: https://www.github.com/sivanWu0222</span></span><br><span class="line"><span class="comment"> * @Desc:</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//测试两个链表</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestIntersection</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	<span class="comment">//模拟场景</span></span><br><span class="line">	<span class="comment">//1.1 两个不带环且不相交的链表</span></span><br><span class="line">	l1, l2 := constructTwoLinkedListWithoutCycleAndNotIntersection()</span><br><span class="line">	<span class="keyword">if</span> Intersection(l1, l2) != <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Fatalf(<span class="string">&quot;expect no intersection node.&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//1.2 两个不带环但是相交的链表：LeetCode原题</span></span><br><span class="line">	<span class="comment">//已修复，由于&amp;&amp;写成了||</span></span><br><span class="line">	l1, l2 = constructTwoLinkedListWithoutCycleButIntersection()</span><br><span class="line">	<span class="keyword">if</span> Intersection(l1, l2) == <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Log(Intersection(l1, l2))</span><br><span class="line">		t.Fatalf(<span class="string">&quot;expect to have intersection node.&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2. 1个链表有环，1个无环</span></span><br><span class="line">	l1, l2 = constructTwoLinkedListButOneHasCycle()</span><br><span class="line">	<span class="keyword">if</span> Intersection(l1, l2) != <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Fatalf(<span class="string">&quot;expect no intersection node.&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//3. 两个链表都有环</span></span><br><span class="line">	<span class="comment">//3.1 两个链表都有环，但是两个链表的环都是各自的</span></span><br><span class="line">	l1, l2 = constructTwoLinkedBothHasOwnCycle()</span><br><span class="line">	<span class="keyword">if</span> Intersection(l1, l2) != <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Fatalf(<span class="string">&quot;expect no intersection node.&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//3.2.1 两个链表都有环，并且两个链表是相交的，且交点在进入环之前</span></span><br><span class="line">	<span class="comment">//todo: 有问题</span></span><br><span class="line">	l1, l2 = constructTwoLinkedListBothHasCycleAndIntersection()</span><br><span class="line">	<span class="keyword">if</span> Intersection(l1, l2) == <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Fatalf(<span class="string">&quot;expect to have intersection node.&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//3.2.2 两个链表都有环，并且两个链表是相交的，且交点在环上</span></span><br><span class="line">	l1, l2 = constructTwoLinkedListBothHasCycleAndIntersectionII()</span><br><span class="line">	<span class="keyword">if</span> Intersection(l1, l2) == <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Fatalf(<span class="string">&quot;expect to have intersection node.&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//两个不带环但是相交的链表</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constructTwoLinkedListWithoutCycleButIntersection</span><span class="params">()</span> <span class="params">(l1, l2 *LinkedListNode)</span></span> &#123;</span><br><span class="line">	node := &amp;LinkedListNode&#123;Val: <span class="number">5</span>&#125;</span><br><span class="line">	l1, l2 = &amp;LinkedListNode&#123;Val: <span class="number">3</span>&#125;, &amp;LinkedListNode&#123;Val: <span class="number">4</span>, Next: &amp;LinkedListNode&#123;Val: <span class="number">6</span>, Next: node&#125;&#125;</span><br><span class="line">	l1.Next, l2.Next = node, node</span><br><span class="line">	<span class="keyword">return</span> l1, l2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//两个不带环且不相交的链表</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constructTwoLinkedListWithoutCycleAndNotIntersection</span><span class="params">()</span> <span class="params">(l1, l2 *LinkedListNode)</span></span> &#123;</span><br><span class="line">	l1, l2 = &amp;LinkedListNode&#123;Val: <span class="number">3</span>, Next: &amp;LinkedListNode&#123;Val: <span class="number">4</span>&#125;&#125;, &amp;LinkedListNode&#123;Val: <span class="number">5</span>, Next: &amp;LinkedListNode&#123;Val: <span class="number">6</span>&#125;&#125;</span><br><span class="line">	<span class="keyword">return</span> l1, l2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造两个链表1个有环1个无环</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constructTwoLinkedListButOneHasCycle</span><span class="params">()</span> <span class="params">(l1, l2 *LinkedListNode)</span></span> &#123;</span><br><span class="line">	node, node2 := &amp;LinkedListNode&#123;Val: <span class="number">2</span>&#125;, &amp;LinkedListNode&#123;Val: <span class="number">3</span>&#125;</span><br><span class="line">	node.Next, node2.Next = node2, node</span><br><span class="line">	l1, l2 = &amp;LinkedListNode&#123;Val: <span class="number">1</span>, Next: node&#125;, &amp;LinkedListNode&#123;Val: <span class="number">3</span>&#125;</span><br><span class="line">	<span class="keyword">return</span> l1, l2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造两个都有环的链表，但是两个链表的环都是各自的</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constructTwoLinkedBothHasOwnCycle</span><span class="params">()</span> <span class="params">(l1, l2 *LinkedListNode)</span></span> &#123;</span><br><span class="line">	node, node2 := &amp;LinkedListNode&#123;Val: <span class="number">2</span>&#125;, &amp;LinkedListNode&#123;Val: <span class="number">3</span>&#125;</span><br><span class="line">	node.Next, node2.Next = node2, node</span><br><span class="line">	node3, node4 := &amp;LinkedListNode&#123;Val: <span class="number">4</span>&#125;, &amp;LinkedListNode&#123;Val: <span class="number">5</span>&#125;</span><br><span class="line">	node3.Next, node4.Next = node4, node3</span><br><span class="line">	l1, l2 = &amp;LinkedListNode&#123;Val: <span class="number">1</span>, Next: node&#125;, &amp;LinkedListNode&#123;Val: <span class="number">3</span>, Next: node3&#125;</span><br><span class="line">	<span class="keyword">return</span> l1, l2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造两个都有环的链表，但是两个链表都是相交的且相交的起点位于环的入口之前</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constructTwoLinkedListBothHasCycleAndIntersection</span><span class="params">()</span> <span class="params">(l1, l2 *LinkedListNode)</span></span> &#123;</span><br><span class="line">	node, node2 := &amp;LinkedListNode&#123;Val: <span class="number">4</span>&#125;, &amp;LinkedListNode&#123;Val: <span class="number">5</span>&#125;</span><br><span class="line">	node.Next, node2.Next = node2, node</span><br><span class="line">	node3 := &amp;LinkedListNode&#123;Val: <span class="number">6</span>, Next: node&#125;</span><br><span class="line">	l1, l2 = &amp;LinkedListNode&#123;Val: <span class="number">1</span>, Next: node3&#125;, &amp;LinkedListNode&#123;Val: <span class="number">3</span>, Next: node3&#125;</span><br><span class="line">	<span class="keyword">return</span> l1, l2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造两个都有环的链表，但是两个链表都是相交的且相交的起点位于环上</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constructTwoLinkedListBothHasCycleAndIntersectionII</span><span class="params">()</span> <span class="params">(l1, l2 *LinkedListNode)</span></span> &#123;</span><br><span class="line">	node, node2 := &amp;LinkedListNode&#123;Val: <span class="number">4</span>&#125;, &amp;LinkedListNode&#123;Val: <span class="number">5</span>&#125;</span><br><span class="line">	node.Next, node2.Next = node2, node</span><br><span class="line">	l1, l2 = &amp;LinkedListNode&#123;Val: <span class="number">1</span>, Next: node&#125;, &amp;LinkedListNode&#123;Val: <span class="number">3</span>, Next: &amp;LinkedListNode&#123;Val: <span class="number">6</span>, Next: node2&#125;&#125;</span><br><span class="line">	<span class="keyword">return</span> l1, l2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-11-27</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/LeetCode/">LeetCode</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/11/27/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%97%AE%E9%A2%98/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/11/27/Morris%E9%81%8D%E5%8E%86/">
+        Morris遍历
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="Morris遍历："><a href="#Morris遍历：" class="headerlink" title="Morris遍历："></a>Morris遍历：</h2><p>优点：不同于我们之前递归遍历或者借助栈来进行树的遍历，因为Morris遍历可以在保证时间复杂度依然为O(N)的情况下可以将空间复杂度降低为O(1)</p>
+<blockquote>
+<p>假设当前节点为cur,最一开始来到树根，什么时候停呢，当cur来到nil的时候就停止</p>
+</blockquote>
+<ol>
+<li>如果当前节点没有左子树，直接向右移动</li>
+<li>如果当前节点有左子树，找到当前节点左子树的最右节点mostRight<ol>
+<li>如果mostRight的右指针指向null，那么mostRight.Right=Cur,cur=cur.Left</li>
+<li>如果mostRight的右指针指向cur，那么mostRight.Right=nil,cur=cur.Right</li>
+</ol>
+</li>
+</ol>
+<p>遍历之后发现一个问题：任何一个节点，只要有左孩子Morris遍历的时候会遍历两次，也就是有左树的节点，左树不为空，首先遍历当前节点，然后遍历左树，遍历之后再回到当前节点，所以当前节点会遍历两次。因为用这个就可以知道是第一次来到自己还是第二次来到自己。</p>
+<h3 id="Morris先序遍历："><a href="#Morris先序遍历：" class="headerlink" title="Morris先序遍历："></a>Morris先序遍历：</h3><p>第一次遍历到该节点的时候直接打印（没有左子树的节点会遍历到一次，有左子树的节点会遍历到两次，但是我们第一次就应该打印）</p>
+<details blue><summary> <p>Morris先序遍历代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">MorrisPreOrderTraverse</span><span class="params">(root *TreeNode)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> mostRight *TreeNode</span><br><span class="line">	cur := root</span><br><span class="line">	<span class="keyword">var</span> ret []<span class="keyword">int</span></span><br><span class="line">	<span class="keyword">for</span> cur != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="comment">//如果当前节点没有左子树</span></span><br><span class="line">		<span class="keyword">if</span> cur.Left == <span class="literal">nil</span> &#123; <span class="comment">//当前节点向右移动  (只有没有左子树的节点会走这一步)</span></span><br><span class="line">			ret = <span class="built_in">append</span>(ret, cur.Val)</span><br><span class="line">			cur = cur.Right</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">//找到当前节点左子树的最右节点</span></span><br><span class="line">			mostRight = cur.Left</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> mostRight.Right != <span class="literal">nil</span> &amp;&amp; mostRight.Right != cur &#123;</span><br><span class="line">				mostRight = mostRight.Right</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//此时mostRight就是当前节点左子树的最右节点</span></span><br><span class="line">			<span class="keyword">if</span> mostRight.Right == <span class="literal">nil</span> &#123; <span class="comment">//说明是第一次来到</span></span><br><span class="line">				ret = <span class="built_in">append</span>(ret, cur.Val)</span><br><span class="line">				mostRight.Right, cur = cur, cur.Left</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123; <span class="comment">//说明是第二次来到(只有有左子树的时候才会有第二次来到)</span></span><br><span class="line">				mostRight.Right, cur = <span class="literal">nil</span>, cur.Right</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-11-27</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/11/27/Morris%E9%81%8D%E5%8E%86/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/11/04/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/">
+        Go语言中的执行顺序
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <blockquote>
+<p>最近梳理项目结构的时候，对于Go中项目执行流程有点模糊，因此有了本文的诞生方便巩固复习</p>
+</blockquote>
+<div class="note info"><p>我们知道整个Go项目只能有一个全局的main()函数，但是Go项目可以有多个不同的package，每一个package下都可以有很多go文件，每一个go文件可以导入其他package，并且每一个go文件可以包含自己的常量定义，全局变量，init()以及其他函数。总结下来，一个Go程序中通常由导入的包，常量，变量，init()，其他函数，main()构成，那么具体的执行流程是怎样的呢？</p></div>
+
+<div class="note danger"><p>注意不可以因为导入包造成循环依赖</p></div>
+
+<p>正常的执行流程：</p>
+<ol>
+<li>首先进入main函数所在的go文件，假设为<code>main.go</code><ol>
+<li>执行 <code>main.go</code> 中的 <code>import</code> 语句，然后进入到其他的pkg中，<ol>
+<li>重复我们进入<code>main.go</code>中的类似流程：首先执行import导包，然后定义常量和全局变量并执行init</li>
+</ol>
+</li>
+<li>执行<code>const</code>定义的常量</li>
+<li>执行<code>var</code>定义的变量</li>
+<li>执行<code>init()</code>对应的初始化函数</li>
+<li>执行<code>main()</code>启动程序</li>
+</ol>
+</li>
+</ol>
+<p>注意点：</p>
+<ol>
+<li>同一个包下面的多个go文件，如果每一个go文件中都有一个init函数，那么执行顺序就是go文件的导入顺序，并且同包下的不同 go 文件，按照文件名“从小到大”排序顺序执行</li>
+<li>其他的包只有被 main 包 import 才会执行，按照 import 的先后顺序执行，也就是按照 main 包中 import 的顺序调用其包中的 init() 函数</li>
+<li>一个包被其它多个包 import，但只能被初始化一次</li>
+<li>对同一个 go 文件的 init( ) 调用顺序是从上到下的</li>
+<li>在同一个 package 中，可以多个文件中定义 init 方法</li>
+<li>在同一个 go 文件中，可以重复定义 init 方法</li>
+<li>在同一个 package 中，不同文件中的 init 方法的执行按照文件名先后执行各个文件中的 init 方法</li>
+<li>所有 init 函数都在同⼀个 goroutine 内执⾏。 所有 init 函数结束后才会执⾏ main.main 函数。</li>
+</ol>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lxx-coder/p/13081517.html">Go语言的执行顺序（转）</a>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-11-04</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/11/04/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/09/24/%E5%AE%9E%E4%B9%A0%E4%BB%A5%E5%8F%8A%E7%A7%8B%E6%8B%9B%E6%80%BB%E7%BB%93/">
+        实习以及秋招总结
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>实习结束总结一下实习的所见所闻，顺带分享一下之前实习以及秋招的面经</p>
+</blockquote>
+<p>从3月份找实习到现在找工作以来，一直……</p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'></a>
+        
+        <time>2021-09-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/09/24/%E5%AE%9E%E4%B9%A0%E4%BB%A5%E5%8F%8A%E7%A7%8B%E6%8B%9B%E6%80%BB%E7%BB%93/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+      <br>
+      <div class="prev-next">
+        
+        <p class="current">
+          1 / 10
+        </p>
+        
+          <a class="next" rel="next" href="/page/2/">
+            <section class="post next white-box shadow">
+              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        
+      </div>
+    
+  
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger blur desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>逸如风</h2>
+        
+        
+          <p>忠于自己，披星戴月奔向理想和你!</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="/yirufeng@foxmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/sivanWu0222/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget blur desktop">
+  
+  <header>
+    
+      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>97 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2016/01/01'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>100.6k 字</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          
+          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          
+          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          
+            <div id="last-update" style="display: none;">Fri Dec 24 2021 05:30:16 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update-show">2021-12-24 日</div>
+          
+        </div>
+        
+        <script>
+          function timeago(dateTimeStamp) {
+              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
+              var hour = minute * 60;
+              var day = hour * 24;
+              var week = day * 7;
+              var month = day * 30;
+              var now = new Date().getTime(); //获取当前时间毫秒
+              var diffValue = now - dateTimeStamp; //时间差
+              if (diffValue < 0) {
+                  return;
+              }
+              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
+              var hourC = diffValue / hour;
+              var dayC = diffValue / day;
+              var weekC = diffValue / week;
+              var monthC = diffValue / month;
+              if (monthC >= 1 && monthC <= 3) {
+                  result = " " + parseInt(monthC) + " 月前"
+              } else if (weekC >= 1 && weekC <= 3) {
+                  result = " " + parseInt(weekC) + " 周前"
+              } else if (dayC >= 1 && dayC <= 6) {
+                  result = " " + parseInt(dayC) + " 天前"
+              } else if (hourC >= 1 && hourC <= 23) {
+                  result = " " + parseInt(hourC) + " 小时前"
+              } else if (minC >= 1 && minC <= 59) {
+                  result = " " + parseInt(minC) + " 分钟前"
+              } else if (diffValue >= 0 && diffValue <= minute) {
+                  result = "刚刚"
+              } else {
+                  var datetime = new Date();
+                  datetime.setTime(dateTimeStamp);
+                  var Nyear = datetime.getFullYear();
+                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+                  result = Nyear + "-" + Nmonth + "-" + Ndate
+              }
+              return result;
+          }
+          var lastUpDate = document.getElementById('last-update').innerHTML;
+          try {
+            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
+          } catch (error) {
+            document.getElementById('last-update-show').innerHTML = '2021-12-24 日';
+          }
+        </script>
+        
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget grid blur desktop mobile">
+  
+  <header>
+    
+      <a target="_blank" rel="noopener" href='https://github.com/volantis-x/hexo-theme-volantis'><i class="fas fa-calendar fa-fw" aria-hidden="true"></i><span class='name'>总结</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/pictures" href="/pictures"
+          
+          
+          id="pictures">
+          
+            <i class="fas fa-camera fa-fw" aria-hidden="true"></i>
+          
+          摄影展
+        </a>
+      
+        <a class="flat-box" title="http://www.sivan.tech/AlgoBook/#/" href="http://www.sivan.tech/AlgoBook/#/"
+          
+          
+          id="http:wwwsivantechAlgoBook#">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          算法
+        </a>
+      
+        <a class="flat-box" title="http://www.sivan.tech/BasicCompu/#/" href="http://www.sivan.tech/BasicCompu/#/"
+          
+          
+          id="http:wwwsivantechBasicCompu#">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          面经
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category blur desktop">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/CI-CD/" href="/categories/CI-CD/"
+            id="categoriesCI-CD"
+            ><div class='name'>CI/CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Golang/" href="/categories/Golang/"
+            id="categoriesGolang"
+            ><div class='name'>Golang</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/LeetCode/" href="/categories/LeetCode/"
+            id="categoriesLeetCode"
+            ><div class='name'>LeetCode</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/LeetCode/dp/" href="/categories/LeetCode/dp/"
+            id="categoriesLeetCodedp"
+            ><div class='name'>dp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/LeetCode/%E4%BD%8D%E8%BF%90%E7%AE%97/" href="/categories/LeetCode/%E4%BD%8D%E8%BF%90%E7%AE%97/"
+            id="categoriesLeetCodeE4BD8DE8BF90E7AE97"
+            ><div class='name'>位运算</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/LeetCode/%E5%9B%9E%E6%BA%AF/" href="/categories/LeetCode/%E5%9B%9E%E6%BA%AF/"
+            id="categoriesLeetCodeE59B9EE6BAAF"
+            ><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/LeetCode/%E7%AE%97%E6%B3%95/" href="/categories/LeetCode/%E7%AE%97%E6%B3%95/"
+            id="categoriesLeetCodeE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/Linux/%E7%BD%91%E7%BB%9C/" href="/categories/Linux/%E7%BD%91%E7%BB%9C/"
+            id="categoriesLinuxE7BD91E7BB9C"
+            ><div class='name'>网络</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/OS/" href="/categories/OS/"
+            id="categoriesOS"
+            ><div class='name'>OS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Tools/" href="/categories/Tools/"
+            id="categoriesTools"
+            ><div class='name'>Tools</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/demo/" href="/categories/demo/"
+            id="categoriesdemo"
+            ><div class='name'>demo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/docker/" href="/categories/docker/"
+            id="categoriesdocker"
+            ><div class='name'>docker</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/go/" href="/categories/go/"
+            id="categoriesgo"
+            ><div class='name'>go</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/go/json/" href="/categories/go/json/"
+            id="categoriesgojson"
+            ><div class='name'>json</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/go/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/go/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+            id="categoriesgoE59FBAE69CACE695B0E68DAEE7BB93E69E84"
+            ><div class='name'>基本数据结构</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/go/%E7%88%AC%E8%99%AB/" href="/categories/go/%E7%88%AC%E8%99%AB/"
+            id="categoriesgoE788ACE899AB"
+            ><div class='name'>爬虫</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/go/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" href="/categories/go/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/"
+            id="categoriesgoE98083E980B8E58886E69E90"
+            ><div class='name'>逃逸分析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/go/%E9%94%99%E8%AF%AF/" href="/categories/go/%E9%94%99%E8%AF%AF/"
+            id="categoriesgoE99499E8AFAF"
+            ><div class='name'>错误</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/golang/" href="/categories/golang/"
+            id="categoriesgolang"
+            ><div class='name'>golang</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/hexo/" href="/categories/hexo/"
+            id="categorieshexo"
+            ><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/jwt/" href="/categories/jwt/"
+            id="categoriesjwt"
+            ><div class='name'>jwt</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/jwt/go/" href="/categories/jwt/go/"
+            id="categoriesjwtgo"
+            ><div class='name'>go</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/linux/" href="/categories/linux/"
+            id="categorieslinux"
+            ><div class='name'>linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/maven/" href="/categories/maven/"
+            id="categoriesmaven"
+            ><div class='name'>maven</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/mysql/" href="/categories/mysql/"
+            id="categoriesmysql"
+            ><div class='name'>mysql</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/nginx/" href="/categories/nginx/"
+            id="categoriesnginx"
+            ><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/python/" href="/categories/python/"
+            id="categoriespython"
+            ><div class='name'>python</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/python/pip/" href="/categories/python/pip/"
+            id="categoriespythonpip"
+            ><div class='name'>pip</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/redis/" href="/categories/redis/"
+            id="categoriesredis"
+            ><div class='name'>redis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/tools/" href="/categories/tools/"
+            id="categoriestools"
+            ><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%A5%E8%81%8C/" href="/categories/%E5%85%A5%E8%81%8C/"
+            id="categoriesE585A5E8818C"
+            ><div class='name'>入职</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%B7%A5%E4%BD%9C/" href="/categories/%E5%B7%A5%E4%BD%9C/"
+            id="categoriesE5B7A5E4BD9C"
+            ><div class='name'>工作</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"
+            id="categoriesE5B7A5E585B7"
+            ><div class='name'>工具</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%B7%A5%E5%85%B7/git/" href="/categories/%E5%B7%A5%E5%85%B7/git/"
+            id="categoriesE5B7A5E585B7git"
+            ><div class='name'>git</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%B7%A5%E5%85%B7%E7%AF%87/" href="/categories/%E5%B7%A5%E5%85%B7%E7%AF%87/"
+            id="categoriesE5B7A5E585B7E7AF87"
+            ><div class='name'>工具篇</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"
+            id="categoriesE5BEAEE69C8DE58AA1"
+            ><div class='name'>微服务</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%85%E8%A1%8C/" href="/categories/%E6%97%85%E8%A1%8C/"
+            id="categoriesE69785E8A18C"
+            ><div class='name'>旅行</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%9E%B6%E6%9E%84/" href="/categories/%E6%9E%B6%E6%9E%84/"
+            id="categoriesE69EB6E69E84"
+            ><div class='name'>架构</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%9E%B6%E6%9E%84/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" href="/categories/%E6%9E%B6%E6%9E%84/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"
+            id="categoriesE69EB6E69E84E5ADA6E4B9A0E8B7AFE7BABF"
+            ><div class='name'>学习路线</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B1%87%E6%80%BB/" href="/categories/%E6%B1%87%E6%80%BB/"
+            id="categoriesE6B187E680BB"
+            ><div class='name'>汇总</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            id="categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(24)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/BFPRT/" href="/categories/%E7%AE%97%E6%B3%95/BFPRT/"
+            id="categoriesE7AE97E6B395BFPRT"
+            ><div class='name'>BFPRT</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/" href="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/"
+            id="categoriesE7AE97E6B395E4BA8CE58886"
+            ><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/" href="/categories/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/"
+            id="categoriesE7AE97E6B395E68E92E5BA8F"
+            ><div class='name'>排序</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+            id="categoriesE7AE97E6B395E695B0E68DAEE7BB93E69E84"
+            ><div class='name'>数据结构</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E6%A0%91/" href="/categories/%E7%AE%97%E6%B3%95/%E6%A0%91/"
+            id="categoriesE7AE97E6B395E6A091"
+            ><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95/" href="/categories/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95/"
+            id="categoriesE7AE97E6B395E99DA2E8AF95"
+            ><div class='name'>面试</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" href="/categories/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+            id="categoriesE7AE97E6B395E99DA2E8AF95E4BA8CE58F89E6A091"
+            ><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E8%B5%84%E6%BA%90/" href="/categories/%E8%B5%84%E6%BA%90/"
+            id="categoriesE8B584E6BA90"
+            ><div class='name'>资源</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"
+            id="categoriesE99DA2E8AF95"
+            ><div class='name'>面试</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E9%9D%A2%E8%AF%95/OS/" href="/categories/%E9%9D%A2%E8%AF%95/OS/"
+            id="categoriesE99DA2E8AF95OS"
+            ><div class='name'>OS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E9%9D%A2%E8%AF%95/%E7%AE%97%E6%B3%95/" href="/categories/%E9%9D%A2%E8%AF%95/%E7%AE%97%E6%B3%95/"
+            id="categoriesE99DA2E8AF95E7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E9%9D%A2%E8%AF%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" href="/categories/%E9%9D%A2%E8%AF%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+            id="categoriesE99DA2E8AF95E8AEA1E7AE97E69CBAE7BD91E7BB9C"
+            ><div class='name'>计算机网络</div><div class='badge'>(3)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud blur desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/AVL%E6%A0%91/" style="font-size: 14px; color: #999">AVL树</a> <a href="/tags/Algorithms/" style="font-size: 14px; color: #999">Algorithms</a> <a href="/tags/B-%E6%A0%91/" style="font-size: 14px; color: #999">B+树</a> <a href="/tags/BFPRT/" style="font-size: 14px; color: #999">BFPRT</a> <a href="/tags/B%E6%A0%91/" style="font-size: 14px; color: #999">B树</a> <a href="/tags/CORS/" style="font-size: 14px; color: #999">CORS</a> <a href="/tags/Centos/" style="font-size: 14px; color: #999">Centos</a> <a href="/tags/DP/" style="font-size: 15.11px; color: #919191">DP</a> <a href="/tags/Golang/" style="font-size: 16.22px; color: #8a8a8a">Golang</a> <a href="/tags/IO/" style="font-size: 14px; color: #999">IO</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/LeetCode/" style="font-size: 20.67px; color: #6c6c6c">LeetCode</a> <a href="/tags/Linux/" style="font-size: 15.11px; color: #919191">Linux</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/Morris%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">Morris遍历</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/OS/" style="font-size: 17.33px; color: #828282">OS</a> <a href="/tags/Pycharm/" style="font-size: 14px; color: #999">Pycharm</a> <a href="/tags/Tools/" style="font-size: 18.44px; color: #7b7b7b">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/consul/" style="font-size: 14px; color: #999">consul</a> <a href="/tags/defer/" style="font-size: 14px; color: #999">defer</a> <a href="/tags/demo/" style="font-size: 14px; color: #999">demo</a> <a href="/tags/docker/" style="font-size: 18.44px; color: #7b7b7b">docker</a> <a href="/tags/dp/" style="font-size: 14px; color: #999">dp</a> <a href="/tags/error/" style="font-size: 14px; color: #999">error</a> <a href="/tags/flag/" style="font-size: 14px; color: #999">flag</a> <a href="/tags/gitlab/" style="font-size: 14px; color: #999">gitlab</a> <a href="/tags/go/" style="font-size: 22.89px; color: #5d5d5d">go</a> <a href="/tags/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.11px; color: #919191">go的基本数据结构</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/iota/" style="font-size: 14px; color: #999">iota</a> <a href="/tags/jwt/" style="font-size: 14px; color: #999">jwt</a> <a href="/tags/jwt-gos/" style="font-size: 14px; color: #999">jwt-gos</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/maven/" style="font-size: 15.11px; color: #919191">maven</a> <a href="/tags/mysql/" style="font-size: 15.11px; color: #919191">mysql</a> <a href="/tags/nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="/tags/orm/" style="font-size: 14px; color: #999">orm</a> <a href="/tags/panic/" style="font-size: 14px; color: #999">panic</a> <a href="/tags/parallel-desktop/" style="font-size: 14px; color: #999">parallel desktop</a> <a href="/tags/pip/" style="font-size: 15.11px; color: #919191">pip</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/recover/" style="font-size: 14px; color: #999">recover</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/tools/" style="font-size: 16.22px; color: #8a8a8a">tools</a> <a href="/tags/topK/" style="font-size: 14px; color: #999">topK</a> <a href="/tags/vs-code/" style="font-size: 14px; color: #999">vs code</a> <a href="/tags/%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" style="font-size: 14px; color: #999">主从复制</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 15.11px; color: #919191">二分</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" style="font-size: 14px; color: #999">二叉搜索树</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">云服务器</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 15.11px; color: #919191">位运算</a> <a href="/tags/%E5%85%A5%E8%81%8C/" style="font-size: 14px; color: #999">入职</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" style="font-size: 15.11px; color: #919191">冒泡排序</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 14px; color: #999">刷题</a> <a href="/tags/%E5%89%8D%E7%BC%80%E6%A0%91/" style="font-size: 14px; color: #999">前缀树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/" style="font-size: 15.11px; color: #919191">堆排序</a> <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 14px; color: #999">多路复用</a> <a href="/tags/%E5%A4%A7%E7%89%9B/" style="font-size: 14px; color: #999">大牛</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" style="font-size: 14px; color: #999">学习路线</a> <a href="/tags/%E5%AE%9E%E4%B9%A0/" style="font-size: 14px; color: #999">实习</a> <a href="/tags/%E5%B0%8F%E5%92%8C%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">小和问题</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16.22px; color: #8a8a8a">工具</a> <a href="/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/" style="font-size: 14px; color: #999">布隆过滤器</a> <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 14px; color: #999">序列化</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" style="font-size: 14px; color: #999">开发环境安装</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 17.33px; color: #828282">归并排序</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 15.11px; color: #919191">快速排序</a> <a href="/tags/%E6%89%BE%E5%89%8D%E5%87%A0%E5%A4%A7%E6%88%96%E5%89%8D%E5%87%A0%E5%B0%8F/" style="font-size: 14px; color: #999">找前几大或前几小</a> <a href="/tags/%E6%89%BE%E7%AC%AC%E5%87%A0%E5%A4%A7%E6%88%96%E7%AC%AC%E5%87%A0%E5%B0%8F/" style="font-size: 14px; color: #999">找第几大或第几小</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 19.56px; color: #737373">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.11px; color: #919191">数据结构</a> <a href="/tags/%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">文件</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 14px; color: #999">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">服务器</a> <a href="/tags/%E6%9D%82%E8%AE%B0/" style="font-size: 14px; color: #999">杂记</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 14px; color: #999">架构</a> <a href="/tags/%E6%A0%88/" style="font-size: 14px; color: #999">栈</a> <a href="/tags/%E6%A0%91/" style="font-size: 18.44px; color: #7b7b7b">树</a> <a href="/tags/%E6%A0%91%E5%BD%A2DP/" style="font-size: 15.11px; color: #919191">树形DP</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 14px; color: #999">框架</a> <a href="/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">桶排序</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 15.11px; color: #919191">直接插入排序</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">矩阵</a> <a href="/tags/%E7%A7%8B%E6%8B%9B/" style="font-size: 14px; color: #999">秋招</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">统计逆序对</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16.22px; color: #8a8a8a">计算机网络</a> <a href="/tags/%E8%B0%83%E8%AF%95/" style="font-size: 14px; color: #999">调试</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #999">资源</a> <a href="/tags/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">跨域问题</a> <a href="/tags/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">逃逸分析</a> <a href="/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="font-size: 15.11px; color: #919191">选择排序</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 14px; color: #999">部署</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">链表</a> <a href="/tags/%E9%94%99%E8%AF%AF/" style="font-size: 14px; color: #999">错误</a> <a href="/tags/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/" style="font-size: 14px; color: #999">阅读清单</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">队列</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 21.78px; color: #646464">面试</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 14px; color: #999">项目</a>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2016-2021 yirufeng</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg", "https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg", "https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg", "https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg", "https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg", "https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg", "https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover-backstretch') {
+          $('.cover-backstretch').backstretch(
+            imgs,
+          {
+            duration: "10000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "10000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>Copy Text</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>Copy Link</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>Open Link in New Tab</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>Copy Image Link</a>
+        <hr id='hr-src'>
+      </li>
+      
+        <li class='navigation'>
+          <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+        </li>
+      
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/sivanWu0222/sivanWu0222.github.io
+        
+        
+        
+        
+          id="https:githubcomsivanWu0222sivanWu0222githubio"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('true' == true && ('home,help,examples,contributors,hr,source_docs,source_theme,hr,print,hr,music'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+    pjax_scrollrebeal();
+  });
+</script>
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '3175833810';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+
+
+  
+<script src="/js/aplayer.js"></script>
+
+
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
+
+<script type="text/javascript">
+function getClientHeight(){
+  var clientHeight=0;
+  if(document.body.clientHeight&&document.documentElement.clientHeight){
+  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }else{
+  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }
+  return clientHeight;
+}
+function supportCss3(style) {
+  var prefix = ['webkit', 'Moz', 'ms', 'o'],
+  i,
+  humpString = [],
+  htmlStyle = document.documentElement.style,
+  _toHumb = function (string) {
+  return string.replace(/-(\w)/g, function ($0, $1) {
+  return $1.toUpperCase();
+  });
+  };
+  for (i in prefix)
+  humpString.push(_toHumb(prefix[i] + '-' + style));
+  humpString.push(_toHumb(style));
+  for (i in humpString)
+  if (humpString[i] in htmlStyle) return true;
+  return false;
+};
+//配置信息
+var options = {
+  bottom: '32px',
+  right: 'unset',
+  left: '16px',
+  time: '0s',
+  mixColor: '#f4f4f4',
+  backgroundColor: '#f4f4f4',
+  buttonColorDark: '#333',
+  buttonColorLight: '#ddd',
+  saveInCookies: true,
+  label: '',
+  autoMatchOsTheme: true
+};
+// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
+
+function pjax_darkmodejs(){
+  
+  if(!supportCss3('mix-blend-mode'))return;
+  var checkExist2 = setInterval(function() {
+     if (typeof jQuery == 'undefined'){return;}
+     clearInterval(checkExist2);
+     var TopFlag=getClientHeight();
+    $(window).scroll(function(){
+      var top = $(document).scrollTop();
+      if(top > TopFlag) {
+        $(".darkmode-layer").css("mix-blend-mode","normal");
+        $(".darkmode-layer").css("background-color","#222");
+      }else{
+        $(".darkmode-layer").css("mix-blend-mode","difference");
+        $(".darkmode-layer").css("background-color","");
+      }
+    })
+  }, 100);
+  
+}
+// mix-blend-mode support?
+if(supportCss3('mix-blend-mode')){
+  window.darkmode = new Darkmode(options);
+  
+  window.darkmode.showWidget();
+  
+  pjax_darkmodejs();
+}
+////////////////Development///////////////////////
+//////////////darkmode模式切换////////////////////
+//window.darkmode.toggle();                     //
+//////////////darkmode模式判断////////////////////
+//console.log(window.darkmode.isActivated())    //
+//////////////////////////////////////////////////
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);
+
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+          
+          if ('.cover-backstretch') {
+            $('.cover-backstretch').backstretch("resize");
+            if($('.cover-wrapper').is(':hidden')){
+              $('.cover-backstretch').backstretch("pause");
+            }else{
+              $('.cover-backstretch').backstretch("next");
+            }
+          } else {
+            $.backstretch("resize");
+            if($('.cover-wrapper').is(':hidden')){
+              $.backstretch("pause");
+            }else{
+              $.backstretch("next");
+            }
+          }
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+          pjax_darkmodejs();
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
