@@ -590,18 +590,18 @@
 <li>键入如下内容：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">name: Build and Deploy</span><br><span class="line">on: </span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - source</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build-and-deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout 🛎️</span><br><span class="line">        uses: actions&#x2F;checkout@v2 # If you&#39;re using actions&#x2F;checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.</span><br><span class="line">        with:</span><br><span class="line">          persist-credentials: false</span><br><span class="line"></span><br><span class="line">      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the &#39;build&#39; folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.</span><br><span class="line">        run: |</span><br><span class="line">          npm install</span><br><span class="line">          npm run build</span><br><span class="line">        env:</span><br><span class="line">          CI: false</span><br><span class="line"></span><br><span class="line">      - name: Deploy 🚀</span><br><span class="line">        uses: JamesIves&#x2F;github-pages-deploy-action@releases&#x2F;v3</span><br><span class="line">        with:</span><br><span class="line">          GITHUB_TOKEN: $&#123;&#123; secrets.ACCESS_TOKEN &#125;&#125;</span><br><span class="line">          BRANCH: main # The branch the action should deploy to.</span><br><span class="line">          FOLDER: public # The folder the action should deploy.</span><br></pre></td></tr></table></figure></li>
 <li>配置ACCESS_TOKEN<ol>
 <li>进入<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">github token页面</a></li>
-<li>点击<code>generate new token</code>ranhou</li>
+<li>点击<code>generate new token</code>全选之后将将生成的token赋值</li>
+<li>进入自己的<code>用户名.github.io</code>仓库，然后点击<code>settings</code>-&gt;<code>secrets</code>-&gt;<code>New repository secret</code>-&gt;名字是<code>ACCESS_TOKEN</code>，值是刚才生成的token</li>
 </ol>
 </li>
-<li>使用git的<code>add</code>、<code>commit</code>、<code>push</code> 命令提交<ol>
-<li>注意事项：<ul>
+<li>使用git的<code>add</code>、<code>commit</code>、<code>push</code> 命令提交</li>
+</ol>
+<p>注意事项：</p>
+<ul>
 <li>博客的源代码存放到 <code>用户名.github.io</code>这个仓库下的source分支下</li>
 <li>博客的发布流程我们在上面已经配置到了github的action中，github会在我们push到source分支的时候直接拉取代码然后发布到main分支，之后我们就可以通过<code>用户名.github.io</code>这个域名进行访问了</li>
 </ul>
-</li>
-</ol>
-</li>
-</ol>
+<p>之后每次提交记得在source分支下操作</p>
 <h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><blockquote>
 <p>博客搭建好之后，只需要选一个合适的主题，就可以书写自己的博客了</p>
 </blockquote>
@@ -644,7 +644,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-24T05:54:09+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-24T06:10:46+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Dec 24, 2021</p>
@@ -863,7 +863,7 @@
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>100.1k 字</div>
+          <div>100.2k 字</div>
         </div>
       
 
@@ -889,7 +889,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Dec 24 2021 05:54:47 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Fri Dec 24 2021 06:11:37 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2021-12-24 日</div>
           
         </div>
