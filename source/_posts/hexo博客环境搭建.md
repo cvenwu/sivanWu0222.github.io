@@ -10,9 +10,10 @@ sidebar:
   - tagcloud
   - category
 categories:
-  - hexo
+  - blog
 tags:
   - hexo
+  - blog
 date: 2019-03-21 21:17:42
 summary:
 ---
@@ -99,11 +100,13 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ secrets.BLOG_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: main # The branch the action should deploy to.
           FOLDER: public # The folder the action should deploy.
 ```
-3. 配置BLOG_TOKEN
+3. 配置ACCESS_TOKEN
+   1. 进入[github token页面](https://github.com/settings/tokens)
+   2. 点击`generate new token`ranhou
 4. 使用git的`add`、`commit`、`push` 命令提交
    1. 注意事项：
       - 博客的源代码存放到 `用户名.github.io`这个仓库下的source分支下
