@@ -106,12 +106,16 @@ jobs:
 ```
 3. 配置ACCESS_TOKEN
    1. 进入[github token页面](https://github.com/settings/tokens)
-   2. 点击`generate new token`ranhou
+   2. 点击`generate new token`全选之后将将生成的token赋值
+   3. 进入自己的`用户名.github.io`仓库，然后点击`settings`->`secrets`->`New repository secret`->名字是`ACCESS_TOKEN`，值是刚才生成的token
 4. 使用git的`add`、`commit`、`push` 命令提交
-   1. 注意事项：
-      - 博客的源代码存放到 `用户名.github.io`这个仓库下的source分支下
-      - 博客的发布流程我们在上面已经配置到了github的action中，github会在我们push到source分支的时候直接拉取代码然后发布到main分支，之后我们就可以通过`用户名.github.io`这个域名进行访问了
 
+注意事项：
+- 博客的源代码存放到 `用户名.github.io`这个仓库下的source分支下
+- 博客的发布流程我们在上面已经配置到了github的action中，github会在我们push到source分支的时候直接拉取代码然后发布到main分支，之后我们就可以通过`用户名.github.io`这个域名进行访问了
+
+
+之后每次提交记得在source分支下操作
 
 ## 后续
 > 博客搭建好之后，只需要选一个合适的主题，就可以书写自己的博客了
