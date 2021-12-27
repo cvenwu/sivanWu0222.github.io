@@ -1,9 +1,13 @@
-<article class="article post white-box reveal md <%- theme.custom_css.body.effect.join(' ') %> article-type-<%= post.layout %>" id="<%= post.layout %>" itemscope itemprop="blogPost">
+<article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md <%- theme.custom_css.body.effect.join(' ') %> article-type-<%= post.layout %>" id="<%= post.layout %>" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="<%- post.permalink %>">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="<%- config.title %>">
+  </span>
   <%- partial('meta', {post: post, position: 'top'}) %>
-  <% if (page.layout == 'artitalk') { %>
-    <div id="artitalk_main"></div>
-  <% } %>
-  <%- post.content %>
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <%- post.content %>
+  </div>
   <% if (page.link) { %>
     <div class='div-ori-link'>
       <a class='ori-link' href='<%- url_for(post.link || post.path) %>'>
@@ -42,7 +46,7 @@
         )
         %>
       <% } %>
-      <% if (['post'].includes(page.layout) && footer_widget.copyright && footer_widget.copyright.enable == true) { %>
+      <% if (['post'].includes(page.layout) && footer_widget.copyright && footer_widget.copyright.enable == true && post.copyright != false) { %>
         <div class='copyright'>
           <blockquote>
             <% (footer_widget.copyright.content||[]).forEach(function(row){ %>
@@ -118,12 +122,12 @@
       <% } %>
     </div>
   <% } %>
+  <!-- Custom Files postEnd begin-->
+  <%- volantis_inject('postEnd') %>
+  <!-- Custom Files postEnd end-->
 </article>
 
 <% if (page.comments == undefined || page.comments != false) { %>
-  <%- partial('../_third-party/comments/index') %>
+  <%- partial('../_plugins/comments/index') %>
 <% } %>
 
-<% if (page.mathjax) { %>
-  <%- partial('../_third-party/math/mathjax/script') %>
-<% } %>

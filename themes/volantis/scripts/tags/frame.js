@@ -13,9 +13,14 @@
 // {% frame device | video=xxx | part=bottom %}
 // device: iphone11,
 hexo.extend.tag.register('frame', function(args) {
-  args = args.join(' ').split(' | ');
+  if(/::/g.test(args)){
+    args = args.join(' ').split('::');
+  }
+  else{
+    args = args.join(' ').split(' | ');
+  }
   // 所有支持的参数
-  let device = args[0].trim();
+  const device = args[0].trim();
   let img = '';
   let video = '';
   let part = '';
@@ -23,7 +28,7 @@ hexo.extend.tag.register('frame', function(args) {
   // 解析
   if (args.length > 0) {
     for (let i = 0; i < args.length; i++) {
-      let tmp = args[i].trim();
+      const tmp = args[i].trim();
       if (tmp.includes('img=')) {
         img = tmp.substring(4, tmp.length);
       } else if (tmp.includes('video=')) {
@@ -48,7 +53,26 @@ hexo.extend.tag.register('frame', function(args) {
     i += '/>';
     return i;
   }
-  if (img.length > 0) {
+  if (video.length > 0) {
+    ret += '<div class="video-wrap">';
+    ret += '<div class="frame-wrap" id="' + device + '"';
+    if (part.length > 0) {
+      ret += 'part="' + part + '">';
+    } else {
+      ret += '>';
+    }
+    ret += '<video';
+    if (img.length > 0) {
+      ret += ' poster="' + img + '"';
+    }
+    ret += ' playsinline="" muted="" loop="" autoplay="" preload="metadata">';
+    ret += '<source src="' + video + '" type="video/mp4">';
+    ret += '</video>';
+
+    ret += '<div class="frame"></div>';
+    ret += '</div>';
+    ret += '</div>';
+  } else if (img.length > 0) {
     ret += '<div class="img-wrap">';
     ret += '<div class="frame-wrap" id="' + device + '"';
     if (part.length > 0) {
@@ -62,22 +86,6 @@ hexo.extend.tag.register('frame', function(args) {
     if (alt.length > 0) {
       ret += '<span class="image-caption">' + alt + '</span>';
     }
-    ret += '</div>';
-  } else if (video.length > 0) {
-    ret += '<div class="video-wrap">';
-    ret += '<div class="frame-wrap" id="' + device + '"';
-    if (part.length > 0) {
-      ret += 'part="' + part + '">';
-    } else {
-      ret += '>';
-    }
-
-    ret += '<video muted="" loop="" autoplay="" preload="metadata">';
-    ret += '<source src="' + video + '" type="video/mp4">';
-    ret += '</video>';
-
-    ret += '<div class="frame"></div>';
-    ret += '</div>';
     ret += '</div>';
   }
   return ret;

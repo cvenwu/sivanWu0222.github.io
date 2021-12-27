@@ -6,6 +6,7 @@ index: true
 
 
 ## 一些技术团队
+```
 {% sitegroup %}
 
 {% site 致力于分享Go语言编程, url=https://mojotv.cn/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xaBP8n.png, avatar=https://mojotv.cn/assets/image/logo01.png, description=致力于分享Go语言编程 %}
@@ -58,7 +59,7 @@ index: true
 {% site 泫(深圳腾讯音乐), url=https://blog.cugxuan.cn/, screenshot=https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gROkXJ.png, avatar=https://image.cugxuan.cn/avater.jpg, description=本科地大硕士华科大佬 %}
 
 {% endsitegroup %}
-
+```
 ​​​
 
 ### 一些课程推荐

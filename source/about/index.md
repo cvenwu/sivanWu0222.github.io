@@ -228,17 +228,6 @@ valine:
 {% timenode  %}
 你必须非常努力才能看起来毫不费力，路不坦荡，那就活成自己
 {% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-{% timenode  %}
-
-{% endtimenode %}
-
-
 {% endtimeline %}
 
 

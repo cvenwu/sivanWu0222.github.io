@@ -1,7 +1,7 @@
 ---
 title: Demo
 author: yirufeng
-pin: true
+pin: false
 toc: true
 mathjax: false
 summary: 演示页面
@@ -10,9 +10,8 @@ categories:
   - demo
 tags:
   - demo
-date: 2099-09-15 19:43:00
+date: 2011-09-15 19:43:00
 ---
-
 
 
 [文章头部frot-matter编写参考](https://volantis.js.org/v5/page-settings/)
@@ -52,11 +51,6 @@ date: 2099-09-15 19:43:00
 
 ## note
 {% note 样式参数, 文本内容 %}
-
-## issue标签
-[参考](https://xaoxuu.com/wiki/volantis/tag-plugins/issues/)
-
-{% issues timeline | api=https://gitee.com/api/v5/repos/xaoxuu/timeline/issues?state=open&creator=xaoxuu&sort=created&direction=desc&page=1&per_page=100 %}
 
 
 ## 相册
@@ -205,15 +199,6 @@ Windows 10不是為所有人設計,而是為每個人設計
 
 {% endtimeline %}
 
-## 网站卡片标签
-
-{% sitegroup %}
-{% site xaoxuu, url=https://xaoxuu.com, screenshot=https://i.loli.net/2020/08/21/VuSwWZ1xAeUHEBC.jpg, avatar=https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png, description=简约风格 %}
-{% site inkss, url=https://inkss.cn, screenshot=https://i.loli.net/2020/08/21/Vzbu3i8fXs6Nh5Y.jpg, avatar=https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg, description=这是一段关于这个网站的描述文字 %}
-{% site MHuiG, url=https://blog.mhuig.top, screenshot=https://i.loli.net/2020/08/22/d24zpPlhLYWX6D1.png, avatar=https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png, description=这是一段关于这个网站的描述文字 %}
-{% site Colsrch, url=https://colsrch.top, screenshot=https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png, avatar=https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg, description=这是一段关于这个网站的描述文字 %}
-{% site Linhk1606, url=https://linhk1606.github.io, screenshot=https://i.loli.net/2020/08/21/3PmGLCKicnfow1x.png, avatar=https://i.loli.net/2020/02/09/PN7I5RJfFtA93r2.png, description=这是一段关于这个网站的描述文字 %}
-{% endsitegroup %}
 
 
 {% folding 查看图片测试 %}
