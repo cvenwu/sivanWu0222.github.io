@@ -1,0 +1,110 @@
+- group: C++系列 # 分组标题
+  description:  # 分组描述
+  items:
+    - title: Coder梁的《Easy C++ 系列》
+      url: https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg5NTYyMDgyNg==&action=getalbum&album_id=2088617341923147782&scene=173&from_msgid=2247491754&from_itemidx=2&count=3&nolastread=1#wechat_redirect
+      avatar: http://mmbiz.qpic.cn/mmbiz_png/6nNCNSoRubwF0Fe9HwzoYficlQuenM5ZhJEibicSicPbCYXVJD8b6PAhaErd3gjsNib5xlCSQp9Vxaku30jtwAll27g/0?wx_fmt=png
+
+- group: Go 相关的博客 # 分组标题
+  description:  # 分组描述
+  items:
+    - title: 致力于分享Go语言编程
+      url: https://mojotv.cn/
+      avatar: https://mojotv.cn/assets/image/logo01.png
+      # screenshot: # 截图
+      # keywords: # 关键词
+      # description: # 描述
+    - title: 啸逸的博客 # 名称
+      avatar: https://avatars.githubusercontent.com/u/48213711?v=4 # 头像
+      url: https://www.cnblogs.com/codexiaoyi/p/14975236.html # 链接
+    - title: 张馆长 # 名称
+      avatar: https://zhangguanzhang.github.io/avatar/dw.jpg # 头像
+      url: https://zhangguanzhang.github.io/ # 链接
+    - title: 大俊的博客(文章都是Go每日一库) # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/5v0ykQ.png # 头像
+      url: https://darjun.github.io/ # 链接
+    - title: 鸟窝大佬(rpcx作者) # 名称
+      avatar: https://colobu.com/images/logos/golang6.png # 头像
+      url: https://colobu.com/ # 链接
+    - title: 潘建锋 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/G2FuPm.png # 头像
+      url: https://strikefreedom.top/ # 链接
+    - title: 曹春晖(Go<<语言高级编程>>作者) # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xYaCT5.png # 头像
+      url: https://xargin.com/ # 链接
+    - title: 柴树杉 # 名称
+      url: https://github.com/chai2010 # 头像
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/J4ralm.png # 链接
+    - title: 敖小剑(dapr contributor) # 名称
+      avatar: https://avatars.githubusercontent.com/u/1582369?v=4 # 头像
+      url: https://github.com/skyao # 链接
+    - title: 无闻老师 # 名称
+      avatar: https://avatars.githubusercontent.com/u/2946214?v=4 # 头像
+      url: https://github.com/unknwon # 链接
+    - title: 欧神博客 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/s8cD08.png # 头像
+      url: https://changkun.de/ # 链接
+    - title: 饶大 # 名称
+      avatar: https://i.loli.net/2021/08/09/LxgCmlXDASiRUrZ.png # 头像
+      url: https://www.qcrao.com/ # 链接
+    - title: 煎架 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/4XVLYC.png # 头像
+      url: https://eddycjy.com/posts/ # 链接
+    - title: jiajun的编程思想 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/VVreSj.png # 头像
+      url: https://jiajunhuang.com/ # 链接
+    - title: mohuishou # 名称
+      avatar: https://avatars.githubusercontent.com/u/15172509?v=4 # 头像
+      url: https://lailin.xyz/ # 链接
+    - title: 飞雪无情 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png # 头像
+      url: https://www.flysnow.org/archives/ # 链接
+    - title: 极客兔兔 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg # 头像
+      url: https://geektutu.com/ # 链接
+    - title: 泫 # 名称
+      avatar: https://image.cugxuan.cn/avater.jpg # 头像
+      url: https://blog.cugxuan.cn/ # 链接
+
+
+- group: 云原生 # 分组标题
+  description:  # 分组描述
+  items:
+    - title: 云原生实验室 # 名称
+      avatar: https://fuckcloudnative.io/logo.webp # 头像
+      url: https://fuckcloudnative.io/ # 链接
+    - title: CloudNative 架构 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/4lWTfY.png # 头像
+      url: http://team.jiunile.com/ # 链接
+
+
+
+
+- group: 技术团队 # 分组标题
+  description:  # 分组描述
+  items:
+    - title: 美团技术团队
+      url: https://tech.meituan.com/
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/4VfVoN.png
+    - title: 阿里云RDS-数据库内核组 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/SvVPbn.png # 头像
+      url: http://mysql.taobao.org/monthly/ # 链接
+      # screenshot: # 截图
+      # keywords: # 关键词
+      # description: # 描述
+
+- group: 开源书籍 # 分组标题
+  description:  # 分组描述
+  items:
+    - title: Go 语言设计与实现 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/0y0Q0x.png # 头像
+      url: https://draveness.me/golang/ # 链接
+    - title: Go语言原本 # 名称
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/4oKoWO.png # 头像
+      url: https://golang.design/under-the-hood/ # 链接
+    - title: Go语言101
+      avatar: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/dIJkIu.png
+      url: https://gfw.go101.org/article/101.html
+    - title: Go入门指南
+      avatar: https://avatars.githubusercontent.com/u/2946214?v=4
+      url: https://github.com/unknwon/the-way-to-go_ZH_CN
