@@ -323,8 +323,8 @@ comments:
     path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
     placeholder: 快来评论吧~  # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
-    appId: # your appId
-    appKey: # your appKey
+    appId: 3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz # your appId
+    appKey: Ltp7stMByJNyVnbPWECrbkgx # your appKey
     meta: [nick,mail,link] # valine comment header info
     requiredFields: [nick,mail]
     enableQQ: true # Unstable avatar link
@@ -792,7 +792,7 @@ plugins:
   #   icon: fas fa-moon # 可自定义
   #   toggle: darkmode
   darkmode:
-    enable: true
+    enable: false
 
   # 旧版 Internet Explorer 淘汰行动
   # https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support
