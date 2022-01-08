@@ -20,7 +20,7 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641202245523" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606465753" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2020-10-13T20:50:33.000Z">
-<meta property="article:modified_time" content="2022-01-03T09:29:33.135Z">
+<meta property="article:modified_time" content="2022-01-08T01:46:42.486Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="go">
 <meta property="article:tag" content="iota">
@@ -747,152 +747,6 @@ button {
     opacity: 1;
     -webkit-opacity: 1;
     -moz-opacity: 1;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-  :root:not([color-scheme]) {
-    --color-site-body: #000;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
-    --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
-    --color-block: #3a3a3a;
-    --color-codeblock: #343a3c;
-    --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
-    --color-list: #aaa;
-    --color-list-hl: #69dfc4;
-    --color-meta: #888;
-    --color-link: #888;
-  }
-  :root:not([color-scheme]) img {
-    filter: brightness(70%) !important;
-  }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
-  :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) .nav-main .u-search-input {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) .article-title a {
-    color: var(--color-h1) !important;
-  }
-  :root:not([color-scheme]) details>summary {
-    color: var(--color-p) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) details {
-    border: 1px solid var(--color-site-bg) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal,
-  :root:not([color-scheme]) #u-search .modal-header,
-  :root:not([color-scheme]) #u-search .modal-body {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
-    background: var(--color-block) !important;
-  }
-}
-[color-scheme='dark'] {
-  --color-site-body: #000;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
-  --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
-  --color-block: #3a3a3a;
-  --color-codeblock: #343a3c;
-  --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
-  --color-list: #aaa;
-  --color-list-hl: #69dfc4;
-  --color-meta: #888;
-  --color-link: #888;
-}
-[color-scheme='dark'] img {
-  filter: brightness(70%) !important;
-}
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
-[color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] .nav-main .u-search-input {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] .article-title a {
-  color: var(--color-h1) !important;
-}
-[color-scheme='dark'] details>summary {
-  color: var(--color-p) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] details {
-  border: 1px solid var(--color-site-bg) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] #u-search .modal,
-[color-scheme='dark'] #u-search .modal-header,
-[color-scheme='dark'] #u-search .modal-body {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
-  background: var(--color-block) !important;
-}
-@media screen and (max-width: 500px) {
-  [color-scheme='dark'] .l_header .m_search {
-    background: var(--color-site-bg) !important;
   }
 }
 @font-face {
@@ -1731,21 +1585,10 @@ ul.list-v >li>a:hover {
     padding: 0px;
   }
 }
-@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
-  .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641202245523" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641202245523"></noscript>
-    <script>
-      var userColorScheme=localStorage.getItem("color-scheme")
-      if(userColorScheme){
-        document.documentElement.setAttribute("color-scheme", userColorScheme);
-      }
-    </script>
+  <link rel="stylesheet" href="/css/style.css?time=1641606465753" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606465753"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2671,10 +2514,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-03T09:29:33+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-08T01:46:42+00:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 3, 2022</p>
+    <p>更新于：Jan 8, 2022</p>
   </a>
 </div>
 
@@ -2987,8 +2830,8 @@ recoverrecover其实就是其他语言的try catch
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Jan 03 2022 09:30:26 GMT+0000 (Coordinated Universal Time)</div>
-            <div id="last-update-show">2022-01-03 日</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:26 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update-show">2022-01-08 日</div>
           
         </div>
         
@@ -3038,7 +2881,7 @@ recoverrecover其实就是其他语言的try catch
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-01-03 日';
+            document.getElementById('last-update-show').innerHTML = '2022-01-08 日';
           }
         </script>
         
@@ -3533,8 +3376,8 @@ recoverrecover其实就是其他语言的try catch
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245523')
-      volantis.js('/js/thirdparty/message.js?time=1641202245523', () => {
+      volantis.css('/css/message.css?time=1641606465753')
+      volantis.js('/js/thirdparty/message.js?time=1641606465753', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3579,8 +3422,8 @@ recoverrecover其实就是其他语言的try catch
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245523')
-      volantis.js('/js/thirdparty/message.js?time=1641202245523', () => {
+      volantis.css('/css/message.css?time=1641606465753')
+      volantis.js('/js/thirdparty/message.js?time=1641606465753', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3639,8 +3482,8 @@ recoverrecover其实就是其他语言的try catch
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245523')
-      volantis.js('/js/thirdparty/message.js?time=1641202245523', () => {
+      volantis.css('/css/message.css?time=1641606465753')
+      volantis.js('/js/thirdparty/message.js?time=1641606465753', () => {
         hideMessage(done);
       });
     } else {
@@ -3679,122 +3522,6 @@ recoverrecover其实就是其他语言的try catch
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
 
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "color-scheme";
-const rootElementDarkModeAttributeName = "color-scheme";
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-  getCustomDarkMode();
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-/**
- * get target mode
- */
- const getCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  if(currentSetting=="dark"){
-    volantis.dark.mode="light";
-  }else{
-    volantis.dark.mode="dark";
-  }
-  // console.log(volantis.dark.mode)
-};
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-/**
- * 暗黑模式触发器
- */
-volantis.dark.toggle=()=>{
-  const mode = toggleCustomDarkMode();
-  applyCustomDarkModeSettings(mode);
-  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
-  volantis.dark.method.toggle.start();
-}
-/**
- * bind event for toggle button
- */
-
-function bindToggleButton() {
-  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
-  btn.forEach(function (e) {
-    volantis.dom.$(e).on('click',volantis.dark.toggle);
-  })
-}
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", ()=>{
-  volantis.requestAnimationFrame(bindToggleButton)
-});
-volantis.pjax.push(bindToggleButton);
-
-const darkModelListeners={
-  dark:(mediaQueryList )=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "dark";
-    }
-    volantis.dark.method.toggle.start();
-  },
-  light:(mediaQueryList)=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "light";
-    }
-    volantis.dark.method.toggle.start();
-  }
-}
-window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
-window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
-</script>
-
-
 
 
 <script>
@@ -3802,19 +3529,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641202245523")
+        volantis.js("/js/plugins/sites.js?time=1641606465753")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641202245523")
+        volantis.js("/js/plugins/friends.js?time=1641606465753")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641202245523")
+        volantis.js("/js/plugins/contributors.js?time=1641606465753")
       }
     
   };
@@ -3972,7 +3699,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":null,"appKey":null,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz","appKey":"Ltp7stMByJNyVnbPWECrbkgx","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -3992,7 +3719,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641202245523').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606465753').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4003,7 +3730,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-<script src="/js/app.js?time=1641202245523.js"></script>
+<script src="/js/app.js?time=1641606465753.js"></script>
 
 
 <!-- optional -->
@@ -4016,7 +3743,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641202245523");
+    return volantis.js("/js/search/hexo.js?time=1641606465753");
   }
 
   function loadSearchService() {
@@ -4309,7 +4036,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4352,7 +4079,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641202245523').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606465753').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4586,7 +4313,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/go/","name":"go"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2020/10/13/golang中的iota/","name":"golang中的iota"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"golang中的iota","description":"经常有面试官甩出个const以及iota的面试题\n\n\n如下便是国内某公司的面试题：\n\n 回答输出结果 \n              \n              1234567891011121314151617181920212223242526272829303132package mainimport &quot;fmt&quot;/** * @Author: yirufeng * @Email: yirufeng@foxmail.com * @Date: 2020/10/13 6:06 下午 * @Desc: *///第一个const来自于面试题const (\ti = 7\tj\tk)const (\ta = 7\tb\tc = 3\tm = 1 &lt;&lt; iota\tn\to)func main() &#123;\tfmt.Println(a, b, c)\tfmt.Println(i, j, k, m, n, o)&#125;\n              \n            \n\n\n\n\n总结进行几点总结不同 const 定义块互不干扰：即我们在推算这些常量值的时候只需要看当前的 const ( ) 之内的内容，不用关心之前或之后是否也用常量定义语句所有注释行和空行全部忽略：注意：_ 并不是一个空行，它是一个省略了标识符也省略了表达式的常量定义，这一点你需要清楚，不要大意。没有表达式的常量定义复用上一行的表达式：例如如下的代码，j中没有写表达式，那么j是复用上一行表达式的即j = iota，但此时iota的值会为21234const (  i = iota  j)从第一行开始，iota 从 0 逐行加一：也就是说赋值表达式里无论是否引用了 iota，也无论引用了多少次，iota 的都会从常量定义块的第一行（注意这里不计空行和注释）开始计数，从 0 开始，逐行加一，例如上面代码1234567891011121314const (  i = 7   //iota = 1  j       //iota = 2  k       //iota = 3)const (  a = 7   //iota = 1  b       //iota = 2  c = 3   //iota = 3  m = 1 &lt;&lt; iota   //iota = 4  n       //iota = 5  o       //iota = 6)替换所有 iota：直接将表达式中的iota全部替换为我们上一步写出的值即可\n\n\n","datePublished":"2020-10-13T20:50:33.000Z","dateModified":"2022-01-03T09:29:33.135Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2020/10/13/golang%E4%B8%AD%E7%9A%84iota/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2020/10/13/golang%E4%B8%AD%E7%9A%84iota/","wordCount":1072,"articleSection":"go","keywords":"go,iota","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/go/","name":"go"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2020/10/13/golang中的iota/","name":"golang中的iota"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"golang中的iota","description":"经常有面试官甩出个const以及iota的面试题\n\n\n如下便是国内某公司的面试题：\n\n 回答输出结果 \n              \n              1234567891011121314151617181920212223242526272829303132package mainimport &quot;fmt&quot;/** * @Author: yirufeng * @Email: yirufeng@foxmail.com * @Date: 2020/10/13 6:06 下午 * @Desc: *///第一个const来自于面试题const (\ti = 7\tj\tk)const (\ta = 7\tb\tc = 3\tm = 1 &lt;&lt; iota\tn\to)func main() &#123;\tfmt.Println(a, b, c)\tfmt.Println(i, j, k, m, n, o)&#125;\n              \n            \n\n\n\n\n总结进行几点总结不同 const 定义块互不干扰：即我们在推算这些常量值的时候只需要看当前的 const ( ) 之内的内容，不用关心之前或之后是否也用常量定义语句所有注释行和空行全部忽略：注意：_ 并不是一个空行，它是一个省略了标识符也省略了表达式的常量定义，这一点你需要清楚，不要大意。没有表达式的常量定义复用上一行的表达式：例如如下的代码，j中没有写表达式，那么j是复用上一行表达式的即j = iota，但此时iota的值会为21234const (  i = iota  j)从第一行开始，iota 从 0 逐行加一：也就是说赋值表达式里无论是否引用了 iota，也无论引用了多少次，iota 的都会从常量定义块的第一行（注意这里不计空行和注释）开始计数，从 0 开始，逐行加一，例如上面代码1234567891011121314const (  i = 7   //iota = 1  j       //iota = 2  k       //iota = 3)const (  a = 7   //iota = 1  b       //iota = 2  c = 3   //iota = 3  m = 1 &lt;&lt; iota   //iota = 4  n       //iota = 5  o       //iota = 6)替换所有 iota：直接将表达式中的iota全部替换为我们上一步写出的值即可\n\n\n","datePublished":"2020-10-13T20:50:33.000Z","dateModified":"2022-01-08T01:46:42.486Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2020/10/13/golang%E4%B8%AD%E7%9A%84iota/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2020/10/13/golang%E4%B8%AD%E7%9A%84iota/","wordCount":1072,"articleSection":"go","keywords":"go,iota","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

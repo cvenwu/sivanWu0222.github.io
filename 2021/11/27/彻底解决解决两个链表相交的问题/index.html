@@ -20,7 +20,7 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641202245336" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606465556" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-11-27T18:47:17.000Z">
-<meta property="article:modified_time" content="2022-01-03T09:29:33.135Z">
+<meta property="article:modified_time" content="2022-01-08T01:46:42.490Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="算法">
@@ -748,152 +748,6 @@ button {
     opacity: 1;
     -webkit-opacity: 1;
     -moz-opacity: 1;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-  :root:not([color-scheme]) {
-    --color-site-body: #000;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
-    --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
-    --color-block: #3a3a3a;
-    --color-codeblock: #343a3c;
-    --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
-    --color-list: #aaa;
-    --color-list-hl: #69dfc4;
-    --color-meta: #888;
-    --color-link: #888;
-  }
-  :root:not([color-scheme]) img {
-    filter: brightness(70%) !important;
-  }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
-  :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) .nav-main .u-search-input {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) .article-title a {
-    color: var(--color-h1) !important;
-  }
-  :root:not([color-scheme]) details>summary {
-    color: var(--color-p) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) details {
-    border: 1px solid var(--color-site-bg) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal,
-  :root:not([color-scheme]) #u-search .modal-header,
-  :root:not([color-scheme]) #u-search .modal-body {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
-    background: var(--color-block) !important;
-  }
-}
-[color-scheme='dark'] {
-  --color-site-body: #000;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
-  --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
-  --color-block: #3a3a3a;
-  --color-codeblock: #343a3c;
-  --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
-  --color-list: #aaa;
-  --color-list-hl: #69dfc4;
-  --color-meta: #888;
-  --color-link: #888;
-}
-[color-scheme='dark'] img {
-  filter: brightness(70%) !important;
-}
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
-[color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] .nav-main .u-search-input {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] .article-title a {
-  color: var(--color-h1) !important;
-}
-[color-scheme='dark'] details>summary {
-  color: var(--color-p) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] details {
-  border: 1px solid var(--color-site-bg) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] #u-search .modal,
-[color-scheme='dark'] #u-search .modal-header,
-[color-scheme='dark'] #u-search .modal-body {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
-  background: var(--color-block) !important;
-}
-@media screen and (max-width: 500px) {
-  [color-scheme='dark'] .l_header .m_search {
-    background: var(--color-site-bg) !important;
   }
 }
 @font-face {
@@ -1732,21 +1586,10 @@ ul.list-v >li>a:hover {
     padding: 0px;
   }
 }
-@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
-  .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641202245336" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641202245336"></noscript>
-    <script>
-      var userColorScheme=localStorage.getItem("color-scheme")
-      if(userColorScheme){
-        document.documentElement.setAttribute("color-scheme", userColorScheme);
-      }
-    </script>
+  <link rel="stylesheet" href="/css/style.css?time=1641606465556" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606465556"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2677,10 +2520,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-03T09:29:33+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-08T01:46:42+00:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 3, 2022</p>
+    <p>更新于：Jan 8, 2022</p>
   </a>
 </div>
 
@@ -3004,8 +2847,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Jan 03 2022 09:30:23 GMT+0000 (Coordinated Universal Time)</div>
-            <div id="last-update-show">2022-01-03 日</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:24 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update-show">2022-01-08 日</div>
           
         </div>
         
@@ -3055,7 +2898,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-01-03 日';
+            document.getElementById('last-update-show').innerHTML = '2022-01-08 日';
           }
         </script>
         
@@ -3550,8 +3393,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245336')
-      volantis.js('/js/thirdparty/message.js?time=1641202245336', () => {
+      volantis.css('/css/message.css?time=1641606465556')
+      volantis.js('/js/thirdparty/message.js?time=1641606465556', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3596,8 +3439,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245336')
-      volantis.js('/js/thirdparty/message.js?time=1641202245336', () => {
+      volantis.css('/css/message.css?time=1641606465556')
+      volantis.js('/js/thirdparty/message.js?time=1641606465556', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3656,8 +3499,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245336')
-      volantis.js('/js/thirdparty/message.js?time=1641202245336', () => {
+      volantis.css('/css/message.css?time=1641606465556')
+      volantis.js('/js/thirdparty/message.js?time=1641606465556', () => {
         hideMessage(done);
       });
     } else {
@@ -3696,122 +3539,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
 
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "color-scheme";
-const rootElementDarkModeAttributeName = "color-scheme";
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-  getCustomDarkMode();
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-/**
- * get target mode
- */
- const getCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  if(currentSetting=="dark"){
-    volantis.dark.mode="light";
-  }else{
-    volantis.dark.mode="dark";
-  }
-  // console.log(volantis.dark.mode)
-};
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-/**
- * 暗黑模式触发器
- */
-volantis.dark.toggle=()=>{
-  const mode = toggleCustomDarkMode();
-  applyCustomDarkModeSettings(mode);
-  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
-  volantis.dark.method.toggle.start();
-}
-/**
- * bind event for toggle button
- */
-
-function bindToggleButton() {
-  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
-  btn.forEach(function (e) {
-    volantis.dom.$(e).on('click',volantis.dark.toggle);
-  })
-}
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", ()=>{
-  volantis.requestAnimationFrame(bindToggleButton)
-});
-volantis.pjax.push(bindToggleButton);
-
-const darkModelListeners={
-  dark:(mediaQueryList )=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "dark";
-    }
-    volantis.dark.method.toggle.start();
-  },
-  light:(mediaQueryList)=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "light";
-    }
-    volantis.dark.method.toggle.start();
-  }
-}
-window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
-window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
-</script>
-
-
 
 
 <script>
@@ -3819,19 +3546,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641202245336")
+        volantis.js("/js/plugins/sites.js?time=1641606465556")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641202245336")
+        volantis.js("/js/plugins/friends.js?time=1641606465556")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641202245336")
+        volantis.js("/js/plugins/contributors.js?time=1641606465556")
       }
     
   };
@@ -3989,7 +3716,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":null,"appKey":null,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz","appKey":"Ltp7stMByJNyVnbPWECrbkgx","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -4009,7 +3736,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641202245336').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606465556').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4020,7 +3747,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-<script src="/js/app.js?time=1641202245336.js"></script>
+<script src="/js/app.js?time=1641606465556.js"></script>
 
 
 <!-- optional -->
@@ -4033,7 +3760,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641202245336");
+    return volantis.js("/js/search/hexo.js?time=1641606465556");
   }
 
   function loadSearchService() {
@@ -4326,7 +4053,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4369,7 +4096,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641202245336').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606465556').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4603,7 +4330,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/LeetCode/","name":"LeetCode"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/11/27/彻底解决解决两个链表相交的问题/","name":"彻底解决解决两个链表相交的问题"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"彻底解决解决两个链表相交的问题","description":"前言\n两个链表相交涉及到关于链表的一系列问题：其中包含了如下子问题，并且涉及到了大量的算法思想，比如快慢指针\n\n\n判断链表是否有环\n链表有环的情况下找到环的入口节点\n判断两个链表是否相交\n相交的情况下找到相交时候的第一个节点\n\n对应的7种情况\n解决代码执行测试命令：go test -v intersection_test.go intersection.go -test.run TestIntersection\n\n 解决代码 \n              \n              123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168package InterviewCoding/** * @Author: yirufeng * @Date: 2021/11/25 8:21 上午 * @Email: yirufeng@foxmail.com * @GitHub: https://www.github.com/sivanWu0222 * @Desc: **/type LinkedListNode struct &#123;\tVal  int\tNext *LinkedListNode&#125;/*题目：返回两个链表相交的节点步骤：1. 明确题目中的意思，两个链表有无环，是否一定相交(如果不一定的话，我们需要判断是否相交，只有在相交的情况下我们才可以返回相交的第一个节点)2. 分情况进行讨论：\t2.1 有环\t\t2.1.1 一定相交：\t\t\t直接找到相交的节点即可\t\t2.1.2 不一定相交：\t\t\t首先判断是否相交\t\t\t相交的时候，找到相交的第一个节点并返回\t2.2 无环\t\t2.2.1 一定相交：\t\t2.2.2 不一定相交：\t\t\t首先判断是否相交\t\t\t相交的时候，找到相交的第一个节点并返回\t2.3 1个有环1个无环，说明一定不会相交，直接返回Nil就可以了*///返回两个链表的相交节点，如果不相交返回Nil，否则返回相交的第一个节点func Intersection(l1, l2 *LinkedListNode) *LinkedListNode &#123;\t//如果有一个为空，直接说明不相交\tif l1 == nil || l2 == nil &#123;\t\treturn nil\t&#125;\t//判断两个链表是否有环，如果有环就返回环的起始节点\tstartOfl1Ring, startOfl2Ring := startNodeOfRing(l1), startNodeOfRing(l2)\t//如果1个有1个没有，说明白不相交，直接返回nil\tif ((startOfl1Ring == nil) &amp;&amp; (startOfl2Ring != nil)) || ((startOfl1Ring != nil) &amp;&amp; (startOfl2Ring == nil)) &#123;\t\treturn nil\t&#125;\tvar ret *LinkedListNode\tif startOfl1Ring != nil &#123; //如果有环\t\tret = findIntersectionNodeWhenBothHaveCycle(l1, l2, startOfl1Ring, startOfl2Ring)\t&#125; else &#123; //如果没有环：此时就转换为我们正常的题解了\t\tret = findIntersectionNodeWhenBothNoCycle(l1, l2)\t&#125;\treturn ret&#125;//当两个链表都没有环的时候，找到两个链表的相交节点(可能相交，可能不相交)//三种解法去找出第一个相交的节点func findIntersectionNodeWhenBothNoCycle(l1, l2 *LinkedListNode) *LinkedListNode &#123;\t//1. 获得第1个链表第2个链表的长度以及各自链表的最后一个节点\tl1Length, l2Length := 1, 1\tl1LastNode, l2LastNode := l1, l2\tfor l1LastNode.Next != nil &#123;\t\tl1Length, l1LastNode = l1Length+1, l1LastNode.Next\t&#125;\tfor l2LastNode.Next != nil &#123;\t\tl2Length, l2LastNode = l2Length+1, l2LastNode.Next\t&#125;\t//判断各自最后一个节点是否相等，如果不相等，说明不相交，直接返回nil\tif l1LastNode != l2LastNode &#123;\t\treturn nil\t&#125;\t//先走长度差\tl1LastNode, l2LastNode = l1, l2\tif l1Length &gt; l2Length &#123;\t\tfor i := 0; i &lt; l1Length-l2Length; i++ &#123;\t\t\tl1LastNode = l1LastNode.Next\t\t&#125;\t&#125; else &#123;\t\tfor i := 0; i &lt; l2Length-l1Length; i++ &#123;\t\t\tl2LastNode = l2LastNode.Next\t\t&#125;\t&#125;\t//然后一起走，如果中途相等直接返回\tfor l1LastNode != l2LastNode &#123;\t\tl1LastNode, l2LastNode = l1LastNode.Next, l2LastNode.Next\t&#125;\treturn l1LastNode&#125;//当两个链表都有环的时候，找到两个链表的相交节点(可能相交，可能不相交(各自有一个自己的环))func findIntersectionNodeWhenBothHaveCycle(l1, l2, startOfl1Ring, startOfl2Ring *LinkedListNode) *LinkedListNode &#123;\t//判断两个链表是否有环的时候我们可以找到链表有环时候环的第一个节点\t//如果两个环的起始节点都相同，此时问题转变为l1的起始节点到自己拥有环的开始节点和l2的起始节点到自己拥有环的开始节点的第一个相交节点\tif startOfl1Ring == startOfl2Ring &#123;\t\tl1Temp, l2Temp := l1, l2\t\t//转变为求两个无环单链表的相交节点\t\tvar l1TempLength, l2TempLength int\t\tfor l1Temp != startOfl1Ring &#123;\t\t\tl1Temp, l1TempLength = l1Temp.Next, l1TempLength+1\t\t&#125;\t\tfor l2Temp != startOfl2Ring &#123;\t\t\tl2Temp, l2TempLength = l2Temp.Next, l2TempLength+1\t\t&#125;\t\t//长的先走\t\tif l1TempLength &gt; l2TempLength &#123;\t\t\tfor i := 0; i &lt; l1TempLength-l2TempLength; i++ &#123;\t\t\t\tl1Temp = l1Temp.Next\t\t\t&#125;\t\t&#125; else &#123;\t\t\tfor i := 0; i &lt; l2TempLength-l1TempLength; i++ &#123;\t\t\t\tl2Temp = l2Temp.Next\t\t\t&#125;\t\t&#125;\t\t//此时一起走\t\tfor l1Temp != l2Temp &#123;\t\t\tl1Temp, l2Temp = l1Temp.Next, l2Temp.Next\t\t&#125;\t\treturn l1Temp\t&#125; else &#123; //如果两个环的起始节点不同，让其中一个环开始走，走到起始节点为止，如果中途会出现和另外一个环起始节点相同，说明相交，否则各自成环\t\tl1Temp := startOfl1Ring.Next\t\tfor l1Temp != startOfl1Ring &#123;\t\t\tif l1Temp == startOfl2Ring &#123;\t\t\t\treturn startOfl2Ring\t\t\t&#125;\t\t\tl1Temp = l1Temp.Next\t\t&#125;\t&#125;\treturn nil&#125;//返回链表是否有环，如果有的话直接返回true，否则返回falsefunc startNodeOfRing(head *LinkedListNode) *LinkedListNode &#123;\tfast, slow := head, head\tfor fast != nil &amp;&amp; fast.Next != nil &#123;\t\tfast, slow = fast.Next.Next, slow.Next\t\t//说明此时相遇，表明有环\t\tif fast == slow &#123;\t\t\tbreak\t\t&#125;\t&#125;\t//这里是第二个注意点，这里不仅仅要判断fast是否为空，还要判断fast.Next是否为空，\t//因为让链表停止上面for循环的有两个条件：1. fast为空 2. fast.Next为空\t//判断一下是因为fast为空或者fast.Next为空还是fast==slow退出的\tif fast == nil || fast.Next == nil &#123;\t\treturn nil\t&#125;\t//走到这里说明有环，此时让fast指向head,然后fast与slow每次都走一步，一起相遇的时候返回即可\tfast = head\tfor fast != slow &#123;\t\tfast, slow = fast.Next, slow.Next\t&#125;\treturn fast&#125;\n              \n            \n\n\n 测试代码 \n              \n              123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104package InterviewCodingimport (\t&quot;testing&quot;)/** * @Author: yirufeng * @Date: 2021/11/25 11:05 上午 * @Email: yirufeng@foxmail.com * @GitHub: https://www.github.com/sivanWu0222 * @Desc: **///测试两个链表func TestIntersection(t *testing.T) &#123;\t//模拟场景\t//1.1 两个不带环且不相交的链表\tl1, l2 := constructTwoLinkedListWithoutCycleAndNotIntersection()\tif Intersection(l1, l2) != nil &#123;\t\tt.Fatalf(&quot;expect no intersection node.&quot;)\t&#125;\t//1.2 两个不带环但是相交的链表：LeetCode原题\t//已修复，由于&amp;&amp;写成了||\tl1, l2 = constructTwoLinkedListWithoutCycleButIntersection()\tif Intersection(l1, l2) == nil &#123;\t\tt.Log(Intersection(l1, l2))\t\tt.Fatalf(&quot;expect to have intersection node.&quot;)\t&#125;\t//2. 1个链表有环，1个无环\tl1, l2 = constructTwoLinkedListButOneHasCycle()\tif Intersection(l1, l2) != nil &#123;\t\tt.Fatalf(&quot;expect no intersection node.&quot;)\t&#125;\t//3. 两个链表都有环\t//3.1 两个链表都有环，但是两个链表的环都是各自的\tl1, l2 = constructTwoLinkedBothHasOwnCycle()\tif Intersection(l1, l2) != nil &#123;\t\tt.Fatalf(&quot;expect no intersection node.&quot;)\t&#125;\t//3.2.1 两个链表都有环，并且两个链表是相交的，且交点在进入环之前\t//todo: 有问题\tl1, l2 = constructTwoLinkedListBothHasCycleAndIntersection()\tif Intersection(l1, l2) == nil &#123;\t\tt.Fatalf(&quot;expect to have intersection node.&quot;)\t&#125;\t//3.2.2 两个链表都有环，并且两个链表是相交的，且交点在环上\tl1, l2 = constructTwoLinkedListBothHasCycleAndIntersectionII()\tif Intersection(l1, l2) == nil &#123;\t\tt.Fatalf(&quot;expect to have intersection node.&quot;)\t&#125;&#125;//两个不带环但是相交的链表func constructTwoLinkedListWithoutCycleButIntersection() (l1, l2 *LinkedListNode) &#123;\tnode := &amp;LinkedListNode&#123;Val: 5&#125;\tl1, l2 = &amp;LinkedListNode&#123;Val: 3&#125;, &amp;LinkedListNode&#123;Val: 4, Next: &amp;LinkedListNode&#123;Val: 6, Next: node&#125;&#125;\tl1.Next, l2.Next = node, node\treturn l1, l2&#125;//两个不带环且不相交的链表func constructTwoLinkedListWithoutCycleAndNotIntersection() (l1, l2 *LinkedListNode) &#123;\tl1, l2 = &amp;LinkedListNode&#123;Val: 3, Next: &amp;LinkedListNode&#123;Val: 4&#125;&#125;, &amp;LinkedListNode&#123;Val: 5, Next: &amp;LinkedListNode&#123;Val: 6&#125;&#125;\treturn l1, l2&#125;//构造两个链表1个有环1个无环func constructTwoLinkedListButOneHasCycle() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 2&#125;, &amp;LinkedListNode&#123;Val: 3&#125;\tnode.Next, node2.Next = node2, node\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node&#125;, &amp;LinkedListNode&#123;Val: 3&#125;\treturn l1, l2&#125;//构造两个都有环的链表，但是两个链表的环都是各自的func constructTwoLinkedBothHasOwnCycle() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 2&#125;, &amp;LinkedListNode&#123;Val: 3&#125;\tnode.Next, node2.Next = node2, node\tnode3, node4 := &amp;LinkedListNode&#123;Val: 4&#125;, &amp;LinkedListNode&#123;Val: 5&#125;\tnode3.Next, node4.Next = node4, node3\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node&#125;, &amp;LinkedListNode&#123;Val: 3, Next: node3&#125;\treturn l1, l2&#125;//构造两个都有环的链表，但是两个链表都是相交的且相交的起点位于环的入口之前func constructTwoLinkedListBothHasCycleAndIntersection() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 4&#125;, &amp;LinkedListNode&#123;Val: 5&#125;\tnode.Next, node2.Next = node2, node\tnode3 := &amp;LinkedListNode&#123;Val: 6, Next: node&#125;\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node3&#125;, &amp;LinkedListNode&#123;Val: 3, Next: node3&#125;\treturn l1, l2&#125;//构造两个都有环的链表，但是两个链表都是相交的且相交的起点位于环上func constructTwoLinkedListBothHasCycleAndIntersectionII() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 4&#125;, &amp;LinkedListNode&#123;Val: 5&#125;\tnode.Next, node2.Next = node2, node\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node&#125;, &amp;LinkedListNode&#123;Val: 3, Next: &amp;LinkedListNode&#123;Val: 6, Next: node2&#125;&#125;\treturn l1, l2&#125;\n              \n            ","datePublished":"2021-11-27T18:47:17.000Z","dateModified":"2022-01-03T09:29:33.135Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/11/27/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%97%AE%E9%A2%98/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/11/27/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%97%AE%E9%A2%98/","wordCount":8742,"articleSection":"LeetCode","keywords":"LeetCode,算法,链表","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/LeetCode/","name":"LeetCode"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/11/27/彻底解决解决两个链表相交的问题/","name":"彻底解决解决两个链表相交的问题"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"彻底解决解决两个链表相交的问题","description":"前言\n两个链表相交涉及到关于链表的一系列问题：其中包含了如下子问题，并且涉及到了大量的算法思想，比如快慢指针\n\n\n判断链表是否有环\n链表有环的情况下找到环的入口节点\n判断两个链表是否相交\n相交的情况下找到相交时候的第一个节点\n\n对应的7种情况\n解决代码执行测试命令：go test -v intersection_test.go intersection.go -test.run TestIntersection\n\n 解决代码 \n              \n              123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168package InterviewCoding/** * @Author: yirufeng * @Date: 2021/11/25 8:21 上午 * @Email: yirufeng@foxmail.com * @GitHub: https://www.github.com/sivanWu0222 * @Desc: **/type LinkedListNode struct &#123;\tVal  int\tNext *LinkedListNode&#125;/*题目：返回两个链表相交的节点步骤：1. 明确题目中的意思，两个链表有无环，是否一定相交(如果不一定的话，我们需要判断是否相交，只有在相交的情况下我们才可以返回相交的第一个节点)2. 分情况进行讨论：\t2.1 有环\t\t2.1.1 一定相交：\t\t\t直接找到相交的节点即可\t\t2.1.2 不一定相交：\t\t\t首先判断是否相交\t\t\t相交的时候，找到相交的第一个节点并返回\t2.2 无环\t\t2.2.1 一定相交：\t\t2.2.2 不一定相交：\t\t\t首先判断是否相交\t\t\t相交的时候，找到相交的第一个节点并返回\t2.3 1个有环1个无环，说明一定不会相交，直接返回Nil就可以了*///返回两个链表的相交节点，如果不相交返回Nil，否则返回相交的第一个节点func Intersection(l1, l2 *LinkedListNode) *LinkedListNode &#123;\t//如果有一个为空，直接说明不相交\tif l1 == nil || l2 == nil &#123;\t\treturn nil\t&#125;\t//判断两个链表是否有环，如果有环就返回环的起始节点\tstartOfl1Ring, startOfl2Ring := startNodeOfRing(l1), startNodeOfRing(l2)\t//如果1个有1个没有，说明白不相交，直接返回nil\tif ((startOfl1Ring == nil) &amp;&amp; (startOfl2Ring != nil)) || ((startOfl1Ring != nil) &amp;&amp; (startOfl2Ring == nil)) &#123;\t\treturn nil\t&#125;\tvar ret *LinkedListNode\tif startOfl1Ring != nil &#123; //如果有环\t\tret = findIntersectionNodeWhenBothHaveCycle(l1, l2, startOfl1Ring, startOfl2Ring)\t&#125; else &#123; //如果没有环：此时就转换为我们正常的题解了\t\tret = findIntersectionNodeWhenBothNoCycle(l1, l2)\t&#125;\treturn ret&#125;//当两个链表都没有环的时候，找到两个链表的相交节点(可能相交，可能不相交)//三种解法去找出第一个相交的节点func findIntersectionNodeWhenBothNoCycle(l1, l2 *LinkedListNode) *LinkedListNode &#123;\t//1. 获得第1个链表第2个链表的长度以及各自链表的最后一个节点\tl1Length, l2Length := 1, 1\tl1LastNode, l2LastNode := l1, l2\tfor l1LastNode.Next != nil &#123;\t\tl1Length, l1LastNode = l1Length+1, l1LastNode.Next\t&#125;\tfor l2LastNode.Next != nil &#123;\t\tl2Length, l2LastNode = l2Length+1, l2LastNode.Next\t&#125;\t//判断各自最后一个节点是否相等，如果不相等，说明不相交，直接返回nil\tif l1LastNode != l2LastNode &#123;\t\treturn nil\t&#125;\t//先走长度差\tl1LastNode, l2LastNode = l1, l2\tif l1Length &gt; l2Length &#123;\t\tfor i := 0; i &lt; l1Length-l2Length; i++ &#123;\t\t\tl1LastNode = l1LastNode.Next\t\t&#125;\t&#125; else &#123;\t\tfor i := 0; i &lt; l2Length-l1Length; i++ &#123;\t\t\tl2LastNode = l2LastNode.Next\t\t&#125;\t&#125;\t//然后一起走，如果中途相等直接返回\tfor l1LastNode != l2LastNode &#123;\t\tl1LastNode, l2LastNode = l1LastNode.Next, l2LastNode.Next\t&#125;\treturn l1LastNode&#125;//当两个链表都有环的时候，找到两个链表的相交节点(可能相交，可能不相交(各自有一个自己的环))func findIntersectionNodeWhenBothHaveCycle(l1, l2, startOfl1Ring, startOfl2Ring *LinkedListNode) *LinkedListNode &#123;\t//判断两个链表是否有环的时候我们可以找到链表有环时候环的第一个节点\t//如果两个环的起始节点都相同，此时问题转变为l1的起始节点到自己拥有环的开始节点和l2的起始节点到自己拥有环的开始节点的第一个相交节点\tif startOfl1Ring == startOfl2Ring &#123;\t\tl1Temp, l2Temp := l1, l2\t\t//转变为求两个无环单链表的相交节点\t\tvar l1TempLength, l2TempLength int\t\tfor l1Temp != startOfl1Ring &#123;\t\t\tl1Temp, l1TempLength = l1Temp.Next, l1TempLength+1\t\t&#125;\t\tfor l2Temp != startOfl2Ring &#123;\t\t\tl2Temp, l2TempLength = l2Temp.Next, l2TempLength+1\t\t&#125;\t\t//长的先走\t\tif l1TempLength &gt; l2TempLength &#123;\t\t\tfor i := 0; i &lt; l1TempLength-l2TempLength; i++ &#123;\t\t\t\tl1Temp = l1Temp.Next\t\t\t&#125;\t\t&#125; else &#123;\t\t\tfor i := 0; i &lt; l2TempLength-l1TempLength; i++ &#123;\t\t\t\tl2Temp = l2Temp.Next\t\t\t&#125;\t\t&#125;\t\t//此时一起走\t\tfor l1Temp != l2Temp &#123;\t\t\tl1Temp, l2Temp = l1Temp.Next, l2Temp.Next\t\t&#125;\t\treturn l1Temp\t&#125; else &#123; //如果两个环的起始节点不同，让其中一个环开始走，走到起始节点为止，如果中途会出现和另外一个环起始节点相同，说明相交，否则各自成环\t\tl1Temp := startOfl1Ring.Next\t\tfor l1Temp != startOfl1Ring &#123;\t\t\tif l1Temp == startOfl2Ring &#123;\t\t\t\treturn startOfl2Ring\t\t\t&#125;\t\t\tl1Temp = l1Temp.Next\t\t&#125;\t&#125;\treturn nil&#125;//返回链表是否有环，如果有的话直接返回true，否则返回falsefunc startNodeOfRing(head *LinkedListNode) *LinkedListNode &#123;\tfast, slow := head, head\tfor fast != nil &amp;&amp; fast.Next != nil &#123;\t\tfast, slow = fast.Next.Next, slow.Next\t\t//说明此时相遇，表明有环\t\tif fast == slow &#123;\t\t\tbreak\t\t&#125;\t&#125;\t//这里是第二个注意点，这里不仅仅要判断fast是否为空，还要判断fast.Next是否为空，\t//因为让链表停止上面for循环的有两个条件：1. fast为空 2. fast.Next为空\t//判断一下是因为fast为空或者fast.Next为空还是fast==slow退出的\tif fast == nil || fast.Next == nil &#123;\t\treturn nil\t&#125;\t//走到这里说明有环，此时让fast指向head,然后fast与slow每次都走一步，一起相遇的时候返回即可\tfast = head\tfor fast != slow &#123;\t\tfast, slow = fast.Next, slow.Next\t&#125;\treturn fast&#125;\n              \n            \n\n\n 测试代码 \n              \n              123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104package InterviewCodingimport (\t&quot;testing&quot;)/** * @Author: yirufeng * @Date: 2021/11/25 11:05 上午 * @Email: yirufeng@foxmail.com * @GitHub: https://www.github.com/sivanWu0222 * @Desc: **///测试两个链表func TestIntersection(t *testing.T) &#123;\t//模拟场景\t//1.1 两个不带环且不相交的链表\tl1, l2 := constructTwoLinkedListWithoutCycleAndNotIntersection()\tif Intersection(l1, l2) != nil &#123;\t\tt.Fatalf(&quot;expect no intersection node.&quot;)\t&#125;\t//1.2 两个不带环但是相交的链表：LeetCode原题\t//已修复，由于&amp;&amp;写成了||\tl1, l2 = constructTwoLinkedListWithoutCycleButIntersection()\tif Intersection(l1, l2) == nil &#123;\t\tt.Log(Intersection(l1, l2))\t\tt.Fatalf(&quot;expect to have intersection node.&quot;)\t&#125;\t//2. 1个链表有环，1个无环\tl1, l2 = constructTwoLinkedListButOneHasCycle()\tif Intersection(l1, l2) != nil &#123;\t\tt.Fatalf(&quot;expect no intersection node.&quot;)\t&#125;\t//3. 两个链表都有环\t//3.1 两个链表都有环，但是两个链表的环都是各自的\tl1, l2 = constructTwoLinkedBothHasOwnCycle()\tif Intersection(l1, l2) != nil &#123;\t\tt.Fatalf(&quot;expect no intersection node.&quot;)\t&#125;\t//3.2.1 两个链表都有环，并且两个链表是相交的，且交点在进入环之前\t//todo: 有问题\tl1, l2 = constructTwoLinkedListBothHasCycleAndIntersection()\tif Intersection(l1, l2) == nil &#123;\t\tt.Fatalf(&quot;expect to have intersection node.&quot;)\t&#125;\t//3.2.2 两个链表都有环，并且两个链表是相交的，且交点在环上\tl1, l2 = constructTwoLinkedListBothHasCycleAndIntersectionII()\tif Intersection(l1, l2) == nil &#123;\t\tt.Fatalf(&quot;expect to have intersection node.&quot;)\t&#125;&#125;//两个不带环但是相交的链表func constructTwoLinkedListWithoutCycleButIntersection() (l1, l2 *LinkedListNode) &#123;\tnode := &amp;LinkedListNode&#123;Val: 5&#125;\tl1, l2 = &amp;LinkedListNode&#123;Val: 3&#125;, &amp;LinkedListNode&#123;Val: 4, Next: &amp;LinkedListNode&#123;Val: 6, Next: node&#125;&#125;\tl1.Next, l2.Next = node, node\treturn l1, l2&#125;//两个不带环且不相交的链表func constructTwoLinkedListWithoutCycleAndNotIntersection() (l1, l2 *LinkedListNode) &#123;\tl1, l2 = &amp;LinkedListNode&#123;Val: 3, Next: &amp;LinkedListNode&#123;Val: 4&#125;&#125;, &amp;LinkedListNode&#123;Val: 5, Next: &amp;LinkedListNode&#123;Val: 6&#125;&#125;\treturn l1, l2&#125;//构造两个链表1个有环1个无环func constructTwoLinkedListButOneHasCycle() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 2&#125;, &amp;LinkedListNode&#123;Val: 3&#125;\tnode.Next, node2.Next = node2, node\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node&#125;, &amp;LinkedListNode&#123;Val: 3&#125;\treturn l1, l2&#125;//构造两个都有环的链表，但是两个链表的环都是各自的func constructTwoLinkedBothHasOwnCycle() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 2&#125;, &amp;LinkedListNode&#123;Val: 3&#125;\tnode.Next, node2.Next = node2, node\tnode3, node4 := &amp;LinkedListNode&#123;Val: 4&#125;, &amp;LinkedListNode&#123;Val: 5&#125;\tnode3.Next, node4.Next = node4, node3\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node&#125;, &amp;LinkedListNode&#123;Val: 3, Next: node3&#125;\treturn l1, l2&#125;//构造两个都有环的链表，但是两个链表都是相交的且相交的起点位于环的入口之前func constructTwoLinkedListBothHasCycleAndIntersection() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 4&#125;, &amp;LinkedListNode&#123;Val: 5&#125;\tnode.Next, node2.Next = node2, node\tnode3 := &amp;LinkedListNode&#123;Val: 6, Next: node&#125;\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node3&#125;, &amp;LinkedListNode&#123;Val: 3, Next: node3&#125;\treturn l1, l2&#125;//构造两个都有环的链表，但是两个链表都是相交的且相交的起点位于环上func constructTwoLinkedListBothHasCycleAndIntersectionII() (l1, l2 *LinkedListNode) &#123;\tnode, node2 := &amp;LinkedListNode&#123;Val: 4&#125;, &amp;LinkedListNode&#123;Val: 5&#125;\tnode.Next, node2.Next = node2, node\tl1, l2 = &amp;LinkedListNode&#123;Val: 1, Next: node&#125;, &amp;LinkedListNode&#123;Val: 3, Next: &amp;LinkedListNode&#123;Val: 6, Next: node2&#125;&#125;\treturn l1, l2&#125;\n              \n            ","datePublished":"2021-11-27T18:47:17.000Z","dateModified":"2022-01-08T01:46:42.490Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/11/27/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%97%AE%E9%A2%98/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/11/27/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%97%AE%E9%A2%98/","wordCount":8742,"articleSection":"LeetCode","keywords":"LeetCode,算法,链表","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

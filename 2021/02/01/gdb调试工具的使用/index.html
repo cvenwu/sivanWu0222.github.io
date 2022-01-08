@@ -20,7 +20,7 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641202245467" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606465696" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-02-01T21:59:22.000Z">
-<meta property="article:modified_time" content="2022-01-03T09:29:33.135Z">
+<meta property="article:modified_time" content="2022-01-08T01:46:42.486Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="go">
 <meta property="article:tag" content="调试">
@@ -748,152 +748,6 @@ button {
     opacity: 1;
     -webkit-opacity: 1;
     -moz-opacity: 1;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-  :root:not([color-scheme]) {
-    --color-site-body: #000;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
-    --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
-    --color-block: #3a3a3a;
-    --color-codeblock: #343a3c;
-    --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
-    --color-list: #aaa;
-    --color-list-hl: #69dfc4;
-    --color-meta: #888;
-    --color-link: #888;
-  }
-  :root:not([color-scheme]) img {
-    filter: brightness(70%) !important;
-  }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
-  :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) .nav-main .u-search-input {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) .article-title a {
-    color: var(--color-h1) !important;
-  }
-  :root:not([color-scheme]) details>summary {
-    color: var(--color-p) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) details {
-    border: 1px solid var(--color-site-bg) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal,
-  :root:not([color-scheme]) #u-search .modal-header,
-  :root:not([color-scheme]) #u-search .modal-body {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
-    background: var(--color-block) !important;
-  }
-}
-[color-scheme='dark'] {
-  --color-site-body: #000;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
-  --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
-  --color-block: #3a3a3a;
-  --color-codeblock: #343a3c;
-  --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
-  --color-list: #aaa;
-  --color-list-hl: #69dfc4;
-  --color-meta: #888;
-  --color-link: #888;
-}
-[color-scheme='dark'] img {
-  filter: brightness(70%) !important;
-}
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
-[color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] .nav-main .u-search-input {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] .article-title a {
-  color: var(--color-h1) !important;
-}
-[color-scheme='dark'] details>summary {
-  color: var(--color-p) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] details {
-  border: 1px solid var(--color-site-bg) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] #u-search .modal,
-[color-scheme='dark'] #u-search .modal-header,
-[color-scheme='dark'] #u-search .modal-body {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
-  background: var(--color-block) !important;
-}
-@media screen and (max-width: 500px) {
-  [color-scheme='dark'] .l_header .m_search {
-    background: var(--color-site-bg) !important;
   }
 }
 @font-face {
@@ -1732,21 +1586,10 @@ ul.list-v >li>a:hover {
     padding: 0px;
   }
 }
-@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
-  .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641202245467" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641202245467"></noscript>
-    <script>
-      var userColorScheme=localStorage.getItem("color-scheme")
-      if(userColorScheme){
-        document.documentElement.setAttribute("color-scheme", userColorScheme);
-      }
-    </script>
+  <link rel="stylesheet" href="/css/style.css?time=1641606465696" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606465696"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2697,10 +2540,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-03T09:29:33+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-08T01:46:42+00:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 3, 2022</p>
+    <p>更新于：Jan 8, 2022</p>
   </a>
 </div>
 
@@ -3084,8 +2927,8 @@ $ go tool compile -S pro_2.go &gt; pr...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Jan 03 2022 09:30:25 GMT+0000 (Coordinated Universal Time)</div>
-            <div id="last-update-show">2022-01-03 日</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:25 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update-show">2022-01-08 日</div>
           
         </div>
         
@@ -3135,7 +2978,7 @@ $ go tool compile -S pro_2.go &gt; pr...</p>
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-01-03 日';
+            document.getElementById('last-update-show').innerHTML = '2022-01-08 日';
           }
         </script>
         
@@ -3630,8 +3473,8 @@ $ go tool compile -S pro_2.go &gt; pr...</p>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245467')
-      volantis.js('/js/thirdparty/message.js?time=1641202245467', () => {
+      volantis.css('/css/message.css?time=1641606465696')
+      volantis.js('/js/thirdparty/message.js?time=1641606465696', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3676,8 +3519,8 @@ $ go tool compile -S pro_2.go &gt; pr...</p>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245467')
-      volantis.js('/js/thirdparty/message.js?time=1641202245467', () => {
+      volantis.css('/css/message.css?time=1641606465696')
+      volantis.js('/js/thirdparty/message.js?time=1641606465696', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3736,8 +3579,8 @@ $ go tool compile -S pro_2.go &gt; pr...</p>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245467')
-      volantis.js('/js/thirdparty/message.js?time=1641202245467', () => {
+      volantis.css('/css/message.css?time=1641606465696')
+      volantis.js('/js/thirdparty/message.js?time=1641606465696', () => {
         hideMessage(done);
       });
     } else {
@@ -3776,122 +3619,6 @@ $ go tool compile -S pro_2.go &gt; pr...</p>
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
 
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "color-scheme";
-const rootElementDarkModeAttributeName = "color-scheme";
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-  getCustomDarkMode();
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-/**
- * get target mode
- */
- const getCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  if(currentSetting=="dark"){
-    volantis.dark.mode="light";
-  }else{
-    volantis.dark.mode="dark";
-  }
-  // console.log(volantis.dark.mode)
-};
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-/**
- * 暗黑模式触发器
- */
-volantis.dark.toggle=()=>{
-  const mode = toggleCustomDarkMode();
-  applyCustomDarkModeSettings(mode);
-  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
-  volantis.dark.method.toggle.start();
-}
-/**
- * bind event for toggle button
- */
-
-function bindToggleButton() {
-  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
-  btn.forEach(function (e) {
-    volantis.dom.$(e).on('click',volantis.dark.toggle);
-  })
-}
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", ()=>{
-  volantis.requestAnimationFrame(bindToggleButton)
-});
-volantis.pjax.push(bindToggleButton);
-
-const darkModelListeners={
-  dark:(mediaQueryList )=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "dark";
-    }
-    volantis.dark.method.toggle.start();
-  },
-  light:(mediaQueryList)=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "light";
-    }
-    volantis.dark.method.toggle.start();
-  }
-}
-window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
-window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
-</script>
-
-
 
 
 <script>
@@ -3899,19 +3626,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641202245467")
+        volantis.js("/js/plugins/sites.js?time=1641606465696")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641202245467")
+        volantis.js("/js/plugins/friends.js?time=1641606465696")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641202245467")
+        volantis.js("/js/plugins/contributors.js?time=1641606465696")
       }
     
   };
@@ -4069,7 +3796,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":null,"appKey":null,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz","appKey":"Ltp7stMByJNyVnbPWECrbkgx","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -4089,7 +3816,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641202245467').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606465696').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4100,7 +3827,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-<script src="/js/app.js?time=1641202245467.js"></script>
+<script src="/js/app.js?time=1641606465696.js"></script>
 
 
 <!-- optional -->
@@ -4113,7 +3840,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641202245467");
+    return volantis.js("/js/search/hexo.js?time=1641606465696");
   }
 
   function loadSearchService() {
@@ -4406,7 +4133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4449,7 +4176,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641202245467').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606465696').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4683,7 +4410,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/工具/","name":"工具"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/02/01/gdb调试工具的使用/","name":"Golang中使用gdb调试工具"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Golang中使用gdb调试工具","description":"gdb 工具的安装!&gt; 以mac系统为例\n1brew install gdb\n\n使用场景通常情况下，我们使用gdb是为了研究底层源码的实现，比如go中的runtime的入口在哪里？\ngo中使用\n编译go程序的时候，要带上编译信息，也就是使用命令go build --gcflags=all=&quot;-N -l&quot; .\n执行命令 gdb 二进制文件的名字 就可以进入gdb调试了\n\ngdb 中常用命令的使用note info 注意：gdb中命令行有一个特点，如果我们在命令中没有任何输入按下回车将会重复上一个命令，但是有一些命令不会，例如run\n\n\nlist：将当前行号所在的代码打印出来\n\n加一个断点：break 断点所在的行 或者 b 断点所在的行。\n\n当我们执行run命令之后将会停在第一个断点上，然后使用next或ns执行到下一行，如果想要跟踪进去调用函数的内部，我们使用命令s进入调用函数的内部，如果我们想要退出该函数了，我们可以使用命令return退出返回到调用代码的地方，如果想要查看某一个变量的值，可以使用命令p 变量名，如果我们不想每次都打印指定的变量，我们可以使用info args打印参数或info locals打印本地变量next：执行下一行\n\n使用info files命令，看到有一个entry point，也就是代码是从这里开始执行的，我们想要让代码在入口停下，我们在入口加上一个端点，也就是在entry point对应的值的地址加上断点b 对应的地址\n\nlist。列出代码，输入第一次后如果输入回车，那么就会重复以上命令\n\nbreak。加断点，一般是list之后，break 行号来加断点\n\nbt。打印调用链\n\ninfo files。打印调试文件信息\n\nrun。运行所要调试的代码\n\nup 和 down。在frame里跳来跳去\n\ninfo args 和 info locals 打印参数和本地变量\n\nwhatis 和 p。打印变量和想要看的值，例如数组啊，函数啊，都可以\n\ninfo goroutines。查看所有的goroutine及其ID\n\ngoroutine 命令。对对应的goroutine执行命令。\n\nq。退出\n\nhelp。打印帮助文档\n\n\n参考参考安装教程使用教程使用视频","datePublished":"2021-02-01T21:59:22.000Z","dateModified":"2022-01-03T09:29:33.135Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/02/01/gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/02/01/gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":965,"articleSection":"工具","keywords":"go,调试,工具","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/工具/","name":"工具"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/02/01/gdb调试工具的使用/","name":"Golang中使用gdb调试工具"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Golang中使用gdb调试工具","description":"gdb 工具的安装!&gt; 以mac系统为例\n1brew install gdb\n\n使用场景通常情况下，我们使用gdb是为了研究底层源码的实现，比如go中的runtime的入口在哪里？\ngo中使用\n编译go程序的时候，要带上编译信息，也就是使用命令go build --gcflags=all=&quot;-N -l&quot; .\n执行命令 gdb 二进制文件的名字 就可以进入gdb调试了\n\ngdb 中常用命令的使用note info 注意：gdb中命令行有一个特点，如果我们在命令中没有任何输入按下回车将会重复上一个命令，但是有一些命令不会，例如run\n\n\nlist：将当前行号所在的代码打印出来\n\n加一个断点：break 断点所在的行 或者 b 断点所在的行。\n\n当我们执行run命令之后将会停在第一个断点上，然后使用next或ns执行到下一行，如果想要跟踪进去调用函数的内部，我们使用命令s进入调用函数的内部，如果我们想要退出该函数了，我们可以使用命令return退出返回到调用代码的地方，如果想要查看某一个变量的值，可以使用命令p 变量名，如果我们不想每次都打印指定的变量，我们可以使用info args打印参数或info locals打印本地变量next：执行下一行\n\n使用info files命令，看到有一个entry point，也就是代码是从这里开始执行的，我们想要让代码在入口停下，我们在入口加上一个端点，也就是在entry point对应的值的地址加上断点b 对应的地址\n\nlist。列出代码，输入第一次后如果输入回车，那么就会重复以上命令\n\nbreak。加断点，一般是list之后，break 行号来加断点\n\nbt。打印调用链\n\ninfo files。打印调试文件信息\n\nrun。运行所要调试的代码\n\nup 和 down。在frame里跳来跳去\n\ninfo args 和 info locals 打印参数和本地变量\n\nwhatis 和 p。打印变量和想要看的值，例如数组啊，函数啊，都可以\n\ninfo goroutines。查看所有的goroutine及其ID\n\ngoroutine 命令。对对应的goroutine执行命令。\n\nq。退出\n\nhelp。打印帮助文档\n\n\n参考参考安装教程使用教程使用视频","datePublished":"2021-02-01T21:59:22.000Z","dateModified":"2022-01-08T01:46:42.486Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/02/01/gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/02/01/gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":965,"articleSection":"工具","keywords":"go,调试,工具","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

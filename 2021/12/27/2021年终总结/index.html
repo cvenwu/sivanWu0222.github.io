@@ -20,7 +20,7 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641202245285" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606465493" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-12-27T09:46:34.000Z">
-<meta property="article:modified_time" content="2022-01-03T09:29:33.131Z">
+<meta property="article:modified_time" content="2022-01-08T01:46:42.486Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="杂谈">
 <meta property="article:tag" content="总结">
@@ -747,152 +747,6 @@ button {
     opacity: 1;
     -webkit-opacity: 1;
     -moz-opacity: 1;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-  :root:not([color-scheme]) {
-    --color-site-body: #000;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
-    --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
-    --color-block: #3a3a3a;
-    --color-codeblock: #343a3c;
-    --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
-    --color-list: #aaa;
-    --color-list-hl: #69dfc4;
-    --color-meta: #888;
-    --color-link: #888;
-  }
-  :root:not([color-scheme]) img {
-    filter: brightness(70%) !important;
-  }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
-  :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) .nav-main .u-search-input {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) .article-title a {
-    color: var(--color-h1) !important;
-  }
-  :root:not([color-scheme]) details>summary {
-    color: var(--color-p) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) details {
-    border: 1px solid var(--color-site-bg) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal,
-  :root:not([color-scheme]) #u-search .modal-header,
-  :root:not([color-scheme]) #u-search .modal-body {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
-    background: var(--color-block) !important;
-  }
-}
-[color-scheme='dark'] {
-  --color-site-body: #000;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
-  --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
-  --color-block: #3a3a3a;
-  --color-codeblock: #343a3c;
-  --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
-  --color-list: #aaa;
-  --color-list-hl: #69dfc4;
-  --color-meta: #888;
-  --color-link: #888;
-}
-[color-scheme='dark'] img {
-  filter: brightness(70%) !important;
-}
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
-[color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] .nav-main .u-search-input {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] .article-title a {
-  color: var(--color-h1) !important;
-}
-[color-scheme='dark'] details>summary {
-  color: var(--color-p) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] details {
-  border: 1px solid var(--color-site-bg) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] #u-search .modal,
-[color-scheme='dark'] #u-search .modal-header,
-[color-scheme='dark'] #u-search .modal-body {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
-  background: var(--color-block) !important;
-}
-@media screen and (max-width: 500px) {
-  [color-scheme='dark'] .l_header .m_search {
-    background: var(--color-site-bg) !important;
   }
 }
 @font-face {
@@ -1731,21 +1585,10 @@ ul.list-v >li>a:hover {
     padding: 0px;
   }
 }
-@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
-  .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641202245285" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641202245285"></noscript>
-    <script>
-      var userColorScheme=localStorage.getItem("color-scheme")
-      if(userColorScheme){
-        document.documentElement.setAttribute("color-scheme", userColorScheme);
-      }
-    </script>
+  <link rel="stylesheet" href="/css/style.css?time=1641606465493" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606465493"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2759,10 +2602,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-03T09:29:33+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-08T01:46:42+00:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 3, 2022</p>
+    <p>更新于：Jan 8, 2022</p>
   </a>
 </div>
 
@@ -3191,8 +3034,8 @@ AA面(最终的大老板面)
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Jan 03 2022 09:30:23 GMT+0000 (Coordinated Universal Time)</div>
-            <div id="last-update-show">2022-01-03 日</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:23 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update-show">2022-01-08 日</div>
           
         </div>
         
@@ -3242,7 +3085,7 @@ AA面(最终的大老板面)
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-01-03 日';
+            document.getElementById('last-update-show').innerHTML = '2022-01-08 日';
           }
         </script>
         
@@ -3737,8 +3580,8 @@ AA面(最终的大老板面)
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245285')
-      volantis.js('/js/thirdparty/message.js?time=1641202245285', () => {
+      volantis.css('/css/message.css?time=1641606465488')
+      volantis.js('/js/thirdparty/message.js?time=1641606465493', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3783,8 +3626,8 @@ AA面(最终的大老板面)
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245285')
-      volantis.js('/js/thirdparty/message.js?time=1641202245285', () => {
+      volantis.css('/css/message.css?time=1641606465488')
+      volantis.js('/js/thirdparty/message.js?time=1641606465493', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3843,8 +3686,8 @@ AA面(最终的大老板面)
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245285')
-      volantis.js('/js/thirdparty/message.js?time=1641202245285', () => {
+      volantis.css('/css/message.css?time=1641606465488')
+      volantis.js('/js/thirdparty/message.js?time=1641606465493', () => {
         hideMessage(done);
       });
     } else {
@@ -3883,122 +3726,6 @@ AA面(最终的大老板面)
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
 
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "color-scheme";
-const rootElementDarkModeAttributeName = "color-scheme";
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-  getCustomDarkMode();
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-/**
- * get target mode
- */
- const getCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  if(currentSetting=="dark"){
-    volantis.dark.mode="light";
-  }else{
-    volantis.dark.mode="dark";
-  }
-  // console.log(volantis.dark.mode)
-};
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-/**
- * 暗黑模式触发器
- */
-volantis.dark.toggle=()=>{
-  const mode = toggleCustomDarkMode();
-  applyCustomDarkModeSettings(mode);
-  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
-  volantis.dark.method.toggle.start();
-}
-/**
- * bind event for toggle button
- */
-
-function bindToggleButton() {
-  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
-  btn.forEach(function (e) {
-    volantis.dom.$(e).on('click',volantis.dark.toggle);
-  })
-}
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", ()=>{
-  volantis.requestAnimationFrame(bindToggleButton)
-});
-volantis.pjax.push(bindToggleButton);
-
-const darkModelListeners={
-  dark:(mediaQueryList )=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "dark";
-    }
-    volantis.dark.method.toggle.start();
-  },
-  light:(mediaQueryList)=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "light";
-    }
-    volantis.dark.method.toggle.start();
-  }
-}
-window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
-window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
-</script>
-
-
 
 
 <script>
@@ -4006,19 +3733,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641202245285")
+        volantis.js("/js/plugins/sites.js?time=1641606465488")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641202245285")
+        volantis.js("/js/plugins/friends.js?time=1641606465488")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641202245285")
+        volantis.js("/js/plugins/contributors.js?time=1641606465493")
       }
     
   };
@@ -4176,7 +3903,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":null,"appKey":null,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz","appKey":"Ltp7stMByJNyVnbPWECrbkgx","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -4196,7 +3923,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641202245285').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606465493').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4207,7 +3934,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-<script src="/js/app.js?time=1641202245285.js"></script>
+<script src="/js/app.js?time=1641606465493.js"></script>
 
 
 <!-- optional -->
@@ -4220,7 +3947,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641202245285");
+    return volantis.js("/js/search/hexo.js?time=1641606465493");
   }
 
   function loadSearchService() {
@@ -4513,7 +4240,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4556,7 +4283,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641202245285').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606465493').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4790,7 +4517,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/杂谈/","name":"杂谈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/12/27/2021年终总结/","name":"迟来的2021年终总结"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"迟来的2021年终总结","description":"静下心回顾自己的2021，才发现这一年自己竟然经历了这么多重要的事情，实习，工作，爱情；是的，就是这样一个人生转折点的路上，庆幸的是自己可以有这么多选项，有趣的是这也是自己最后一年以学生身份做的个人总结(明年总结的时候就是一个社畜了，莫名想说无忧无虑的学生时光真好，不仅仅是因为毕业以后一天就没有几个小时真正属于自己，更因为成年人的时间永远都用来生存而不是生活。\n\n\n回想2021，这一年属实经历了很多，不仅拿到了通往下一站的门票，还有幸习得了一些新技能，比如重拾之前的摄影爱好，也感谢全哥带领并悉心指导，经过两次游泳终于在可以在水里站立起来了；还和咯噔还有邓颖从下午场开始连玩两场剧本杀一直到凌晨1点（年轻么就是要疯狂）；也很幸运这一年做了几场分享，给学弟学妹们做了两场分享(秋招分享+iTeach大赛分享)；甚至还作为采访者帮助学弟完成马克思作业的一部分；不过最幸运的是是认识了你，最开心的便是2021.12.12和你表白的那天，想了一个瞒天过海的方案，不过还是没有骗过你，让你生了气，好在终于在进入你实验室的那一瞬间你仿佛知道发生了什么，谢谢你来到我身边！\n\n今年的大事记：\n2021-06-07 ~ 2021-09-18\n实习：阿里云-洛神云网络-ALB产品组实习\n\n2021-07-18 ~ 2021-12-01\n工作：备战秋招\n\n2021-11-16 - now\nlove ing  \n\n\n学习备战实习+工作\n后面有时间会整理一下面经，围绕着Go实习+秋招的40多场技术面试，在这里还是要衷心感谢雷兄，晓辉师弟，雅晶师妹以及室友阿鑫，如果没有你们借校园卡去预约研讨室，可能我的求职之旅不会这样一帆风顺。。。。\n\n\n虽然大多数时间在刷题和备战工作，但每天大多都是一个规律也就是蹂躏算法或者被算法蹂躏…….然后就是八股文之类的，僵硬~\n发现刷题其实对自己语法层面的提升也有一定好处，比如经常会涉及到数据结构的内置操作，可以细心去看一下内部的阻止结构以及源码\n\n参加线下技术分享大会\n2021-04-10\nGopher Meetup 武汉站：博主求职的方向是Go，说来也是缘分，之前水群的时候认识了华科的泫，后来在朋友圈看到他发的一个Gopher Meetup武汉站的邀请，看了一下那两天没啥时间安排，就怂恿着海金和凯琦去了，有幸见到了谢大，曹大，茶歇的时候厚着脸皮加了曹大微信😂(不得不说曹大人太Nice了，后面找实习曹大还帮忙推了一下)\n\n2021-06-26 ~ 2021-06-27\nGopher China 2021大会：从顺义赶到西北旺太远了，单程1个小时40多分钟地铁😂\n\n\ntodo:这里要放图\n实习\n有幸来到阿里云-洛神云网络实习，感谢柱总和商总的关怀和支持，还有mentor淮安师兄以及mentor乃斌师兄的悉心指导，有幸体会到了阿里内部生态的完善，感受到了组里学习与娱乐氛围的浓厚，来之前已经准备好接受脉脉中传说中的pua；遗憾的是hc有限，没有与各位师兄成为同事，不过希望以后有机会一起并肩作战\n\n没想到第一份实习氛围就这么Nice，脉脉中说的pua一丝都没体会到，就是大家任务比较紧而已，但是一想到每次上线之后的成就觉得很酷\n\n看完脉脉上对阿里的吐槽：\n\n来之前: 卷王 + pua\n来之后: 每周一次的技术交流 + 每周一次的饭局 + 每天各位师兄开着各种逗比的玩笑🤣\n\ntodo:放几张实习的图，\n总结：\n\n内部整个生态的完善（研发+产品管理+内部效率工具以及一些机制）+ 大牛云集的师兄们\n大家都在提倡反内卷，每次一提到什么事情都是顺其自然，其实真正的顺其自然不代表你不努力，而是你在努力的前提下去让结果顺其自然。\n\n校招\n感谢汪晓祯的内推，面微软的时候有幸结识了几位伙伴，记得群里的一位小伙伴说去微软就是为祖国尽一份力，去拖慢美帝科技进步的步伐（🤣），最后也感谢华科的一位大佬组织的候选人交流群\n\n面试详情请戳：我的微软面试之旅\n其他\n\ntodo: 放照片\n11月分享自己的求职经历 + 认识","datePublished":"2021-12-27T09:46:34.000Z","dateModified":"2022-01-03T09:29:33.131Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/12/27/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/12/27/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/","wordCount":1670,"articleSection":"杂谈","keywords":"杂谈,总结","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/杂谈/","name":"杂谈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/12/27/2021年终总结/","name":"迟来的2021年终总结"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"迟来的2021年终总结","description":"静下心回顾自己的2021，才发现这一年自己竟然经历了这么多重要的事情，实习，工作，爱情；是的，就是这样一个人生转折点的路上，庆幸的是自己可以有这么多选项，有趣的是这也是自己最后一年以学生身份做的个人总结(明年总结的时候就是一个社畜了，莫名想说无忧无虑的学生时光真好，不仅仅是因为毕业以后一天就没有几个小时真正属于自己，更因为成年人的时间永远都用来生存而不是生活。\n\n\n回想2021，这一年属实经历了很多，不仅拿到了通往下一站的门票，还有幸习得了一些新技能，比如重拾之前的摄影爱好，也感谢全哥带领并悉心指导，经过两次游泳终于在可以在水里站立起来了；还和咯噔还有邓颖从下午场开始连玩两场剧本杀一直到凌晨1点（年轻么就是要疯狂）；也很幸运这一年做了几场分享，给学弟学妹们做了两场分享(秋招分享+iTeach大赛分享)；甚至还作为采访者帮助学弟完成马克思作业的一部分；不过最幸运的是是认识了你，最开心的便是2021.12.12和你表白的那天，想了一个瞒天过海的方案，不过还是没有骗过你，让你生了气，好在终于在进入你实验室的那一瞬间你仿佛知道发生了什么，谢谢你来到我身边！\n\n今年的大事记：\n2021-06-07 ~ 2021-09-18\n实习：阿里云-洛神云网络-ALB产品组实习\n\n2021-07-18 ~ 2021-12-01\n工作：备战秋招\n\n2021-11-16 - now\nlove ing  \n\n\n学习备战实习+工作\n后面有时间会整理一下面经，围绕着Go实习+秋招的40多场技术面试，在这里还是要衷心感谢雷兄，晓辉师弟，雅晶师妹以及室友阿鑫，如果没有你们借校园卡去预约研讨室，可能我的求职之旅不会这样一帆风顺。。。。\n\n\n虽然大多数时间在刷题和备战工作，但每天大多都是一个规律也就是蹂躏算法或者被算法蹂躏…….然后就是八股文之类的，僵硬~\n发现刷题其实对自己语法层面的提升也有一定好处，比如经常会涉及到数据结构的内置操作，可以细心去看一下内部的阻止结构以及源码\n\n参加线下技术分享大会\n2021-04-10\nGopher Meetup 武汉站：博主求职的方向是Go，说来也是缘分，之前水群的时候认识了华科的泫，后来在朋友圈看到他发的一个Gopher Meetup武汉站的邀请，看了一下那两天没啥时间安排，就怂恿着海金和凯琦去了，有幸见到了谢大，曹大，茶歇的时候厚着脸皮加了曹大微信😂(不得不说曹大人太Nice了，后面找实习曹大还帮忙推了一下)\n\n2021-06-26 ~ 2021-06-27\nGopher China 2021大会：从顺义赶到西北旺太远了，单程1个小时40多分钟地铁😂\n\n\ntodo:这里要放图\n实习\n有幸来到阿里云-洛神云网络实习，感谢柱总和商总的关怀和支持，还有mentor淮安师兄以及mentor乃斌师兄的悉心指导，有幸体会到了阿里内部生态的完善，感受到了组里学习与娱乐氛围的浓厚，来之前已经准备好接受脉脉中传说中的pua；遗憾的是hc有限，没有与各位师兄成为同事，不过希望以后有机会一起并肩作战\n\n没想到第一份实习氛围就这么Nice，脉脉中说的pua一丝都没体会到，就是大家任务比较紧而已，但是一想到每次上线之后的成就觉得很酷\n\n看完脉脉上对阿里的吐槽：\n\n来之前: 卷王 + pua\n来之后: 每周一次的技术交流 + 每周一次的饭局 + 每天各位师兄开着各种逗比的玩笑🤣\n\ntodo:放几张实习的图，\n总结：\n\n内部整个生态的完善（研发+产品管理+内部效率工具以及一些机制）+ 大牛云集的师兄们\n大家都在提倡反内卷，每次一提到什么事情都是顺其自然，其实真正的顺其自然不代表你不努力，而是你在努力的前提下去让结果顺其自然。\n\n校招\n感谢汪晓祯的内推，面微软的时候有幸结识了几位伙伴，记得群里的一位小伙伴说去微软就是为祖国尽一份力，去拖慢美帝科技进步的步伐（🤣），最后也感谢华科的一位大佬组织的候选人交流群\n\n面试详情请戳：我的微软面试之旅\n其他\n\ntodo: 放照片\n11月分享自己的求职经历 + 认识","datePublished":"2021-12-27T09:46:34.000Z","dateModified":"2022-01-08T01:46:42.486Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/12/27/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/12/27/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/","wordCount":1670,"articleSection":"杂谈","keywords":"杂谈,总结","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

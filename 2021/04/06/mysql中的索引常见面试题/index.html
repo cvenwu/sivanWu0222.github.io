@@ -20,7 +20,7 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641202245419" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606465650" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-04-06T10:44:13.000Z">
-<meta property="article:modified_time" content="2022-01-03T09:29:33.135Z">
+<meta property="article:modified_time" content="2022-01-08T01:46:42.490Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
@@ -746,152 +746,6 @@ button {
     opacity: 1;
     -webkit-opacity: 1;
     -moz-opacity: 1;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-  :root:not([color-scheme]) {
-    --color-site-body: #000;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
-    --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
-    --color-block: #3a3a3a;
-    --color-codeblock: #343a3c;
-    --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
-    --color-list: #aaa;
-    --color-list-hl: #69dfc4;
-    --color-meta: #888;
-    --color-link: #888;
-  }
-  :root:not([color-scheme]) img {
-    filter: brightness(70%) !important;
-  }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
-  :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) .nav-main .u-search-input {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
-  }
-  :root:not([color-scheme]) .article-title a {
-    color: var(--color-h1) !important;
-  }
-  :root:not([color-scheme]) details>summary {
-    color: var(--color-p) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) details {
-    border: 1px solid var(--color-site-bg) !important;
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal,
-  :root:not([color-scheme]) #u-search .modal-header,
-  :root:not([color-scheme]) #u-search .modal-body {
-    background: var(--color-card) !important;
-  }
-  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
-    background: var(--color-block) !important;
-  }
-}
-[color-scheme='dark'] {
-  --color-site-body: #000;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
-  --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
-  --color-block: #3a3a3a;
-  --color-codeblock: #343a3c;
-  --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
-  --color-list: #aaa;
-  --color-list-hl: #69dfc4;
-  --color-meta: #888;
-  --color-link: #888;
-}
-[color-scheme='dark'] img {
-  filter: brightness(70%) !important;
-}
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
-[color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] .nav-main .u-search-input {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
-}
-[color-scheme='dark'] .article-title a {
-  color: var(--color-h1) !important;
-}
-[color-scheme='dark'] details>summary {
-  color: var(--color-p) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] details {
-  border: 1px solid var(--color-site-bg) !important;
-  background: var(--color-site-bg) !important;
-}
-[color-scheme='dark'] #u-search .modal,
-[color-scheme='dark'] #u-search .modal-header,
-[color-scheme='dark'] #u-search .modal-body {
-  background: var(--color-card) !important;
-}
-[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
-  background: var(--color-block) !important;
-}
-@media screen and (max-width: 500px) {
-  [color-scheme='dark'] .l_header .m_search {
-    background: var(--color-site-bg) !important;
   }
 }
 @font-face {
@@ -1730,21 +1584,10 @@ ul.list-v >li>a:hover {
     padding: 0px;
   }
 }
-@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
-  .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641202245419" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641202245419"></noscript>
-    <script>
-      var userColorScheme=localStorage.getItem("color-scheme")
-      if(userColorScheme){
-        document.documentElement.setAttribute("color-scheme", userColorScheme);
-      }
-    </script>
+  <link rel="stylesheet" href="/css/style.css?time=1641606465650" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606465650"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2742,10 +2585,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-03T09:29:33+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-08T01:46:42+00:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 3, 2022</p>
+    <p>更新于：Jan 8, 2022</p>
   </a>
 </div>
 
@@ -3035,8 +2878,8 @@ B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。"
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Jan 03 2022 09:30:24 GMT+0000 (Coordinated Universal Time)</div>
-            <div id="last-update-show">2022-01-03 日</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:24 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update-show">2022-01-08 日</div>
           
         </div>
         
@@ -3086,7 +2929,7 @@ B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。"
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-01-03 日';
+            document.getElementById('last-update-show').innerHTML = '2022-01-08 日';
           }
         </script>
         
@@ -3581,8 +3424,8 @@ B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。"
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245419')
-      volantis.js('/js/thirdparty/message.js?time=1641202245419', () => {
+      volantis.css('/css/message.css?time=1641606465650')
+      volantis.js('/js/thirdparty/message.js?time=1641606465650', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3627,8 +3470,8 @@ B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。"
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245419')
-      volantis.js('/js/thirdparty/message.js?time=1641202245419', () => {
+      volantis.css('/css/message.css?time=1641606465650')
+      volantis.js('/js/thirdparty/message.js?time=1641606465650', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3687,8 +3530,8 @@ B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。"
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641202245419')
-      volantis.js('/js/thirdparty/message.js?time=1641202245419', () => {
+      volantis.css('/css/message.css?time=1641606465650')
+      volantis.js('/js/thirdparty/message.js?time=1641606465650', () => {
         hideMessage(done);
       });
     } else {
@@ -3727,122 +3570,6 @@ B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。"
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
 
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "color-scheme";
-const rootElementDarkModeAttributeName = "color-scheme";
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-  getCustomDarkMode();
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-/**
- * get target mode
- */
- const getCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  if(currentSetting=="dark"){
-    volantis.dark.mode="light";
-  }else{
-    volantis.dark.mode="dark";
-  }
-  // console.log(volantis.dark.mode)
-};
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-/**
- * 暗黑模式触发器
- */
-volantis.dark.toggle=()=>{
-  const mode = toggleCustomDarkMode();
-  applyCustomDarkModeSettings(mode);
-  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
-  volantis.dark.method.toggle.start();
-}
-/**
- * bind event for toggle button
- */
-
-function bindToggleButton() {
-  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
-  btn.forEach(function (e) {
-    volantis.dom.$(e).on('click',volantis.dark.toggle);
-  })
-}
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", ()=>{
-  volantis.requestAnimationFrame(bindToggleButton)
-});
-volantis.pjax.push(bindToggleButton);
-
-const darkModelListeners={
-  dark:(mediaQueryList )=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "dark";
-    }
-    volantis.dark.method.toggle.start();
-  },
-  light:(mediaQueryList)=>{
-    if(mediaQueryList.matches){
-      volantis.dark.mode = "light";
-    }
-    volantis.dark.method.toggle.start();
-  }
-}
-window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
-window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
-</script>
-
-
 
 
 <script>
@@ -3850,19 +3577,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641202245419")
+        volantis.js("/js/plugins/sites.js?time=1641606465650")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641202245419")
+        volantis.js("/js/plugins/friends.js?time=1641606465650")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641202245419")
+        volantis.js("/js/plugins/contributors.js?time=1641606465650")
       }
     
   };
@@ -4020,7 +3747,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":null,"appKey":null,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz","appKey":"Ltp7stMByJNyVnbPWECrbkgx","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -4040,7 +3767,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641202245419').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606465650').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4051,7 +3778,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-<script src="/js/app.js?time=1641202245419.js"></script>
+<script src="/js/app.js?time=1641606465650.js"></script>
 
 
 <!-- optional -->
@@ -4064,7 +3791,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641202245419");
+    return volantis.js("/js/search/hexo.js?time=1641606465650");
   }
 
   function loadSearchService() {
@@ -4357,7 +4084,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4400,7 +4127,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641202245419').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606465650').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4634,7 +4361,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/mysql/","name":"mysql"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/04/06/mysql中的索引常见面试题/","name":"mysql中的索引"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mysql中的索引","description":"索引参考参考\n了解索引（索引概念）\n索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，它们包含着对数据表里所有记录的引用指针。\n索引是一种数据结构。数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B数及其变种B+数。\n更通俗的说，索引就相当于目录。为了方便查找书中的内容，通过对内容建立索引形成目录。索引是一个文件，它是要占据物理空间的。\n\nmysql索引的数据结构以及分类\n类似问题： 数据库索引结构是什么样的（我回答B+树，然后问对磁盘有什么优势夺命追问，我说降低IO次数，问为什么）类似问题： 数据库使用b+树的好处类似问题： b+树的特性，为啥要用到这类似问题： B+ Tree类似问题： 谈谈索引的数据结构？说了 B+树类似问题： B+树和 B-树的区别以及优点？类似问题： 为什么不用搜索树？类似问题： B+树的特点类似问题： mysql 索引 2次类似问题：mysql索引结构。\n\n从数据结构的角度看，常用的索引可以分为full-text索引，hash索引,b+树索引：\n在创建表时，InnoDB 存储引擎默认使用表的主键作为主键索引，该主键索引就是聚簇索引（Clustered Index），如果表没有定义主键，InnoDB 就自己产生一个隐藏的 6 个字节的主键 ID 值作为主键索引，而创建的主键索引默认使用的是 B+Tree 索引。\nB+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。","datePublished":"2021-04-06T10:44:13.000Z","dateModified":"2022-01-03T09:29:33.135Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/","wordCount":651,"articleSection":"mysql","keywords":"mysql","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/mysql/","name":"mysql"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/04/06/mysql中的索引常见面试题/","name":"mysql中的索引"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mysql中的索引","description":"索引参考参考\n了解索引（索引概念）\n索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，它们包含着对数据表里所有记录的引用指针。\n索引是一种数据结构。数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B数及其变种B+数。\n更通俗的说，索引就相当于目录。为了方便查找书中的内容，通过对内容建立索引形成目录。索引是一个文件，它是要占据物理空间的。\n\nmysql索引的数据结构以及分类\n类似问题： 数据库索引结构是什么样的（我回答B+树，然后问对磁盘有什么优势夺命追问，我说降低IO次数，问为什么）类似问题： 数据库使用b+树的好处类似问题： b+树的特性，为啥要用到这类似问题： B+ Tree类似问题： 谈谈索引的数据结构？说了 B+树类似问题： B+树和 B-树的区别以及优点？类似问题： 为什么不用搜索树？类似问题： B+树的特点类似问题： mysql 索引 2次类似问题：mysql索引结构。\n\n从数据结构的角度看，常用的索引可以分为full-text索引，hash索引,b+树索引：\n在创建表时，InnoDB 存储引擎默认使用表的主键作为主键索引，该主键索引就是聚簇索引（Clustered Index），如果表没有定义主键，InnoDB 就自己产生一个隐藏的 6 个字节的主键 ID 值作为主键索引，而创建的主键索引默认使用的是 B+Tree 索引。\nB+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。","datePublished":"2021-04-06T10:44:13.000Z","dateModified":"2022-01-08T01:46:42.490Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/","wordCount":651,"articleSection":"mysql","keywords":"mysql","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
