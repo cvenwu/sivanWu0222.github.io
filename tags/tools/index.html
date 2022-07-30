@@ -20,16 +20,16 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641606466424" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606466319" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>Tag: tools - 逸如风的个人博客</title>
+  <title>Tag: Tools - 逸如风的个人博客</title>
   <meta name="keywords" content="null">
   <meta property="og:type" content="website">
 <meta property="og:title" content="逸如风的个人博客">
-<meta property="og:url" content="http://www.sivan.tech/tags/tools/index.html">
+<meta property="og:url" content="http://www.sivan.tech/tags/Tools/index.html">
 <meta property="og:site_name" content="逸如风的个人博客">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1581,8 +1581,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641606466424" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466424"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1641606466319" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466319"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2381,6 +2381,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+          
+        
       
     
     
@@ -2388,7 +2392,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/04/04/parallel%E5%AE%89%E8%A3%85%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%99%BB%E5%BD%95root/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2402,22 +2406,33 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/04/04/parallel%E5%AE%89%E8%A3%85%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%99%BB%E5%BD%95root/"  itemprop="url">
-        parallel安装的虚拟机登录root
+      <a href="/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/"  itemprop="url">
+        centos7安装docker
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <div class="note info"><p>打开terminal</p></div>
+      <div class="note warning"><p>系统要求：docker支持64位Centos7，并且要求内核版本(查看Linux系统内核版本：<code>uname -r</code>)不低于3.10</p></div>
 
-<ol>
-<li>执行<code>sudo passwd</code></li>
-<li>出现<code>Password:</code>，键入自己当前用户的密码</li>
-<li>出现<code>Enter new UNIX password：</code>这个是root的密码</li>
-<li>出现<code>Retype new UNIX password：</code>重复root的密码</li>
-</ol>
-<p><strong>之后就可以使用su命令以及刚才设置的root用户密码切换到root用户</strong></p>
+<h2 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h2><h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><details green><summary> 卸载旧版本 </summary>
+              <div class='content'>
+              <div class="note info"><p>旧版本的docker称为docker或docker-engine，使用如下命令卸载旧版本</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+<details green><summary> 安装方式一：使用yum安装 </summary>
+              <div class='content'>
+              <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure><div class="note info"><p>如果执行之后返回的是没有可用软件包，此时我们需要安装必要的软件依赖以及更新增加docker-ce yum源</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>执行完这两条命令之后我们便可以重新执行`sudo yum install docker-ce`进行安装
+              </div>
+            </details>
+
+<details green><summary> 安装方式二：使用脚本安装 </summary>
+              <div class='content'>
+              <div class="note info"><p>在测试或开发环境中docker官方为了简化安装流程，提供了一套便捷的安装脚本，centos系统上可以使用这套脚本进行安装</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>执行完这个命令之后，系统会自动将一切工作准备好，并把docker ce的Edge版本安装在系统中
+              </div>
+            </details>
     
   </div>
   
@@ -2432,20 +2447,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-04-04T15:13:49+00:00">2021-04-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2021-03-30T10:14:34+00:00">2021-03-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
+          <a class="category-link" href="/categories/docker/">docker</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
+              <a href="/categories/docker/" itemprop="url"><span itemprop="name">docker</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2021/04/04/parallel%E5%AE%89%E8%A3%85%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%99%BB%E5%BD%95root/' itemprop="url">
+          <a class='readmore' href='/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2461,7 +2476,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/12/22/iTerm-Mac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BB%88%E7%AB%AF/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/26/%E5%9F%BA%E4%BA%8ECentos7-%E6%90%AD%E5%BB%BA-gitlab/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2475,14 +2490,38 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/12/22/iTerm-Mac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BB%88%E7%AB%AF/"  itemprop="url">
-        iTerm-Mac自定义自己的终端
+      <a href="/2021/03/26/%E5%9F%BA%E4%BA%8ECentos7-%E6%90%AD%E5%BB%BA-gitlab/"  itemprop="url">
+        基于Centos7 搭建 gitlab
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <p>看一下效果：<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/3cO1JG.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/3cO1JG.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3cO1JG"></p>
+      <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>centos7腾讯云服务器一台</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><details green><summary> 前提 </summary>
+              <div class='content'>
+              <ol><li>更新软件包：<code>yum update -y</code></li><li>安装 sshd：<code>yum install -y curl policycoreutils-python openssh-server</code></li><li>启用并启动sshd：<code>systemctl enable sshd</code> 和 <code>systemctl start sshd</code></li><li>配置防火墙：<ol><li>打开 <code>/etc/sysctl.conf</code> 文件，在文件最后添加新的一行并按 Ctrl + S 保存：<code>net.ipv4.ip_forward = 1</code></li><li>启用并启动防火墙：<code>systemctl enable firewalld</code> 和 <code>systemctl start firewalld</code></li><li>放通 HTTP：<code>firewall-cmd --permanent --add-service=http</code></li><li>重启防火墙：<code>systemctl reload firewalld</code></li><li>在实际使用中，可以使用 <code>systemctl status firewalld</code> 命令查看防火墙的状态。</li></ol></li><li>安装postfix<ol><li>GitLab 需要使用 postfix 来发送邮件。当然，也可以使用 SMTP 服务器，具体步骤请参考 <a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/settings/smtp.html">官方教程</a>。</li><li>安装：<code>yum install -y postfix</code></li><li>打开 <code>/etc/postfix/main.cf</code> 文件，在第 119 行附近找到 <code>inet_protocols = all</code>，将 <code>all</code> 改为 <code>ipv4</code> 并按 <code>Ctrl + S</code> 保存：<code>inet_protocols = ipv4</code></li><li>启用并启动 postfix：<code>systemctl enable postfix</code> + <code>systemctl start postfix</code></li></ol></li></ol>
+              </div>
+            </details>
+
+<details green><summary> 配置 swap 交换分区 </summary>
+              <div class='content'>
+              <blockquote><p>由于 GitLab 较为消耗资源，我们需要先创建交换分区，以降低物理内存的压力。在实际生产环境中，如果服务器配置够高，则不必配置交换分区。</p></blockquote><ol><li>新建 2 GB 大小的交换分区：<code>dd if=/dev/zero of=/root/swapfile bs=1M count=2048</code></li><li>格式化为交换分区文件并启用：<code>mkswap /root/swapfile</code> 和 <code>swapon /root/swapfile</code></li><li>添加自启用。打开 <code>/etc/fstab</code> 文件，在文件最后添加新的一行并按 <code>Ctrl + S</code> 保存：<code>/root/swapfile swap swap defaults 0 0</code></li><li>将软件源修改为国内源：由于网络环境的原因，将 repo 源修改为清华大学。在 <code>/etc/yum.repos.d</code> 目录下新建 <code>gitlab-ce.repo</code>文件并保存。内容如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[gitlab-ce]</span><br><span class="line">name&#x3D;Gitlab CE Repository</span><br><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;gitlab-ce&#x2F;yum&#x2F;el$releasever&#x2F;</span><br><span class="line">gpgcheck&#x3D;0</span><br><span class="line">enabled&#x3D;1</span><br></pre></td></tr></table></figure></li></ol>
+              </div>
+            </details>
+
+<details green><summary> 安装gitlab </summary>
+              <div class='content'>
+              <ol><li>刚才修改过了 yum 源，因此先重新生成缓存：<code>yum makecache</code> <div class="note info"><p>（此步骤执行时间较长，一般需要 3~5 分钟左右，请耐心等待）</p></div></li><li>安装 GitLab：：<code>yum install -y gitlab-ce</code> <div class="note info"><p>（此步骤执行时间较长，一般需要 3~5 分钟左右，请耐心等待）</p></div></li><li>配置 GitLab 的域名（非必需）：打开 <code>/etc/gitlab/gitlab.rb</code> 文件，在第 13 行附近找到 <code>external_url &#39;http://gitlab.example.com&#39;</code>，将单引号中的内容改为自己的域名（带上协议头，末尾无斜杠），并按 Ctrl + S 保存。例如：<code>external_url &#39;http://work.myteam.com&#39;</code> 记得将域名通过 A 记录解析到 centos7对应的IP 哦。</li><li>设置完成后使用如下命令重启 GitLab的配置：<code>sudo gitlab-ctl reconfigure</code> + 重启gitlab服务<code>sudo gitlab-ctl restart</code><div class="note info"><p>（此步骤执行时间较长，一般需要 5~10 分钟左右，请耐心等待）</p></div></li><li>至此，我们已经成功地在 CentOS 7 上搭建了 GitLab。 现在可以在这里（<a target="_blank" rel="noopener" href="http://centoss7主机ip地址/%EF%BC%89%E8%AE%BF%E9%97%AE">http://centoss7主机ip地址/）访问</a> GitLab 了。</li></ol>
+              </div>
+            </details>
+
+
+<details green><summary> 注意事项 </summary>
+              <div class='content'>
+              <ol><li>在实际生产中，建议您使用 2 核 4 GB 或更高配置的 CVM。<a target="_blank" rel="noopener" href="https://docs.gitlab.com/ce/install/requirements.html#cpu">点击这里</a> 可以查看 GitLab 官方推荐的配置和可承载人数对应表。</li><li>再次提醒您，定期执行 <code>yum update -y</code> 以保持各软件包的最新状态。</li></ol>
+              </div>
+            </details>
     
   </div>
   
@@ -2497,20 +2536,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-12-22T19:16:48+00:00">2020-12-22</time>
+        <time itemprop="dateCreated datePublished" datetime="2021-03-26T10:37:13+00:00">2021-03-26</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
+          <a class="category-link" href="/categories/CI-CD/">CI/CD</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
+              <a href="/categories/CI-CD/" itemprop="url"><span itemprop="name">CI/CD</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/12/22/iTerm-Mac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BB%88%E7%AB%AF/' itemprop="url">
+          <a class='readmore' href='/2021/03/26/%E5%9F%BA%E4%BA%8ECentos7-%E6%90%AD%E5%BB%BA-gitlab/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2526,7 +2565,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/09/11/mac%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B9%B6%E8%BF%9E%E6%8E%A5/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/06/10/%E8%80%81%E7%94%B7%E5%AD%A9git%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2540,31 +2579,113 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/09/11/mac%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B9%B6%E8%BF%9E%E6%8E%A5/"  itemprop="url">
-        Mac安装Ubuntu并且通过secureCrt连接
+      <a href="/2020/06/10/%E8%80%81%E7%94%B7%E5%AD%A9git%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"  itemprop="url">
+        老男孩git实战视频笔记
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <blockquote>
-<p>最近准备复习操作系统的知识并通过linux实践，索性就安装了一个ubuntu虚拟机吧<br>以下将parallels Desktop简称为PD</p>
+      
+        本笔记来自视频观看后的总结
+老师自己总结全文参考
+git使用参考网站
+廖雪峰git教程
+本课参考自己下载的对应视频教材的 git实战课堂笔记
+01 git 是什么git 是什么
+分布式
+版本控制
+软件
+
+版本管理发展的历史：
+
+多文件管理，只是不同的文件命名，电脑上有多个文件
+本地版本管理系统：电脑上只显示一个文件，会将其他版本下的文件隐藏起来，
+集中式版本控制： 类似于百度网盘，将所有的版...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
+            <meta itemprop="name" content="yirufeng">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-06-10T10:43:59+00:00">2020-06-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="sep"></span><a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/git/">git</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url"><span itemprop="name">工具</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%B7%A5%E5%85%B7/git/" itemprop="url"><span itemprop="name">git</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/06/10/%E8%80%81%E7%94%B7%E5%AD%A9git%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/06/04/vscode-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAPython%E4%BB%A5%E5%8F%8ADjango-Flask%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/06/04/vscode-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAPython%E4%BB%A5%E5%8F%8ADjango-Flask%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"  itemprop="url">
+        vscode 快速搭建Python以及Django,Flask开发环境
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <h1 id="快速搭建python-开发环境"><a href="#快速搭建python-开发环境" class="headerlink" title="快速搭建python 开发环境"></a>快速搭建python 开发环境</h1><p>安装扩展(汉化扩展-&gt;python)</p>
+<blockquote>
+<p><code>Command + shift + p</code>进行快速设置</p>
 </blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>离线下载好的ubuntu对应版本的iso镜像</li>
-<li>secureCrt工具</li>
-<li>PD软件</li>
-</ol>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>通过PD安装下载好的ubuntu对应版本的iso镜像</li>
-<li>安装之后ubuntu虚拟机已经帮助我们启动了，但是我们通过<code>ifconfig</code>查看ip之后，通过secureCrt连不上对应的ip。<ol>
-<li>解决方案：在Ubuntu终端中输入<code>sshd</code>，验证是否已安装该包。若未安装则通过<code>sudo apt-get install openssh-server</code></li>
-</ol>
-</li>
-<li>之后便可以发现通过ip地址和密码在secureCrt上进行登录</li>
-</ol>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/lee_x_lee/article/details/82984707">参考文章</a></li>
+<blockquote>
+<p><code>Alt + shift + f</code> 自动按照pep8规范进行格式化代码，如果没有安装，将会提示进行安装</p>
+</blockquote>
+<blockquote>
+<p><code>control + shift + ~</code> 快速新建一个终端</p>
+</blockquote>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><p><img src="https://gitee.com/yirufeng/images/raw/master/img/image-20200604092852093.png" class="lazyload" data-srcset="https://gitee.com/yirufeng/images/raw/master/img/image-20200604092852093.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20200604092852093"></p>
+<h2 id="配置python解释器路径的三种方式："><a href="#配置python解释器路径的三种方式：" class="headerlink" title="配置python解释器路径的三种方式："></a>配置python解释器路径的三种方式：</h2><ol>
+<li>使用command + shift + p <img src="https://gitee.com/yirufeng/images/raw/master/img/image-20200604093023126.png" class="lazyload" data-srcset="https://gitee.com/yirufeng/images/raw/master/img/image-20200604093023126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20200604093023126"></li>
+<li>vscode 左下角选择运行环境<img src="https://gitee.com/yirufeng/images/raw/master/img/image-20200604093059999.png" class="lazyload" data-srcset="https://gitee.com/yirufeng/images/raw/master/img/image-20200604093059999.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20200604093059999"></li>
+<li>直接在项目文件夹下的.vscode中的settings.json文件中进行配置<img src="https://gitee.com/yirufeng/images/raw/master/img/image-20200604092936231.png" class="lazyload" data-srcset="https://gitee.com/yirufeng/images/raw/master/img/image-20200604092936231.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20200604092936231"></li>
 </ol>
     
   </div>
@@ -2580,20 +2701,89 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-09-11T09:08:18+00:00">2020-09-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-06-04T09:22:19+00:00">2020-06-04</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7%E7%AF%87/">工具篇</a>
+          <a class="category-link" href="/categories/Tools/">Tools</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%B7%A5%E5%85%B7%E7%AF%87/" itemprop="url"><span itemprop="name">工具篇</span></a>
+              <a href="/categories/Tools/" itemprop="url"><span itemprop="name">Tools</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/09/11/mac%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B9%B6%E8%BF%9E%E6%8E%A5/' itemprop="url">
+          <a class='readmore' href='/2020/06/04/vscode-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAPython%E4%BB%A5%E5%8F%8ADjango-Flask%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/05/28/Mac%E4%B8%8BPycharm%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/05/28/Mac%E4%B8%8BPycharm%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/"  itemprop="url">
+        Mac下Pycharm的快捷键大全
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        参考
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
+            <meta itemprop="name" content="yirufeng">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-05-28T10:51:04+00:00">2020-05-28</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Tools/">Tools</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Tools/" itemprop="url"><span itemprop="name">Tools</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/05/28/Mac%E4%B8%8BPycharm%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2746,7 +2936,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:41 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:39 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-01-08 日</div>
           
         </div>
@@ -3339,8 +3529,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466424')
-      volantis.js('/js/thirdparty/message.js?time=1641606466424', () => {
+      volantis.css('/css/message.css?time=1641606466319')
+      volantis.js('/js/thirdparty/message.js?time=1641606466319', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3385,8 +3575,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466424')
-      volantis.js('/js/thirdparty/message.js?time=1641606466424', () => {
+      volantis.css('/css/message.css?time=1641606466319')
+      volantis.js('/js/thirdparty/message.js?time=1641606466319', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3445,8 +3635,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466424')
-      volantis.js('/js/thirdparty/message.js?time=1641606466424', () => {
+      volantis.css('/css/message.css?time=1641606466319')
+      volantis.js('/js/thirdparty/message.js?time=1641606466319', () => {
         hideMessage(done);
       });
     } else {
@@ -3492,19 +3682,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641606466424")
+        volantis.js("/js/plugins/sites.js?time=1641606466319")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641606466424")
+        volantis.js("/js/plugins/friends.js?time=1641606466319")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641606466424")
+        volantis.js("/js/plugins/contributors.js?time=1641606466319")
       }
     
   };
@@ -3682,7 +3872,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641606466424').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606466319').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3693,7 +3883,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1641606466424.js"></script>
+<script src="/js/app.js?time=1641606466319.js"></script>
 
 
 <!-- optional -->
@@ -3706,7 +3896,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641606466424");
+    return volantis.js("/js/search/hexo.js?time=1641606466319");
   }
 
   function loadSearchService() {
@@ -3999,7 +4189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4042,7 +4232,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641606466424').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606466319').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4276,7 +4466,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/tools/","name":"tools"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/Tools/","name":"Tools"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
 
 
 <!-- more -->

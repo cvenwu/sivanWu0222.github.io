@@ -20,16 +20,16 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641606466176" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606466095" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>Category: golang - 逸如风的个人博客</title>
+  <title>Category: Golang - 逸如风的个人博客</title>
   <meta name="keywords" content="null">
   <meta property="og:type" content="website">
 <meta property="og:title" content="逸如风的个人博客">
-<meta property="og:url" content="http://www.sivan.tech/categories/golang/index.html">
+<meta property="og:url" content="http://www.sivan.tech/categories/Golang/index.html">
 <meta property="og:site_name" content="逸如风的个人博客">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1581,8 +1581,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641606466176" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466176"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1641606466095" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466095"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2377,6 +2377,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+          
+        
+          
+        
       
     
     
@@ -2384,7 +2390,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/12/21/%E4%BD%BF%E7%94%A8gin%E8%A7%A3%E5%86%B3CORS%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/11/04/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2398,26 +2404,186 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/12/21/%E4%BD%BF%E7%94%A8gin%E8%A7%A3%E5%86%B3CORS%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"  itemprop="url">
-        使用gin解决CORS跨域问题
+      <a href="/2021/11/04/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/"  itemprop="url">
+        Go语言中的执行顺序
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <h2 id="什么是跨域问题"><a href="#什么是跨域问题" class="headerlink" title="什么是跨域问题"></a>什么是跨域问题</h2><p>相同的源：如果两个页面的协议端口还有主机都相同，那这两个页面具有相同的源。</p>
-<div class="note "><p><strong>跨域问题</strong></p><p>在请求发送之前，浏览器会先发送一个option请求给gin项目，之后gin项目需要告知浏览器授权访问的协议，端口或者方法，浏览器接收到后台传给前台的访问的这些控制信息，再进一步是否决定正式请求。 option请求也叫域请求</p></div>
+      <blockquote>
+<p>最近梳理项目结构的时候，对于Go中项目执行流程有点模糊，因此有了本文的诞生方便巩固复习</p>
+</blockquote>
+<div class="note info"><p>我们知道整个Go项目只能有一个全局的main()函数，但是Go项目可以有多个不同的package，每一个package下都可以有很多go文件，每一个go文件可以导入其他package，并且每一个go文件可以包含自己的常量定义，全局变量，init()以及其他函数。总结下来，一个Go程序中通常由导入的包，常量，变量，init()，其他函数，main()构成，那么具体的执行流程是怎样的呢？</p></div>
 
-<h2 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题"></a>如何解决跨域问题</h2><p>对于跨域问题的几种解决方法：</p>
+<div class="note danger"><p>注意不可以因为导入包造成循环依赖</p></div>
+
+<p>正常的执行流程：</p>
 <ol>
-<li>包括前端的jsond 和 反向代理</li>
-<li>后端的api拦截option请求返回浏览器一个控制信息</li>
+<li>首先进入main函数所在的go文件，假设为<code>main.go</code><ol>
+<li>执行 <code>main.go</code> 中的 <code>import</code> 语句，然后进入到其他的pkg中，<ol>
+<li>重复我们进入<code>main.go</code>中的类似流程：首先执行import导包，然后定义常量和全局变量并执行init</li>
 </ol>
-<div class="note info"><p>如下代码是使用gin自己封装了一个CORS中间件进行跨域</p></div>
+</li>
+<li>执行<code>const</code>定义的常量</li>
+<li>执行<code>var</code>定义的变量</li>
+<li>执行<code>init()</code>对应的初始化函数</li>
+<li>执行<code>main()</code>启动程序</li>
+</ol>
+</li>
+</ol>
+<p>注意点：</p>
+<ol>
+<li>同一个包下面的多个go文件，如果每一个go文件中都有一个init函数，那么执行顺序就是go文件的导入顺序，并且同包下的不同 go 文件，按照文件名“从小到大”排序顺序执行</li>
+<li>其他的包只有被 main 包 import 才会执行，按照 import 的先后顺序执行，也就是按照 main 包中 import 的顺序调用其包中的 init() 函数</li>
+<li>一个包被其它多个包 import，但只能被初始化一次</li>
+<li>对同一个 go 文件的 init( ) 调用顺序是从上到下的</li>
+<li>在同一个 package 中，可以多个文件中定义 init 方法</li>
+<li>在同一个 go 文件中，可以重复定义 init 方法</li>
+<li>在同一个 package 中，不同文件中的 init 方法的执行按照文件名先后执行各个文件中的 init 方法</li>
+<li>所有 init 函数都在同⼀个 goroutine 内执⾏。 所有 init 函数结束后才会执⾏ main.main 函数。</li>
+</ol>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lxx-coder/p/13081517.html">Go语言的执行顺序（转）</a>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
+            <meta itemprop="name" content="yirufeng">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2021-11-04T08:51:13+00:00">2021-11-04</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/11/04/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
 
-<details green><summary> 使用gin解决跨域问题 </summary>
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/07/24/Go%E8%AF%AD%E8%A8%80%E4%B9%8Bgo-build%E5%91%BD%E4%BB%A4/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2021/07/24/Go%E8%AF%AD%E8%A8%80%E4%B9%8Bgo-build%E5%91%BD%E4%BB%A4/"  itemprop="url">
+        Go语言之go build命令
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/LVS84L.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/LVS84L.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="LVS84L"></p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
+            <meta itemprop="name" content="yirufeng">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2021-07-24T09:29:40+00:00">2021-07-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/07/24/Go%E8%AF%AD%E8%A8%80%E4%B9%8Bgo-build%E5%91%BD%E4%BB%A4/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/24/gorm%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2021/03/24/gorm%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/"  itemprop="url">
+        gorm学习使用
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <h1 id="gorm的使用"><a href="#gorm的使用" class="headerlink" title="gorm的使用"></a>gorm的使用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>使用指令进行安装：<code>go get github.com/jinzhu/gorm</code></li>
+</ol>
+<h2 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h2><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ol>
+<li>新建一个数据库gorm_project</li>
+<li>指定使用Utf8编码</li>
+</ol>
+<h3 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h3><details green><summary> 对应的代码 </summary>
               <div class='content'>
-              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CORSMiddleware</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(ctx *gin.Context)</span></span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;--------------------------允许跨域中间件--------------------------&quot;</span>)</span><br><span class="line">		<span class="comment">//通过中间件给header写入允许访问的域名或方法</span></span><br><span class="line">		<span class="comment">//这里最后一个参数传入的是允许前台的域名访问，因此最后一个参数应该是前台的域名加端口</span></span><br><span class="line">		<span class="comment">//ctx.Writer.Header().Set(&quot;Access-Control-Allow-Origin&quot;, &quot;http://localhost:63343/&quot;)</span></span><br><span class="line">		ctx.Writer.Header().Set(<span class="string">&quot;Access-Control-Allow-Origin&quot;</span>, <span class="string">&quot;*&quot;</span>)</span><br><span class="line">		<span class="comment">//设置缓存时间</span></span><br><span class="line">		ctx.Writer.Header().Set(<span class="string">&quot;Access-Control-Max-Age&quot;</span>, <span class="string">&quot;86400&quot;</span>)</span><br><span class="line">		<span class="comment">//指定方法，可以传入POST以及GET，但是也可以用*代替所有的方法</span></span><br><span class="line">		ctx.Writer.Header().Set(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;*&quot;</span>)</span><br><span class="line">		ctx.Writer.Header().Set(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>, <span class="string">&quot;*&quot;</span>)</span><br><span class="line">		ctx.Writer.Header().Set(<span class="string">&quot;Access-Control-Allow-Credentials&quot;</span>, <span class="string">&quot;true&quot;</span>)</span><br><span class="line"></span><br><span class="line">		<span class="comment">//如果option请求直接返回200</span></span><br><span class="line">		<span class="keyword">if</span> ctx.Request.Method == http.MethodOptions &#123;</span><br><span class="line">			ctx.AbortWithStatus(http.StatusOK)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			ctx.Next()</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;github.com/jinzhu/gorm&quot;</span></span><br><span class="line">   <span class="comment">//_ &quot;github.com/go-sql-driver/mysql&quot; //导入驱动方式一</span></span><br><span class="line">   _ <span class="string">&quot;github.com/jinzhu/gorm/dialects/mysql&quot;</span> <span class="comment">//导入驱动方式二，前面加上_表示不去校验用没用</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @Author: yirufeng</span></span><br><span class="line"><span class="comment"> * @Date: 2021/3/22 10:00 下午</span></span><br><span class="line"><span class="comment"> * @Desc:</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">   MYSQL_USERNAME = <span class="string">&quot;root&quot;</span></span><br><span class="line">   MYSQL_PASSWORD = <span class="string">&quot;qwertyasdfgh&quot;</span></span><br><span class="line">   MYSQL_IP       = <span class="string">&quot;81.69.26.201&quot;</span></span><br><span class="line">   MYSQL_PORT     = <span class="string">&quot;3306&quot;</span></span><br><span class="line">   MYSQL_DATABASE = <span class="string">&quot;gorm_project&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//parseTime用来处理time.Time类型的数据</span></span><br><span class="line">   <span class="comment">//loc=Local表示根据本地时区走</span></span><br><span class="line">   <span class="comment">//连接信息：用户名:密码@tcp(ip:port)/数据库名称?charset=utf8&amp;parseTime=True&amp;loc=Local</span></span><br><span class="line">   connInfo := fmt.Sprintf(<span class="string">&quot;%s:%s@tcp(%s:%s)/%s?charset=utf8&amp;parseTime=True&amp;loc=Local&quot;</span>,</span><br><span class="line">      MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_IP, MYSQL_PORT, MYSQL_DATABASE)</span><br><span class="line"></span><br><span class="line">   <span class="comment">//使用open来连接数据库</span></span><br><span class="line">   <span class="comment">//第一个参数是dialect也就是指定数据库的类型</span></span><br><span class="line">   <span class="comment">//第二个参数是连接信息</span></span><br><span class="line">   db, err := gorm.Open(<span class="string">&quot;mysql&quot;</span>, connInfo)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">panic</span>(err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> db.Close() <span class="comment">//关闭空闲的连接</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
             </details>
     
@@ -2434,20 +2600,105 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-12-21T19:42:46+00:00">2020-12-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2021-03-24T21:55:58+00:00">2021-03-24</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/golang/">golang</a>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/golang/" itemprop="url"><span itemprop="name">golang</span></a>
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/12/21/%E4%BD%BF%E7%94%A8gin%E8%A7%A3%E5%86%B3CORS%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/' itemprop="url">
+          <a class='readmore' href='/2021/03/24/gorm%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/09/24/golang%E8%BF%9E%E6%8E%A5mysql%E6%97%B6%E9%97%B4/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/09/24/golang%E8%BF%9E%E6%8E%A5mysql%E6%97%B6%E9%97%B4/"  itemprop="url">
+        Golang连接mysql插入时间早8个小时
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用Golang操作Mysql，插入一条记录后发现新插入的时间比当前时间早了8个小时。</p>
+<ol>
+<li><div class="note warning"><p>使用go-sql-driver来连接mysql数据库，获取的时区默认是UTC +0的，与本地的东八区是有区别，在业务处理中会出现问题</p></div></li>
+<li><div class="note warning"><p>获取mysql中的日期，是string类型，需要在代码中用time.Parse进行转化</p></div>
+
+</li>
+</ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="note success"><p>在连接的dataSourceName中加上<code>parseTime=True</code>和<code>loc=local</code>。此处的<code>local</code>可以更换为具体的时区<code>(Asia/Shanghai)</code></p></div>
+
+<details red><summary> 修改之前的dataSourceName </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataBaseSource := fmt.Sprintf(<span class="string">&quot;%s:%s@tcp(%s:%s)/%s?charset=%s&quot;</span>, </span><br><span class="line">    MysqlUser, MysqlPassword, MysqlHost, MysqlPort, MysqlDatabase, MysqlCharset)</span><br><span class="line">conn, _ := sql.Open(<span class="string">&quot;mysql&quot;</span>, dataBaseSource)</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+<details green><summary> 修改后的dataSourceName </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataBaseSource := fmt.Sprintf(<span class="string">&quot;%s:%s@tcp(%s:%s)/%s?charset=%s&amp;loc=Local&amp;parseTime=true&quot;</span>, </span><br><span class="line">    MysqlUser, MysqlPassword, MysqlHost, MysqlPort, MysqlDatabase, MysqlCharset)</span><br><span class="line">conn, _ := sql.Open(<span class="string">&quot;mysql&quot;</span>, dataBaseSource)</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
+            <meta itemprop="name" content="yirufeng">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-09-24T09:48:42+00:00">2020-09-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/09/24/golang%E8%BF%9E%E6%8E%A5mysql%E6%97%B6%E9%97%B4/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2600,7 +2851,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:35 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:33 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-01-08 日</div>
           
         </div>
@@ -3193,8 +3444,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466176')
-      volantis.js('/js/thirdparty/message.js?time=1641606466176', () => {
+      volantis.css('/css/message.css?time=1641606466095')
+      volantis.js('/js/thirdparty/message.js?time=1641606466095', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3239,8 +3490,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466176')
-      volantis.js('/js/thirdparty/message.js?time=1641606466176', () => {
+      volantis.css('/css/message.css?time=1641606466095')
+      volantis.js('/js/thirdparty/message.js?time=1641606466095', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3299,8 +3550,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466176')
-      volantis.js('/js/thirdparty/message.js?time=1641606466176', () => {
+      volantis.css('/css/message.css?time=1641606466095')
+      volantis.js('/js/thirdparty/message.js?time=1641606466095', () => {
         hideMessage(done);
       });
     } else {
@@ -3346,19 +3597,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641606466176")
+        volantis.js("/js/plugins/sites.js?time=1641606466095")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641606466176")
+        volantis.js("/js/plugins/friends.js?time=1641606466095")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641606466176")
+        volantis.js("/js/plugins/contributors.js?time=1641606466095")
       }
     
   };
@@ -3536,7 +3787,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641606466176').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606466095').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3547,7 +3798,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1641606466176.js"></script>
+<script src="/js/app.js?time=1641606466095.js"></script>
 
 
 <!-- optional -->
@@ -3560,7 +3811,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641606466176");
+    return volantis.js("/js/search/hexo.js?time=1641606466095");
   }
 
   function loadSearchService() {
@@ -3853,7 +4104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3896,7 +4147,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641606466176').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606466095').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4130,7 +4381,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/golang/","name":"golang"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/categories/Golang/","name":"Golang"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
 
 
 <!-- more -->

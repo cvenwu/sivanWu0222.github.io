@@ -20,16 +20,16 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641606466352" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606466392" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>Tag: mysql - 逸如风的个人博客</title>
+  <title>Tag: Mysql - 逸如风的个人博客</title>
   <meta name="keywords" content="null">
   <meta property="og:type" content="website">
 <meta property="og:title" content="逸如风的个人博客">
-<meta property="og:url" content="http://www.sivan.tech/tags/mysql/index.html">
+<meta property="og:url" content="http://www.sivan.tech/tags/Mysql/index.html">
 <meta property="og:site_name" content="逸如风的个人博客">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1581,8 +1581,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641606466352" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466352"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1641606466392" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466392"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2377,8 +2377,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
-          
-        
       
     
     
@@ -2386,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/09/24/golang%E8%BF%9E%E6%8E%A5mysql%E6%97%B6%E9%97%B4/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2400,96 +2398,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/"  itemprop="url">
-        mysql中的索引
+      <a href="/2020/09/24/golang%E8%BF%9E%E6%8E%A5mysql%E6%97%B6%E9%97%B4/"  itemprop="url">
+        Golang连接mysql插入时间早8个小时
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6942777635579625503">参考</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNTQyOTIxNA==&mid=2247484041&idx=1&sn=76d3bf1772f9e3c796ad3d8a089220fa&chksm=f9b784b8cec00dae3d52318f6cb2bdee39ad975bf79469b72a499ceca1c5d57db5cbbef914ea&token=2025456560&lang=zh_CN#rd">参考</a></p>
-<h3 id="了解索引（索引概念）"><a href="#了解索引（索引概念）" class="headerlink" title="了解索引（索引概念）"></a>了解索引（索引概念）</h3><ol>
-<li>索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，它们包含着对数据表里所有记录的引用指针。</li>
-<li>索引是一种数据结构。数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B数及其变种B+数。</li>
-<li>更通俗的说，索引就相当于目录。为了方便查找书中的内容，通过对内容建立索引形成目录。索引是一个文件，它是要占据物理空间的。</li>
-</ol>
-<h3 id="mysql索引的数据结构以及分类"><a href="#mysql索引的数据结构以及分类" class="headerlink" title="mysql索引的数据结构以及分类"></a>mysql索引的数据结构以及分类</h3><blockquote>
-<p>类似问题： 数据库索引结构是什么样的（我回答B+树，然后问对磁盘有什么优势夺命追问，我说降低IO次数，问为什么）<br>类似问题： 数据库使用b+树的好处<br>类似问题： b+树的特性，为啥要用到这<br>类似问题： B+ Tree<br>类似问题： 谈谈索引的数据结构？说了 B+树<br>类似问题： B+树和 B-树的区别以及优点？<br>类似问题： 为什么不用搜索树？<br>类似问题： B+树的特点<br>类似问题： mysql 索引 2次<br>类似问题：mysql索引结构。</p>
-</blockquote>
-<p>从数据结构的角度看，常用的索引可以分为full-text索引，hash索引,b+树索引：<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/MjiiVj.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/MjiiVj.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MjiiVj"></p>
-<p>在创建表时，InnoDB 存储引擎默认使用表的主键作为主键索引，该主键索引就是聚簇索引（Clustered Index），如果表没有定义主键，InnoDB 就自己产生一个隐藏的 6 个字节的主键 ID 值作为主键索引，而创建的主键索引默认使用的是 B+Tree 索引。</p>
-<p>B+Tree 相比于 B 树和二叉树来说，最大的优势在于查询效率。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
-            <meta itemprop="name" content="yirufeng">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-04-06T10:44:13+00:00">2021-04-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/mysql/">mysql</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/mysql/" itemprop="url"><span itemprop="name">mysql</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/06/mysql%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2020/09/15/docker%E5%AE%9E%E7%8E%B0mysql%E7%9A%84%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="逸如风的个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/09/15/docker%E5%AE%9E%E7%8E%B0mysql%E7%9A%84%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/"  itemprop="url">
-        docker实现mysql的主从复制
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <blockquote>
-<p>通过docker中的容器隔离机制我们实现mysql的主从复制，从而避免了单点故障</p>
-</blockquote>
+      <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用Golang操作Mysql，插入一条记录后发现新插入的时间比当前时间早了8个小时。</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="http://www.fall.ink/post/22">主从复制部署</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-rm-command.html">docker命令参考</a></li>
+<li><div class="note warning"><p>使用go-sql-driver来连接mysql数据库，获取的时区默认是UTC +0的，与本地的东八区是有区别，在业务处理中会出现问题</p></div></li>
+<li><div class="note warning"><p>获取mysql中的日期，是string类型，需要在代码中用time.Parse进行转化</p></div>
+
+</li>
 </ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="note success"><p>在连接的dataSourceName中加上<code>parseTime=True</code>和<code>loc=local</code>。此处的<code>local</code>可以更换为具体的时区<code>(Asia/Shanghai)</code></p></div>
+
+<details red><summary> 修改之前的dataSourceName </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataBaseSource := fmt.Sprintf(<span class="string">&quot;%s:%s@tcp(%s:%s)/%s?charset=%s&quot;</span>, </span><br><span class="line">    MysqlUser, MysqlPassword, MysqlHost, MysqlPort, MysqlDatabase, MysqlCharset)</span><br><span class="line">conn, _ := sql.Open(<span class="string">&quot;mysql&quot;</span>, dataBaseSource)</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+<details green><summary> 修改后的dataSourceName </summary>
+              <div class='content'>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataBaseSource := fmt.Sprintf(<span class="string">&quot;%s:%s@tcp(%s:%s)/%s?charset=%s&amp;loc=Local&amp;parseTime=true&quot;</span>, </span><br><span class="line">    MysqlUser, MysqlPassword, MysqlHost, MysqlPort, MysqlDatabase, MysqlCharset)</span><br><span class="line">conn, _ := sql.Open(<span class="string">&quot;mysql&quot;</span>, dataBaseSource)</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
     
   </div>
   
@@ -2504,20 +2440,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2020-09-15T19:43:00+00:00">2020-09-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-09-24T09:48:42+00:00">2020-09-24</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/mysql/">mysql</a>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/mysql/" itemprop="url"><span itemprop="name">mysql</span></a>
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/09/15/docker%E5%AE%9E%E7%8E%B0mysql%E7%9A%84%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/' itemprop="url">
+          <a class='readmore' href='/2020/09/24/golang%E8%BF%9E%E6%8E%A5mysql%E6%97%B6%E9%97%B4/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2670,7 +2606,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:40 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:41 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-01-08 日</div>
           
         </div>
@@ -3263,8 +3199,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466352')
-      volantis.js('/js/thirdparty/message.js?time=1641606466352', () => {
+      volantis.css('/css/message.css?time=1641606466392')
+      volantis.js('/js/thirdparty/message.js?time=1641606466392', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3309,8 +3245,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466352')
-      volantis.js('/js/thirdparty/message.js?time=1641606466352', () => {
+      volantis.css('/css/message.css?time=1641606466392')
+      volantis.js('/js/thirdparty/message.js?time=1641606466392', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3369,8 +3305,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466352')
-      volantis.js('/js/thirdparty/message.js?time=1641606466352', () => {
+      volantis.css('/css/message.css?time=1641606466392')
+      volantis.js('/js/thirdparty/message.js?time=1641606466392', () => {
         hideMessage(done);
       });
     } else {
@@ -3416,19 +3352,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641606466352")
+        volantis.js("/js/plugins/sites.js?time=1641606466392")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641606466352")
+        volantis.js("/js/plugins/friends.js?time=1641606466392")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641606466352")
+        volantis.js("/js/plugins/contributors.js?time=1641606466392")
       }
     
   };
@@ -3606,7 +3542,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641606466352').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606466392').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3617,7 +3553,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1641606466352.js"></script>
+<script src="/js/app.js?time=1641606466392.js"></script>
 
 
 <!-- optional -->
@@ -3630,7 +3566,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641606466352");
+    return volantis.js("/js/search/hexo.js?time=1641606466392");
   }
 
   function loadSearchService() {
@@ -3923,7 +3859,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3966,7 +3902,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641606466352').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606466392').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4200,7 +4136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/mysql/","name":"mysql"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/Mysql/","name":"Mysql"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
 
 
 <!-- more -->

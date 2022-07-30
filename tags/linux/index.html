@@ -20,16 +20,16 @@
   <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641606466564" as="style">
+  <link rel="preload" href="/css/style.css?time=1641606466342" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>Tag: linux - 逸如风的个人博客</title>
+  <title>Tag: Linux - 逸如风的个人博客</title>
   <meta name="keywords" content="null">
   <meta property="og:type" content="website">
 <meta property="og:title" content="逸如风的个人博客">
-<meta property="og:url" content="http://www.sivan.tech/tags/linux/index.html">
+<meta property="og:url" content="http://www.sivan.tech/tags/Linux/index.html">
 <meta property="og:site_name" content="逸如风的个人博客">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1581,8 +1581,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641606466564" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466564"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1641606466342" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606466342"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2377,6 +2377,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
@@ -2384,7 +2386,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/21/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2398,34 +2400,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/03/21/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/"  itemprop="url">
-        配置编程环境Linux服务器
+      <a href="/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/"  itemprop="url">
+        centos7安装docker
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <div class="note info"><p>前提：将所有软件包放到<code>~</code>目录下</p></div>
+      <div class="note warning"><p>系统要求：docker支持64位Centos7，并且要求内核版本(查看Linux系统内核版本：<code>uname -r</code>)不低于3.10</p></div>
 
-
-<details ><summary> 安装Git </summary>
+<h2 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h2><h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><details green><summary> 卸载旧版本 </summary>
               <div class='content'>
-              <div class="note info"><p>操作存放在<code>~</code>目录下的<code>Git-v2.26.2.tar.gz</code>文件</p></div><details green><summary> 解压并安装 </summary>              <div class='content'>              <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Git-v2.26.2.tar.gz</span><br><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc-c++ perl-ExtUtils-MakeMaker</span><br><span class="line">cd git-2.26.2/</span><br><span class="line">yum -y install autoconf</span><br><span class="line">make configure</span><br><span class="line">./configure --prefix=/usr/local/git</span><br><span class="line">make profix=/usr/local/git</span><br><span class="line">make install</span><br><span class="line">yum remove git</span><br></pre></td></tr></table></figure>              </div>            </details><details green><summary> 之后加入环境变量 </summary>              <div class='content'>              <ol><li>编辑配置⽂件：<code>vim /etc/profile</code></li><li>尾部加⼊Git的bin路径配置即可：<ul><li><code>export GIT_HOME=/usr/local/git</code> </li><li><code>export PATH=$PATH:$GIT_HOME/bin</code></li></ul></li><li>执行<code>source /etc/profile</code>使环境变量⽣效即可。</li></ol>              </div>            </details>
+              <div class="note info"><p>旧版本的docker称为docker或docker-engine，使用如下命令卸载旧版本</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
               </div>
             </details>
 
 
-
-<details ><summary> 安装JDK </summary>
+<details green><summary> 安装方式一：使用yum安装 </summary>
               <div class='content'>
-              <div class="note info"><p>操作存放在<code>~</code>目录下的<code>jdk-8u161-linux-x64.tar.gz</code></p></div><details green><summary> 卸载系统自带的openJDK </summary>              <div class='content'>              <ol><li><code>rpm -qa | grep java</code> </li><li><code>yum -y remove 我们上一步执行的结果</code></li></ol>              </div>            </details><details green><summary> 开始安装我们自己的jdk </summary>              <div class='content'>              <ol><li><code>cd /usr/local/</code></li><li><code>mkdir java</code></li><li><code>cd java</code></li><li><code>tar -zxvf /root/jdk-8u161-linux-x64.tar.gz -C ./</code></li><li>编辑<code>/etc/profile</code>⽂件，在⽂件尾部加⼊如下JDK环境配置即可：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/usr/local/java/jdk1.8.0_161 </span><br><span class="line">CLASSPATH=$JAVA_HOME/lib/ </span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin </span><br><span class="line">export PATH JAVA_HOME CLASSPATH</span><br></pre></td></tr></table></figure></li><li><code>source /etc/profile</code></li><li>验证安装结果：执行<code>java -version</code>与 <code>javac</code></li></ol>              </div>            </details>
+              <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure><div class="note info"><p>如果执行之后返回的是没有可用软件包，此时我们需要安装必要的软件依赖以及更新增加docker-ce yum源</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>执行完这两条命令之后我们便可以重新执行`sudo yum install docker-ce`进行安装
               </div>
             </details>
 
-
-<details ><summary> 安装node </summary>
+<details green><summary> 安装方式二：使用脚本安装 </summary>
               <div class='content'>
-              <div class="note info"><p>操作存放在<code>~</code>目录下的<code>node-v12.16.3-linux-x64.tar.xz</code></p></div><ol><li><code>cd /usr/local/</code></li><li><code>mkdir node</code></li><li><code>cd node</code></li><li><code>tar -xJvf /root/node-v12.16.3-linux-x64.tar.xz -C ./</code></li><li>编辑<code>/etc/profile</code>⽂件，在⽂件尾部加⼊如下环境配置即可：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Nodejs </span></span><br><span class="line">export PATH=/usr/local/node/node-v12.16.3-linux-x64/bin:$PATH</span><br></pre></td></tr></table></figure></li><li><code>source /etc/profile</code></li><li>验证安装结果：执行<code>node -v</code>与 <code>npm version</code>与 <code>npx -v</code>都输出了版本信息即可。</li></ol>
+              <div class="note info"><p>在测试或开发环境中docker官方为了简化安装流程，提供了一套便捷的安装脚本，centos系统上可以使用这套脚本进行安装</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>执行完这个命令之后，系统会自动将一切工作准备好，并把docker ce的Edge版本安装在系统中
               </div>
             </details>
     
@@ -2442,20 +2441,109 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-03-21T21:17:42+00:00">2021-03-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2021-03-30T10:14:34+00:00">2021-03-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/linux/">linux</a>
+          <a class="category-link" href="/categories/docker/">docker</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+              <a href="/categories/docker/" itemprop="url"><span itemprop="name">docker</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2021/03/21/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/' itemprop="url">
+          <a class='readmore' href='/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/26/%E5%9F%BA%E4%BA%8ECentos7-%E6%90%AD%E5%BB%BA-gitlab/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2021/03/26/%E5%9F%BA%E4%BA%8ECentos7-%E6%90%AD%E5%BB%BA-gitlab/"  itemprop="url">
+        基于Centos7 搭建 gitlab
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>centos7腾讯云服务器一台</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><details green><summary> 前提 </summary>
+              <div class='content'>
+              <ol><li>更新软件包：<code>yum update -y</code></li><li>安装 sshd：<code>yum install -y curl policycoreutils-python openssh-server</code></li><li>启用并启动sshd：<code>systemctl enable sshd</code> 和 <code>systemctl start sshd</code></li><li>配置防火墙：<ol><li>打开 <code>/etc/sysctl.conf</code> 文件，在文件最后添加新的一行并按 Ctrl + S 保存：<code>net.ipv4.ip_forward = 1</code></li><li>启用并启动防火墙：<code>systemctl enable firewalld</code> 和 <code>systemctl start firewalld</code></li><li>放通 HTTP：<code>firewall-cmd --permanent --add-service=http</code></li><li>重启防火墙：<code>systemctl reload firewalld</code></li><li>在实际使用中，可以使用 <code>systemctl status firewalld</code> 命令查看防火墙的状态。</li></ol></li><li>安装postfix<ol><li>GitLab 需要使用 postfix 来发送邮件。当然，也可以使用 SMTP 服务器，具体步骤请参考 <a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/settings/smtp.html">官方教程</a>。</li><li>安装：<code>yum install -y postfix</code></li><li>打开 <code>/etc/postfix/main.cf</code> 文件，在第 119 行附近找到 <code>inet_protocols = all</code>，将 <code>all</code> 改为 <code>ipv4</code> 并按 <code>Ctrl + S</code> 保存：<code>inet_protocols = ipv4</code></li><li>启用并启动 postfix：<code>systemctl enable postfix</code> + <code>systemctl start postfix</code></li></ol></li></ol>
+              </div>
+            </details>
+
+<details green><summary> 配置 swap 交换分区 </summary>
+              <div class='content'>
+              <blockquote><p>由于 GitLab 较为消耗资源，我们需要先创建交换分区，以降低物理内存的压力。在实际生产环境中，如果服务器配置够高，则不必配置交换分区。</p></blockquote><ol><li>新建 2 GB 大小的交换分区：<code>dd if=/dev/zero of=/root/swapfile bs=1M count=2048</code></li><li>格式化为交换分区文件并启用：<code>mkswap /root/swapfile</code> 和 <code>swapon /root/swapfile</code></li><li>添加自启用。打开 <code>/etc/fstab</code> 文件，在文件最后添加新的一行并按 <code>Ctrl + S</code> 保存：<code>/root/swapfile swap swap defaults 0 0</code></li><li>将软件源修改为国内源：由于网络环境的原因，将 repo 源修改为清华大学。在 <code>/etc/yum.repos.d</code> 目录下新建 <code>gitlab-ce.repo</code>文件并保存。内容如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[gitlab-ce]</span><br><span class="line">name&#x3D;Gitlab CE Repository</span><br><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;gitlab-ce&#x2F;yum&#x2F;el$releasever&#x2F;</span><br><span class="line">gpgcheck&#x3D;0</span><br><span class="line">enabled&#x3D;1</span><br></pre></td></tr></table></figure></li></ol>
+              </div>
+            </details>
+
+<details green><summary> 安装gitlab </summary>
+              <div class='content'>
+              <ol><li>刚才修改过了 yum 源，因此先重新生成缓存：<code>yum makecache</code> <div class="note info"><p>（此步骤执行时间较长，一般需要 3~5 分钟左右，请耐心等待）</p></div></li><li>安装 GitLab：：<code>yum install -y gitlab-ce</code> <div class="note info"><p>（此步骤执行时间较长，一般需要 3~5 分钟左右，请耐心等待）</p></div></li><li>配置 GitLab 的域名（非必需）：打开 <code>/etc/gitlab/gitlab.rb</code> 文件，在第 13 行附近找到 <code>external_url &#39;http://gitlab.example.com&#39;</code>，将单引号中的内容改为自己的域名（带上协议头，末尾无斜杠），并按 Ctrl + S 保存。例如：<code>external_url &#39;http://work.myteam.com&#39;</code> 记得将域名通过 A 记录解析到 centos7对应的IP 哦。</li><li>设置完成后使用如下命令重启 GitLab的配置：<code>sudo gitlab-ctl reconfigure</code> + 重启gitlab服务<code>sudo gitlab-ctl restart</code><div class="note info"><p>（此步骤执行时间较长，一般需要 5~10 分钟左右，请耐心等待）</p></div></li><li>至此，我们已经成功地在 CentOS 7 上搭建了 GitLab。 现在可以在这里（<a target="_blank" rel="noopener" href="http://centoss7主机ip地址/%EF%BC%89%E8%AE%BF%E9%97%AE">http://centoss7主机ip地址/）访问</a> GitLab 了。</li></ol>
+              </div>
+            </details>
+
+
+<details green><summary> 注意事项 </summary>
+              <div class='content'>
+              <ol><li>在实际生产中，建议您使用 2 核 4 GB 或更高配置的 CVM。<a target="_blank" rel="noopener" href="https://docs.gitlab.com/ce/install/requirements.html#cpu">点击这里</a> 可以查看 GitLab 官方推荐的配置和可承载人数对应表。</li><li>再次提醒您，定期执行 <code>yum update -y</code> 以保持各软件包的最新状态。</li></ol>
+              </div>
+            </details>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg">
+            <meta itemprop="name" content="yirufeng">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2021-03-26T10:37:13+00:00">2021-03-26</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/CI-CD/">CI/CD</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/CI-CD/" itemprop="url"><span itemprop="name">CI/CD</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/03/26/%E5%9F%BA%E4%BA%8ECentos7-%E6%90%AD%E5%BB%BA-gitlab/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2608,7 +2696,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:45 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Sat Jan 08 2022 01:47:39 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-01-08 日</div>
           
         </div>
@@ -3201,8 +3289,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466564')
-      volantis.js('/js/thirdparty/message.js?time=1641606466564', () => {
+      volantis.css('/css/message.css?time=1641606466342')
+      volantis.js('/js/thirdparty/message.js?time=1641606466342', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3247,8 +3335,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466564')
-      volantis.js('/js/thirdparty/message.js?time=1641606466564', () => {
+      volantis.css('/css/message.css?time=1641606466342')
+      volantis.js('/js/thirdparty/message.js?time=1641606466342', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3307,8 +3395,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606466564')
-      volantis.js('/js/thirdparty/message.js?time=1641606466564', () => {
+      volantis.css('/css/message.css?time=1641606466342')
+      volantis.js('/js/thirdparty/message.js?time=1641606466342', () => {
         hideMessage(done);
       });
     } else {
@@ -3354,19 +3442,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641606466564")
+        volantis.js("/js/plugins/sites.js?time=1641606466342")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641606466564")
+        volantis.js("/js/plugins/friends.js?time=1641606466342")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641606466564")
+        volantis.js("/js/plugins/contributors.js?time=1641606466342")
       }
     
   };
@@ -3544,7 +3632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1641606466564').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1641606466342').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3555,7 +3643,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1641606466564.js"></script>
+<script src="/js/app.js?time=1641606466342.js"></script>
 
 
 <!-- optional -->
@@ -3568,7 +3656,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641606466564");
+    return volantis.js("/js/search/hexo.js?time=1641606466342");
   }
 
   function loadSearchService() {
@@ -3861,7 +3949,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3904,7 +3992,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641606466564').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1641606466342').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4138,7 +4226,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/linux/","name":"linux"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/Linux/","name":"Linux"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":""},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
 
 
 <!-- more -->
