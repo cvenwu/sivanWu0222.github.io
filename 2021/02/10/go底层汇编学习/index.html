@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.0.0-alpha.5'>
-  <meta name="generator" content="Hexo 5.2.0">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.0'>
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="Volantis" content="6.0.0-alpha.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
   <link rel="canonical" href="http://www.sivan.tech/2021/02/10/go底层汇编学习/"/>
   <!-- 渲染优化 -->
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+      <link rel='dns-prefetch' href='https://cdn.bootcdn.net'>
+      <link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta content="逸如风的个人博客" name="application-name">
-  <meta content="逸如风的个人博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641606465690" as="style">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-<link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
+  <!-- feed -->
   <!-- 页面元数据 -->
   <title>go底层汇编学习 - 逸如风的个人博客</title>
   <meta name="keywords" content="null">
-  <meta name="description" content="虽然go汇编是plan9汇编，但是x86汇编与go汇编是相通的 程序编译的几个阶段：编译-&gt;汇编-&gt;优化—&gt;链接 一个代码经过汇编之后就生成了汇编代码，然后经过编译器优化，优化之后进行链接，最终得到可执行程序。这里说的优化是汇编优化，实际上我们在所有阶段都有优化， 编译的话，广义上就是指的我们整个编译阶段，狭义上的话就是说词法语法分析，但是这个阶段还没有编译 我们虽然写的是汇编代">
+  <meta desc name="description" content="123 - yirufeng - 逸如风的个人博客">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="go底层汇编学习">
 <meta property="og:url" content="http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="逸如风的个人博客">
 <meta property="og:description" content="虽然go汇编是plan9汇编，但是x86汇编与go汇编是相通的 程序编译的几个阶段：编译-&gt;汇编-&gt;优化—&gt;链接 一个代码经过汇编之后就生成了汇编代码，然后经过编译器优化，优化之后进行链接，最终得到可执行程序。这里说的优化是汇编优化，实际上我们在所有阶段都有优化， 编译的话，广义上就是指的我们整个编译阶段，狭义上的话就是说词法语法分析，但是这个阶段还没有编译 我们虽然写的是汇编代">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-02-10T09:53:33.000Z">
-<meta property="article:modified_time" content="2022-01-08T01:46:42.490Z">
+<meta property="article:modified_time" content="2022-09-24T07:53:05.576Z">
 <meta property="article:author" content="yirufeng">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-  <!-- feed -->
-  <!-- import meta -->
-  <!-- link -->
-  <!-- import link -->
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
     /* 首屏样式 */
     #safearea {
   display: none;
 }
-/* 
-  * Workaround for Chrome bug, part 1
-  * Chunk rendering for all but the first article.
-  * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
-*/
 :root {
   --color-site-body: #f4f4f4;
   --color-site-bg: #f4f4f4;
@@ -72,10 +72,11 @@
   --color-h6: #666;
   --color-p: #444;
   --color-list: #666;
-  --color-list-hl: #36ac91;
+  --color-list-hl: #30ad91;
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
 }
 * {
   box-sizing: border-box;
@@ -84,6 +85,22 @@
   outline: none;
   margin: 0;
   padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
 }
 html {
   color: var(--color-text);
@@ -100,7 +117,7 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #44d7b6;
+  background: #3dd9b6;
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -129,7 +146,7 @@ body.modal-active {
   }
 }
 a {
-  color: #1b79c4;
+  color: #2092ec;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -251,6 +268,103 @@ button {
   position: relative;
   overflow: hidden;
   margin-bottom: -100px;
+}
+.cover-wrapper .cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+.cover-wrapper .cover-bg.lazyload:not(.loaded) {
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.cover-wrapper .cover-bg.lazyload.loaded {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
 }
 .cover-wrapper .cover-body {
   z-index: 1;
@@ -657,7 +771,7 @@ button {
 .cover-wrapper.dock .menu .list-h a.active i+p,
 .cover-wrapper.featured .menu .list-h a.active i+p,
 .cover-wrapper.focus .menu .list-h a.active i+p {
-  color: #44d7b6;
+  color: #3dd9b6;
 }
 .cover-wrapper.dock .menu .list-h a.active img+p,
 .cover-wrapper.featured .menu .list-h a.active img+p,
@@ -682,81 +796,168 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
-.cover-wrapper #parallax-window {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+  :root:not([color-scheme]) {
+    --color-site-body: #121212;
+    --color-read-bkg: #1f1f1f;
+    --color-read-post: #262626;
+    --color-site-bg: #1f1f1f;
+    --color-site-inner: rgba(238,238,238,0.871);
+    --color-site-footer: rgba(170,170,170,0.871);
+    --color-card: #262626;
+    --color-text: rgba(238,238,238,0.871);
+    --color-block: #434343;
+    --color-codeblock: #1f1f1f;
+    --color-inlinecode: #d56d28;
+    --color-h1: rgba(255,255,255,0.871);
+    --color-h2: rgba(255,255,255,0.871);
+    --color-h3: rgba(255,255,255,0.6);
+    --color-h4: rgba(255,255,255,0.6);
+    --color-h5: rgba(255,255,255,0.6);
+    --color-h6: rgba(255,255,255,0.6);
+    --color-p: rgba(217,217,217,0.871);
+    --color-list: rgba(217,217,217,0.871);
+    --color-list-hl: #63e0c4;
+    --color-meta: rgba(191,191,191,0.871);
+    --color-link: rgba(191,191,191,0.871);
+    --color-copyright-bkg: #21252b;
+  }
+  :root:not([color-scheme]) img {
+    filter: brightness(70%) !important;
+  }
+  :root:not([color-scheme]) .blur {
+    background: rgba(31,31,31,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(38,38,38,0.9) !important;
+  }
+  :root:not([color-scheme]) .nav-main .u-search-input {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) .article blockquote {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .article-title a {
+    color: var(--color-h1) !important;
+  }
+  :root:not([color-scheme]) details>summary {
+    color: var(--color-p) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) details {
+    border: 1px solid var(--color-site-bg) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal,
+  :root:not([color-scheme]) #u-search .modal-header,
+  :root:not([color-scheme]) #u-search .modal-body {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
 }
-.parallax-mirror {
-  animation-delay: 0s;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  animation-name: fadeIn;
+[color-scheme='dark'] {
+  --color-site-body: #121212;
+  --color-read-bkg: #1f1f1f;
+  --color-read-post: #262626;
+  --color-site-bg: #1f1f1f;
+  --color-site-inner: rgba(238,238,238,0.871);
+  --color-site-footer: rgba(170,170,170,0.871);
+  --color-card: #262626;
+  --color-text: rgba(238,238,238,0.871);
+  --color-block: #434343;
+  --color-codeblock: #1f1f1f;
+  --color-inlinecode: #d56d28;
+  --color-h1: rgba(255,255,255,0.871);
+  --color-h2: rgba(255,255,255,0.871);
+  --color-h3: rgba(255,255,255,0.6);
+  --color-h4: rgba(255,255,255,0.6);
+  --color-h5: rgba(255,255,255,0.6);
+  --color-h6: rgba(255,255,255,0.6);
+  --color-p: rgba(217,217,217,0.871);
+  --color-list: rgba(217,217,217,0.871);
+  --color-list-hl: #63e0c4;
+  --color-meta: rgba(191,191,191,0.871);
+  --color-link: rgba(191,191,191,0.871);
+  --color-copyright-bkg: #21252b;
 }
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
+[color-scheme='dark'] img {
+  filter: brightness(70%) !important;
 }
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
+[color-scheme='dark'] .blur {
+  background: rgba(31,31,31,0.9) !important;
 }
-@-o-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(38,38,38,0.9) !important;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
+[color-scheme='dark'] .nav-main .u-search-input {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a:hover {
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] .article blockquote {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .article-title a {
+  color: var(--color-h1) !important;
+}
+[color-scheme='dark'] details>summary {
+  color: var(--color-p) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] details {
+  border: 1px solid var(--color-site-bg) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] #u-search .modal,
+[color-scheme='dark'] #u-search .modal-header,
+[color-scheme='dark'] #u-search .modal-body {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
+}
+@media screen and (max-width: 500px) {
+  [color-scheme='dark'] .l_header .m_search {
+    background: var(--color-site-bg) !important;
   }
 }
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'Varela Round';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf");
+  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -960,7 +1161,7 @@ button {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  color: #44d7b6;
+  color: #3dd9b6;
 }
 .l_header .switcher >li >a:hover {
   border: none;
@@ -1140,7 +1341,7 @@ ul.m-pc >li>a {
 }
 ul.m-pc >li>a:active,
 ul.m-pc >li>a.active {
-  border-bottom: 2px solid #44d7b6;
+  border-bottom: 2px solid #3dd9b6;
 }
 ul.m-pc li:hover >ul.list-v,
 ul.list-v li:hover >ul.list-v {
@@ -1279,7 +1480,7 @@ ul.list-v >li>a:hover {
 }
 .l_header ul.nav-list-h>li >a:active,
 .l_header ul.nav-list-h>li >a.active {
-  color: #44d7b6;
+  color: #3dd9b6;
 }
 .l_header ul.nav-list-h>li:hover>a {
   color: var(--color-list-hl);
@@ -1583,10 +1784,21 @@ ul.list-v >li>a:hover {
     padding: 0px;
   }
 }
+@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
+  .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641606465690" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641606465690"></noscript>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+    <script>
+      let userColorScheme=localStorage.getItem("color-scheme")
+      if(userColorScheme){
+        document.documentElement.setAttribute("color-scheme", userColorScheme);
+      }
+    </script>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1615,7 +1827,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     '<div class="kill-ie">'+
         `<span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>`+
         `<span class="kill-c">Microsoft has terminated support for Internet Explorer (IE) 10 and earlier versions in 2016. <br/>There are great security risks to continue using it. Please use contemporary mainstream browsers to access.</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>Learn more ></strong></a>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>Learn more ></strong></a>`+
     '</div>');
 </script>
 
@@ -1653,6 +1865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
   /******************** volantis.EventListener ********************************/
   // 事件监听器 see: /source/js/app.js
@@ -1755,18 +1968,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     this.push = (fn, name, setRequestAnimationFrame = true) => {
       let myfn = fn
       if (setRequestAnimationFrame) {
-        myfn = ()=>{
+        myfn = () => {
           volantis.requestAnimationFrame(fn)
         }
       }
       var f = new Item(myfn, name);
       this.list.push(f);
     };
-    this.remove = (name) =>{
+    this.remove = (name) => {
       for (let index = 0; index < this.list.length; index++) {
         const e = this.list[index];
         if (e.name == name) {
-          this.list.splice(index,1);
+          this.list.splice(index, 1);
         }
       }
     }
@@ -1795,12 +2008,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     error: new RunItem(),
     send: new RunItem(),
   };
-  volantis.pjax = {
-    ...volantis.pjax,
+  volantis.pjax = Object.assign(volantis.pjax, {
     push: volantis.pjax.method.complete.push,
     error: volantis.pjax.method.error.push,
     send: volantis.pjax.method.send.push,
-  };
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
   /********************  Dark Mode  ********************************/
   // /layout/_partial/scripts/darkmode.ejs
   // volantis.dark.mode 当前模式 dark or light
@@ -1810,13 +2032,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dark.method = {
     toggle: new RunItem(),
   };
-  volantis.dark = {
-    ...volantis.dark,
+  volantis.dark = Object.assign(volantis.dark, {
     push: volantis.dark.method.toggle.push,
-  };
+  });
   /********************  Message  ********************************/
-  // /layout/_plugins/message/script.ejs
-  // volantis.message
+  // VolantisApp.message
   /********************  isMobile  ********************************/
   // /source/js/app.js
   // volantis.isMobile
@@ -1881,7 +2101,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.import = {
     jQuery: () => {
       if (typeof jQuery == "undefined") {
-        return volantis.js("https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js")
+        return volantis.js("https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js")
       } else {
         return new Promise(resolve => {
           resolve()
@@ -1892,19 +2112,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /********************** requestAnimationFrame ********************************/
   // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
   // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
-  volantis.requestAnimationFrame = (fn)=>{
+  volantis.requestAnimationFrame = (fn) => {
     if (!window.requestAnimationFrame) {
       window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
     }
     window.requestAnimationFrame(fn)
   }
   /************************ layoutHelper *****************************************/
-  volantis.layoutHelper = (helper, html, opt)=>{
-    opt = Object.assign({clean:false, pjax:true}, opt)
+  volantis.layoutHelper = (helper, html, opt) => {
+    opt = Object.assign({ clean: false, pjax: true }, opt)
     function myhelper(helper, html, clean) {
       volantis.tempDiv = document.createElement("div");
       volantis.tempDiv.innerHTML = html;
-      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      let layoutHelper = document.querySelector("#layoutHelper-" + helper)
       if (layoutHelper) {
         if (clean) {
           layoutHelper.innerHTML = ""
@@ -1914,9 +2134,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     myhelper(helper, html, opt.clean)
     if (opt.pjax) {
-      volantis.pjax.push(()=>{
+      volantis.pjax.push(() => {
         myhelper(helper, html, opt.clean)
-      },"layoutHelper-"+helper)
+      }, "layoutHelper-" + helper)
     }
   }
   /****************************** 滚动事件处理 ****************************************/
@@ -1924,12 +2144,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     engine: new RunItem(),
     unengine: new RunItem(),
   };
-  volantis.scroll = {
-    ...volantis.scroll,
+  volantis.scroll = Object.assign(volantis.scroll, {
     push: volantis.scroll.engine.push,
-  };
+  });
   // 滚动条距离顶部的距离
-  volantis.scroll.getScrollTop = () =>{
+  volantis.scroll.getScrollTop = () => {
     let scrollPos;
     if (window.pageYOffset) {
       scrollPos = window.pageYOffset;
@@ -1939,6 +2158,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       scrollPos = document.body.scrollTop;
     }
     return scrollPos;
+  }
+  volantis.scroll.scrollHeight = function () {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+    )
+  }
+  volantis.scroll.offsetHeight = function () {
+    return Math.max(
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+    )
+  }
+  volantis.scroll.progress = function () {
+    return volantis.scroll.getScrollTop() / (volantis.scroll.scrollHeight() - volantis.scroll.offsetHeight())
   }
   // 使用 requestAnimationFrame 处理滚动事件
   // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
@@ -1954,8 +2190,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         // } else {
         //   console.log("向上滚动");
         // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list = []
         volantis.scroll.engine.start();
-      }else{
+      } else {
         volantis.scroll.unengine.start();
       }
       volantis.requestAnimationFrame(loop)
@@ -1964,7 +2202,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   }
   volantis.scroll.handleScrollEvents()
   // 触发页面滚动至目标元素位置
-  volantis.scroll.to = (ele, option = {}) =>{
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
     // 默认配置
     opt = {
       top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
@@ -1981,41 +2220,123 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       opt.top += option.addTop
     }
     if (!("observerDic" in option)) {
-      option.observerDic = 25
+      option.observerDic = 100
     }
     // 滚动
     window.scrollTo(opt);
     // 监视器
-    // 监视并矫正元素滚动到指定位置 
-    // 目前用于处理 toc 部分 lazyload 引起的 cls 导致的定位失败问题
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
     if (option.observer) {
-      volantis.scroll.unengine.push(()=>{
-        let me = ele.getBoundingClientRect().top
-        if(!(me >= -option.observerDic && me <= option.observerDic)){
-          volantis.scroll.to(ele, option)
-        }else{
+      setTimeout(() => {
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if (!(me >= -option.observerDic && me <= option.observerDic)) {
+            volantis.scroll.to(ele, option)
+          }
           volantis.scroll.unengine.remove("unengineObserver")
-        }
-      },"unengineObserver")
+        }, "unengineObserver")
+      }, 1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = () => {
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e => {
+        e.classList.remove("post-story")
+      })
     }
   }
   /******************************************************************************/
   /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
 </script>
-  <!-- Custom Files head begin-->
+<script>
+  volantis.GLOBAL_CONFIG ={
+    root: '/',
+    debug: "env",
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1664006034875),
+    cdn: {
+      izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
+      izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
+      fancybox_css: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css',
+      fancybox_js: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js'
+    },
+    sidebar: {
+      for_page: ["blogger","webinfo","feedback","category","tagcloud"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2020/01/01",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      
+      
+    },
+    search: {
+      
+
+      
+        dataPath: (("/" || "/").endsWith("/") ? "/" || "/" : "//" || "/") + "content.json",
+      
+
+      
+    },
+    languages: {
+      
+        search: {
+          hits_empty: "We didn't find any results for the search: ${query}.",
+          hits_stats: "${hits} results found in ${time} ms",
+        }
+      
+    }
+  }
+</script>
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
   
-  <!-- Custom Files head end-->
+  <!-- Custom Files headEnd end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" title="comment"></a></li>
         
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" title="toc"></a></li>
         
       </ul>
     </div>
@@ -2024,7 +2345,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png' alt="This is a picture without description" />
+            <img no-lazy class='logo' src='https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png'/>
           
           
           
@@ -2039,7 +2360,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/" title="博客"
                   
                   
@@ -2056,7 +2377,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/categories/" title="分类"
                   
                   
@@ -2073,7 +2394,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/tags/" title="标签"
                   
                   
@@ -2090,7 +2411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/archives/" title="归档"
                   
                   
@@ -2107,7 +2428,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/friends/" title="友链"
                   
                   
@@ -2124,7 +2445,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/about/" title="关于"
                   
                   
@@ -2141,7 +2462,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/resources/" title="资源"
+                  
+                  
+                  
+                    active-action="action-resources"
+                  >
+                  <i class='fas fa-list fa-fw'></i>资源
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/pictures/" title="摄影展"
                   
                   
@@ -2160,7 +2498,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
+          <i class="icon fa-solid fa-search fa-fw"></i>
           <input type="text" class="input u-search-input" placeholder="Search..." />
         </form>
       </div>
@@ -2168,16 +2506,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 			<ul class='switcher nav-list-h m-phone'>
 				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" title="search"></a></li>
 				
 				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" title="menu"></a>
           <ul class="menu-phone list-v navigation white-box">
             
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/" title="博客"
                   
                   
@@ -2194,7 +2532,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/categories/" title="分类"
                   
                   
@@ -2211,7 +2549,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/tags/" title="标签"
                   
                   
@@ -2228,7 +2566,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/archives/" title="归档"
                   
                   
@@ -2245,7 +2583,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/friends/" title="友链"
                   
                   
@@ -2262,7 +2600,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/about/" title="关于"
                   
                   
@@ -2279,7 +2617,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/resources/" title="资源"
+                  
+                  
+                  
+                    active-action="action-resources"
+                  >
+                  <i class='fas fa-list fa-fw'></i>资源
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/pictures/" title="摄影展"
                   
                   
@@ -2312,12 +2667,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
       <div id="none" class='cover-wrapper post featured' style="display: none;">
         
-  <div id="parallax-window"></div>
+  <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
 
 <div class='cover-body'>
   <div class='top'>
     
-      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png' alt="This is a picture without description" />
+      <img no-lazy class='logo' src='https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png'/>
     
     
     
@@ -2371,17 +2726,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/02/10/go底层汇编学习/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="逸如风的个人博客">
+    <meta itemprop="description" content="123">
   </span>
   
 
 
   
     <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   <div class="article-meta" id="top">
@@ -2397,7 +2756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
-    <img itemprop="image" src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+    <img itemprop="image" src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/gQrivL.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     <p itemprop="name">yirufeng</p>
   </a>
 </div>
@@ -2407,12 +2766,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
 
+
           
         
           
             <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-02-10T09:53:33+00:00">
-  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：Feb 10, 2021</p>
   </a>
 </div>
@@ -2421,16 +2781,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <div id="lc-pv" data-title="go底层汇编学习" data-path="/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
+      <span id="busuanzi_value_page_pv">
+        <i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i>
+      </span>
+        
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
 
 
           
@@ -2450,33 +2815,33 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>一个代码经过汇编之后就生成了汇编代码，然后经过编译器优化，优化之后进行链接，最终得到可执行程序。这里说的优化是汇编优化，实际上我们在所有阶段都有优化，</p>
 <p>编译的话，广义上就是指的我们整个编译阶段，狭义上的话就是说词法语法分析，但是这个阶段还没有编译</p>
 <p>我们虽然写的是汇编代码，但是实际上机器指定的是0101的这些序列，这就是汇编和机器码的关系，<br>指令集是指一般每一种cpu都会给你提供你可以用的指令的集合，</p>
-<p>指令寄存器存储的是我们代码的地址，CPU在解释指令的时候是一条一条解释的，没有并发这种。通过这个地址器中的值就可以找到我们的指令，<br><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/tOtEGa.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/tOtEGa.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="tOtEGa"><br>大部分不需要理解，知道通用寄存器，和简单的扩展寄存器就可以了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/XiuoUM.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/XiuoUM.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="XiuoUM"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Hd4Pvj.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Hd4Pvj.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Hd4Pvj"></p>
+<p>指令寄存器存储的是我们代码的地址，CPU在解释指令的时候是一条一条解释的，没有并发这种。通过这个地址器中的值就可以找到我们的指令，<br><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/tOtEGa.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/tOtEGa.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="tOtEGa"><br>大部分不需要理解，知道通用寄存器，和简单的扩展寄存器就可以了。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/XiuoUM.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/XiuoUM.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="XiuoUM"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Hd4Pvj.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Hd4Pvj.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Hd4Pvj"></p>
 <p>函数调用都是有一个函数栈存在的，有函数栈的话可能会发生栈溢出，函数栈是同一个函数跳转或者调用另外一个函数的时候栈的结构，将参数按照规范传入到栈上，然后在被调用函数中我们可以读取到被传入的参数，然后用这些参数做一些业务逻辑，最后返回值。</p>
 <p>intel cpu上栈是从高地址向低地址生长</p>
 <p>被调用函数如何读取到形参：<br>在老的平台上所有参数都是通过栈传入，我在传入的时候其实只需要读这个位置就可以了，后来到了64位平台上寄存器数量变多，c语言很多编译器尽量在参数比较少的函数调用的时候做优化，会将我们前6个参数传入到寄存器中，我具体用哪几个寄存器都是约定好的，在栈上都是只传第7个以后的参数，</p>
 <p>每一个函数都有自己的栈，栈一般用rbp(栈的栈底，frame base pointer)以及rsp(栈的栈顶，很靠近调用该函数的位置，所以直接向上找到输入参数即可)描述</p>
-<p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8wykgm.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8wykgm.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8wykgm"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8wykgm.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8wykgm.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8wykgm"></p>
 <p>我们之前原来函数的时候在上半部分搞事情，调用函数的时候，会将调用者下一条指令传入到return address这个地方中，之后被调用函数执行完之后拿到原来的地址返回去执行下一条指令，之后被调函数的栈其实进行了名义上的销毁，并没有改变值，只是我们后面执行其他指令的时候如果栈往下增长就会将原来的内容进行覆盖，64位系统中，6个参数以内的都是通过寄存器传入，6个以外的通过函数栈传入，</p>
 <p>任意的编程语言自己分配内存的时候，其实都需要自己对这段内存清0，os并不保证，go语言中其实都是给我们赋0，回收的时候并不需要自己赋值0，成本太高。</p>
 <p>通用寄存器是16个</p>
 <p><code>section .data</code>表示我的代码是在哪个段，</p>
 <p>执行syscall也就是进行了系统调用将会切换到内核态</p>
 <p>我们写的go执行成plan9的汇编，最终还是要转换到各个平台的汇编</p>
-<p><code>MOVB $1, DI -&gt; mov al, 0x44    // 1 byte</code><br>英特尔的汇编是将44挪到al里面，然后前面我们的plan9表示将1挪到DI里面。<br><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/VLnpdK.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/VLnpdK.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="VLnpdK"></p>
-<p>程序有基本的分段概念，text段就是代码存储的位置，也就是代码段<br><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/bOpvBM.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/bOpvBM.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="bOpvBM"><br>jbe指令是大于等于就跳转，<code>sub rsp, 0x18</code>是将rsp(因为是我们的栈顶)向下移动</p>
+<p><code>MOVB $1, DI -&gt; mov al, 0x44    // 1 byte</code><br>英特尔的汇编是将44挪到al里面，然后前面我们的plan9表示将1挪到DI里面。<br><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/VLnpdK.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/VLnpdK.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="VLnpdK"></p>
+<p>程序有基本的分段概念，text段就是代码存储的位置，也就是代码段<br><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/bOpvBM.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/bOpvBM.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="bOpvBM"><br>jbe指令是大于等于就跳转，<code>sub rsp, 0x18</code>是将rsp(因为是我们的栈顶)向下移动</p>
 <p>lea是做地址运算的(自己查到的：取有效地址，也就是取偏移地址)<br>call是调用函数<br>mov是移动<br>JNE是不等于就跳转</p>
-<p>生成两种汇编形式的代码：<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/GfQE0l.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/GfQE0l.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GfQE0l">哪种舒服用哪种</p>
+<p>生成两种汇编形式的代码：<img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/GfQE0l.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/GfQE0l.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GfQE0l">哪种舒服用哪种</p>
 <p>golang中函数的参数以及返回值都是通过函数栈来进行的</p>
 <p>我们写的代码最终都在编译的时候转成内部函数，make一个slice和make一个map编译后底层都是不一样的，所以我们可以通过反汇编进行分析</p>
-<p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/rnQDh8.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/rnQDh8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="rnQDh8"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/rnQDh8.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/rnQDh8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="rnQDh8"></p>
 <p>go会根据逃逸分析进行分配确定是在堆还是栈中，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Jk0t5m.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Jk0t5m.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jk0t5m"></p>
-<p>程序在编译之后，编译器会在编译后的代码的函数头部和函数尾部插入两段调度指令，中间是逻辑<br><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/FY9kqB.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/FY9kqB.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="FY9kqB"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Jk0t5m.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Jk0t5m.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jk0t5m"></p>
+<p>程序在编译之后，编译器会在编译后的代码的函数头部和函数尾部插入两段调度指令，中间是逻辑<br><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/FY9kqB.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/FY9kqB.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="FY9kqB"></p>
 <p>nosplit表示go的栈空间不够就会重新分配，顺便将执行权交给runtime，（如果我们非常确定栈的大小之后编译器就不会在函数头部和尾部插入调度指令，这两段指令就是为了检查我们是否需要扩容，如果扩容就跳到插入到函数尾部的代码等）<br>为什么会重新分配：一个g初始化之后，栈只有2kb，慢慢随着深层次函数的递归调用会慢慢增长，增长到一定程度会溢出。</p>
 <p>汇编的结果是<code>go tool compile -S 文件名.go</code><br>反汇编是使用<code>go build</code>生成的.o文件，然后使用<code>go tool objdump 我们的二进制文件</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xXsAHN.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xXsAHN.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="xXsAHN"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xXsAHN.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/xXsAHN.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="xXsAHN"></p>
 <p>如果我们线上遇到问题，可以pprof(1.11将火焰图都集成进去了 )指令看到goroutine栈以及死锁之类的，帮助我们快速定位问题。</p>
 <div class="note info"><p>note info 默认主题色，适合中性的信息</p></div>
 <div class="note "><p><strong>标题（可选）</strong></p><p>Windows 10不是為所有人設計,而是為每個人設計</p></div>
@@ -2493,37 +2858,50 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               </div>
             </details>
 
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><div class="story post-story"><ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5MDUwNTQwMQ==&mid=2257483728&idx=1&sn=c881e621f4f2dfc0ff2277766249ced5&chksm=a5391706924e9e103424852355327c991a7ea2b939add74b949a1ed2cc7fbe62dc79c08efe2f&scene=21#wechat_redirect">深入Go的底层，带你走近一群有追求的人</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/binHome/p/13034103.html">GO汇编-函数</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36982160/article/details/82950848">汇编常用指令</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/cch123/asmshare/blob/master/layout.md">曹大的文章</a></li>
 </ol>
 
-</div>
   </div>
   
   
     
     <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
+       <!-- 相关文章 -->
       
+        
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fa-solid fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/2021/12/27/2021年终总结/" title="迟来的2021年终总结" rel="bookmark "><img src="https://gcore.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot11.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot11.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">迟来的2021年终总结</span><span class="excerpt">静下心回顾自己的2021，才发现这一年自己竟然经历了这么多重要的事情，实习，工作，爱情；是的，就是这样一个人生转折点的路上...</span></a></div></section></div>
       
-        <div class='copyright'>
-          <blockquote>
-            
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
               
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
+                
               
-            
+                
+                  <p>本文永久链接是：<a href="http://www.sivan.tech/2021/02/10/go底层汇编学习/">http://www.sivan.tech/2021/02/10/go底层汇编学习/</a></p>
+                
               
-                <p>本文永久链接是：<a href=http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/>http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/</a></p>
-              
-            
-          </blockquote>
-        </div>
+            </blockquote>
+          </div>
+        
       
+      <!-- 打赏组件 -->
       
     </div>
   
@@ -2535,10 +2913,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-08T01:46:42+00:00">
-  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 8, 2022</p>
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-24T07:53:05+00:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 24, 2022</p>
   </a>
 </div>
 
@@ -2561,7 +2939,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
         </a>
       
@@ -2573,7 +2951,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
         </a>
       
@@ -2585,7 +2963,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
         </a>
       
@@ -2615,7 +2993,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
         <a class='prev' href='/2021/02/23/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>二叉树，二叉搜索树，AVL树，B树，B+树</p>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>二叉树，二叉搜索树，AVL树，B树，B+树</p>
           <p class='content'>二叉树树形结构，但是树中每个节点的分支最多只有两个，我们叫做二叉树
 二叉搜索树(BST)!&gt; 二叉搜索树又叫二叉排序树，或二叉查找树。它或者是一颗空树或者是具有下列性质的二叉树：
 
@@ -2624,13 +3002,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
       
         <a class='next' href='/2021/02/10/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-slice/'>
-          <p class='title'>基本数据结构-slice<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='title'>基本数据结构-slice<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>查看slice结构查看slice内部的构造：在runtime/slice.go中查看源码
 
 123456// runtime/slice.gotype slice struct &#123;  ...</p>
         </a>
       
     </div>
+  
+  <!-- 文章推荐 -->
+  
   
   <!-- Custom Files postEnd begin-->
   
@@ -2640,18 +3021,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
 
-  
-  <article class="post white-box reveal shadow" id="comments">
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
       <meta itemprop="discussionUrl" content="/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/index.html#comments">
     </span>
-    <p ct><i class='fas fa-comments'></i> 评论</p>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    
+
     <div id="layoutHelper-comments"></div>
 
   </article>
-  
+
 
 
 
@@ -2660,16 +3041,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
+
   
     
     
-
-<section class="widget blogger shadow desktop mobile pjax">
+      
+<section class="widget blogger desktop mobile pjax">
   <div class='content'>
     
       
         <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG' alt="This is a picture without description" />
+          <img no-lazy src='https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG'/>
         </a>
       
     
@@ -2720,6 +3102,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </section>
 
+    
   
 
   
@@ -2727,35 +3110,36 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     
+      
   
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
+  <section class="widget tagcloud desktop mobile pjax">
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href='/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/AVL%E6%A0%91/" style="font-size: 14px; color: #999">AVL树</a> <a href="/tags/Algorithms/" style="font-size: 14px; color: #999">Algorithms</a> <a href="/tags/B-%E6%A0%91/" style="font-size: 14px; color: #999">B+树</a> <a href="/tags/BFPRT/" style="font-size: 14px; color: #999">BFPRT</a> <a href="/tags/B%E6%A0%91/" style="font-size: 14px; color: #999">B树</a> <a href="/tags/CORS/" style="font-size: 14px; color: #999">CORS</a> <a href="/tags/Centos/" style="font-size: 14px; color: #999">Centos</a> <a href="/tags/DP/" style="font-size: 15.25px; color: #919191">DP</a> <a href="/tags/Golang/" style="font-size: 16.5px; color: #888">Golang</a> <a href="/tags/IO/" style="font-size: 14px; color: #999">IO</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/LeetCode/" style="font-size: 21.5px; color: #666">LeetCode</a> <a href="/tags/Linux/" style="font-size: 15.25px; color: #919191">Linux</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/Morris%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">Morris遍历</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/OS/" style="font-size: 17.75px; color: #808080">OS</a> <a href="/tags/Pycharm/" style="font-size: 14px; color: #999">Pycharm</a> <a href="/tags/Tools/" style="font-size: 19px; color: #777">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/consul/" style="font-size: 14px; color: #999">consul</a> <a href="/tags/defer/" style="font-size: 14px; color: #999">defer</a> <a href="/tags/demo/" style="font-size: 14px; color: #999">demo</a> <a href="/tags/docker/" style="font-size: 19px; color: #777">docker</a> <a href="/tags/docsify/" style="font-size: 14px; color: #999">docsify</a> <a href="/tags/dp/" style="font-size: 14px; color: #999">dp</a> <a href="/tags/error/" style="font-size: 14px; color: #999">error</a> <a href="/tags/flag/" style="font-size: 14px; color: #999">flag</a> <a href="/tags/gitlab/" style="font-size: 14px; color: #999">gitlab</a> <a href="/tags/go/" style="font-size: 22.75px; color: #5e5e5e">go</a> <a href="/tags/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.25px; color: #919191">go的基本数据结构</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/iota/" style="font-size: 14px; color: #999">iota</a> <a href="/tags/jwt/" style="font-size: 14px; color: #999">jwt</a> <a href="/tags/jwt-gos/" style="font-size: 14px; color: #999">jwt-gos</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/maven/" style="font-size: 15.25px; color: #919191">maven</a> <a href="/tags/mysql/" style="font-size: 15.25px; color: #919191">mysql</a> <a href="/tags/nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="/tags/orm/" style="font-size: 14px; color: #999">orm</a> <a href="/tags/panic/" style="font-size: 14px; color: #999">panic</a> <a href="/tags/parallel-desktop/" style="font-size: 14px; color: #999">parallel desktop</a> <a href="/tags/pip/" style="font-size: 15.25px; color: #919191">pip</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/recover/" style="font-size: 14px; color: #999">recover</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/tools/" style="font-size: 16.5px; color: #888">tools</a> <a href="/tags/topK/" style="font-size: 14px; color: #999">topK</a> <a href="/tags/vs-code/" style="font-size: 14px; color: #999">vs code</a> <a href="/tags/%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" style="font-size: 14px; color: #999">主从复制</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" style="font-size: 14px; color: #999">二叉搜索树</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">云服务器</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 15.25px; color: #919191">位运算</a> <a href="/tags/%E5%85%A5%E8%81%8C/" style="font-size: 14px; color: #999">入职</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">冒泡排序</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 14px; color: #999">刷题</a> <a href="/tags/%E5%89%8D%E7%BC%80%E6%A0%91/" style="font-size: 14px; color: #999">前缀树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">堆排序</a> <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 14px; color: #999">多路复用</a> <a href="/tags/%E5%A4%A7%E7%89%9B/" style="font-size: 14px; color: #999">大牛</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" style="font-size: 14px; color: #999">学习路线</a> <a href="/tags/%E5%AE%9E%E4%B9%A0/" style="font-size: 14px; color: #999">实习</a> <a href="/tags/%E5%B0%8F%E5%92%8C%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">小和问题</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16.5px; color: #888">工具</a> <a href="/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/" style="font-size: 14px; color: #999">布隆过滤器</a> <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 14px; color: #999">序列化</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" style="font-size: 14px; color: #999">开发环境安装</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 17.75px; color: #808080">归并排序</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">快速排序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 14px; color: #999">总结</a> <a href="/tags/%E6%89%BE%E5%89%8D%E5%87%A0%E5%A4%A7%E6%88%96%E5%89%8D%E5%87%A0%E5%B0%8F/" style="font-size: 14px; color: #999">找前几大或前几小</a> <a href="/tags/%E6%89%BE%E7%AC%AC%E5%87%A0%E5%A4%A7%E6%88%96%E7%AC%AC%E5%87%A0%E5%B0%8F/" style="font-size: 14px; color: #999">找第几大或第几小</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 20.25px; color: #6f6f6f">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.25px; color: #919191">数据结构</a> <a href="/tags/%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">文件</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 14px; color: #999">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">服务器</a> <a href="/tags/%E6%9D%82%E8%AE%B0/" style="font-size: 14px; color: #999">杂记</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 14px; color: #999">架构</a> <a href="/tags/%E6%A0%88/" style="font-size: 14px; color: #999">栈</a> <a href="/tags/%E6%A0%91/" style="font-size: 19px; color: #777">树</a> <a href="/tags/%E6%A0%91%E5%BD%A2DP/" style="font-size: 15.25px; color: #919191">树形DP</a> <a href="/tags/%E6%A0%A1%E6%8B%9B/" style="font-size: 14px; color: #999">校招</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 14px; color: #999">框架</a> <a href="/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">桶排序</a> <a href="/tags/%E6%B1%82%E8%81%8C/" style="font-size: 14px; color: #999">求职</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">直接插入排序</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">矩阵</a> <a href="/tags/%E7%A7%8B%E6%8B%9B/" style="font-size: 14px; color: #999">秋招</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">统计逆序对</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16.5px; color: #888">计算机网络</a> <a href="/tags/%E8%B0%83%E8%AF%95/" style="font-size: 14px; color: #999">调试</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #999">资源</a> <a href="/tags/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">跨域问题</a> <a href="/tags/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">逃逸分析</a> <a href="/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">选择排序</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 14px; color: #999">部署</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">链表</a> <a href="/tags/%E9%94%99%E8%AF%AF/" style="font-size: 14px; color: #999">错误</a> <a href="/tags/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/" style="font-size: 14px; color: #999">阅读清单</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">队列</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 22.75px; color: #5e5e5e">面试</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 14px; color: #999">项目</a>
+      <a href="/tags/AVL%E6%A0%91/" style="font-size: 14px; color: #999">AVL树</a> <a href="/tags/Algorithms/" style="font-size: 14px; color: #999">Algorithms</a> <a href="/tags/B-%E6%A0%91/" style="font-size: 14px; color: #999">B+树</a> <a href="/tags/BFPRT/" style="font-size: 14px; color: #999">BFPRT</a> <a href="/tags/B%E6%A0%91/" style="font-size: 14px; color: #999">B树</a> <a href="/tags/CORS/" style="font-size: 14px; color: #999">CORS</a> <a href="/tags/Centos/" style="font-size: 14px; color: #999">Centos</a> <a href="/tags/DP/" style="font-size: 15.25px; color: #919191">DP</a> <a href="/tags/Golang/" style="font-size: 16.5px; color: #888">Golang</a> <a href="/tags/IO/" style="font-size: 14px; color: #999">IO</a> <a href="/tags/Idea/" style="font-size: 14px; color: #999">Idea</a> <a href="/tags/LeetCode/" style="font-size: 21.5px; color: #666">LeetCode</a> <a href="/tags/Linux/" style="font-size: 15.25px; color: #919191">Linux</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/Morris%E9%81%8D%E5%8E%86/" style="font-size: 14px; color: #999">Morris遍历</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/OS/" style="font-size: 17.75px; color: #808080">OS</a> <a href="/tags/Pycharm/" style="font-size: 14px; color: #999">Pycharm</a> <a href="/tags/Tools/" style="font-size: 19px; color: #777">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/blog/" style="font-size: 15.25px; color: #919191">blog</a> <a href="/tags/consul/" style="font-size: 14px; color: #999">consul</a> <a href="/tags/defer/" style="font-size: 14px; color: #999">defer</a> <a href="/tags/demo/" style="font-size: 14px; color: #999">demo</a> <a href="/tags/docker/" style="font-size: 19px; color: #777">docker</a> <a href="/tags/docsify/" style="font-size: 14px; color: #999">docsify</a> <a href="/tags/dp/" style="font-size: 14px; color: #999">dp</a> <a href="/tags/error/" style="font-size: 14px; color: #999">error</a> <a href="/tags/flag/" style="font-size: 14px; color: #999">flag</a> <a href="/tags/gitlab/" style="font-size: 14px; color: #999">gitlab</a> <a href="/tags/go/" style="font-size: 22.75px; color: #5e5e5e">go</a> <a href="/tags/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.25px; color: #919191">go的基本数据结构</a> <a href="/tags/hexo/" style="font-size: 15.25px; color: #919191">hexo</a> <a href="/tags/iota/" style="font-size: 14px; color: #999">iota</a> <a href="/tags/jwt/" style="font-size: 14px; color: #999">jwt</a> <a href="/tags/jwt-gos/" style="font-size: 14px; color: #999">jwt-gos</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/maven/" style="font-size: 15.25px; color: #919191">maven</a> <a href="/tags/mysql/" style="font-size: 15.25px; color: #919191">mysql</a> <a href="/tags/nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="/tags/orm/" style="font-size: 14px; color: #999">orm</a> <a href="/tags/panic/" style="font-size: 14px; color: #999">panic</a> <a href="/tags/parallel-desktop/" style="font-size: 14px; color: #999">parallel desktop</a> <a href="/tags/pip/" style="font-size: 15.25px; color: #919191">pip</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/recover/" style="font-size: 14px; color: #999">recover</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/tools/" style="font-size: 16.5px; color: #888">tools</a> <a href="/tags/topK/" style="font-size: 14px; color: #999">topK</a> <a href="/tags/vs-code/" style="font-size: 14px; color: #999">vs code</a> <a href="/tags/%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" style="font-size: 14px; color: #999">主从复制</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" style="font-size: 14px; color: #999">二叉搜索树</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">云服务器</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 15.25px; color: #919191">位运算</a> <a href="/tags/%E5%85%A5%E8%81%8C/" style="font-size: 14px; color: #999">入职</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">冒泡排序</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 14px; color: #999">刷题</a> <a href="/tags/%E5%89%8D%E7%BC%80%E6%A0%91/" style="font-size: 14px; color: #999">前缀树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">堆排序</a> <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 14px; color: #999">多路复用</a> <a href="/tags/%E5%A4%A7%E7%89%9B/" style="font-size: 14px; color: #999">大牛</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" style="font-size: 14px; color: #999">学习路线</a> <a href="/tags/%E5%AE%9E%E4%B9%A0/" style="font-size: 14px; color: #999">实习</a> <a href="/tags/%E5%B0%8F%E5%92%8C%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">小和问题</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16.5px; color: #888">工具</a> <a href="/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/" style="font-size: 14px; color: #999">布隆过滤器</a> <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 14px; color: #999">序列化</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" style="font-size: 14px; color: #999">开发环境安装</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 17.75px; color: #808080">归并排序</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">快速排序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 14px; color: #999">总结</a> <a href="/tags/%E6%89%BE%E5%89%8D%E5%87%A0%E5%A4%A7%E6%88%96%E5%89%8D%E5%87%A0%E5%B0%8F/" style="font-size: 14px; color: #999">找前几大或前几小</a> <a href="/tags/%E6%89%BE%E7%AC%AC%E5%87%A0%E5%A4%A7%E6%88%96%E7%AC%AC%E5%87%A0%E5%B0%8F/" style="font-size: 14px; color: #999">找第几大或第几小</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 20.25px; color: #6f6f6f">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.25px; color: #919191">数据结构</a> <a href="/tags/%E6%96%87%E4%BB%B6/" style="font-size: 14px; color: #999">文件</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 14px; color: #999">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">服务器</a> <a href="/tags/%E6%9D%82%E8%AE%B0/" style="font-size: 14px; color: #999">杂记</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 14px; color: #999">架构</a> <a href="/tags/%E6%A0%88/" style="font-size: 14px; color: #999">栈</a> <a href="/tags/%E6%A0%91/" style="font-size: 19px; color: #777">树</a> <a href="/tags/%E6%A0%91%E5%BD%A2DP/" style="font-size: 15.25px; color: #919191">树形DP</a> <a href="/tags/%E6%A0%A1%E6%8B%9B/" style="font-size: 14px; color: #999">校招</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 14px; color: #999">框架</a> <a href="/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">桶排序</a> <a href="/tags/%E6%B1%82%E8%81%8C/" style="font-size: 14px; color: #999">求职</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">直接插入排序</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 14px; color: #999">矩阵</a> <a href="/tags/%E7%A7%8B%E6%8B%9B/" style="font-size: 14px; color: #999">秋招</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">统计逆序对</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16.5px; color: #888">计算机网络</a> <a href="/tags/%E8%B0%83%E8%AF%95/" style="font-size: 14px; color: #999">调试</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #999">资源</a> <a href="/tags/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">跨域问题</a> <a href="/tags/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">逃逸分析</a> <a href="/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="font-size: 15.25px; color: #919191">选择排序</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 14px; color: #999">部署</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">链表</a> <a href="/tags/%E9%94%99%E8%AF%AF/" style="font-size: 14px; color: #999">错误</a> <a href="/tags/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/" style="font-size: 14px; color: #999">阅读清单</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">队列</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 22.75px; color: #5e5e5e">面试</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 14px; color: #999">项目</a>
     </div>
   </section>
 
 
+    
   
 
   
     
     
+      
   
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget category desktop pjax">
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
@@ -2821,7 +3205,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <li><a class="flat-box"
             title="/categories/blog/" href="/categories/blog/"
             active-action="action-categoriesblog"
-            ><div class='name'>blog</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>blog</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/blog/document/" href="/categories/blog/document/"
@@ -3048,7 +3432,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </section>
 
 
+    
   
+
+
+<div class="widget-sticky pjax">
+
+</div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3069,19 +3459,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- pjax占位 -->
   </div>
 
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-
   <!-- Custom Files side begin -->
   
   <!-- Custom Files side end -->
@@ -3096,7 +3473,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="go底层汇编学习";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3125,12 +3501,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <br><br>
     
       
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
         <br>
         <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
           
             
-              <a href="/www.github.com/sivanWu0222"
-                class="social fas fa-qq flat-btn"
+              <a href="https://www.github.com/sivanWu0222"
+                class="social fa-brands fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer" itemprop="url">
                 
@@ -3146,24 +3530,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
-        
-      
-    
-      
         Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.0" target="_blank" class="codename">Volantis</a>
         as theme, total visits
-          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
           times
         
       
     
       
+        
+          <div><p><span>本站总访问量为 <span id='busuanzi_value_site_pv'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span>访客数为 <span id='busuanzi_value_site_uv'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
         <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+        <p><a href="/">Copyright © since 2017 yirufeng</a></p>
 
         </div>
       
@@ -3174,7 +3558,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </footer>
 
 
-        <a id="s-top" class="fas fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" title="top"></a>
       </div>
     </div>
     <div>
@@ -3193,13 +3577,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   
-  volantis.css("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css");
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css");
   
   
-  volantis.css("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css");
+  volantis.css("https://unpkg.com/font-awesome-animation@1.1.1/css/font-awesome-animation.min.css");
   
   
-  volantis.css("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css");
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/node-waves/0.7.6/waves.min.css");
   
 </script>
 
@@ -3208,155 +3592,128 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-
-  <script>
-  volantis.message = (title, message, option = {}, done = null) => {
-    if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606465690')
-      volantis.js('/js/thirdparty/message.js?time=1641606465690', () => {
-        tozashMessage(title, message, option, done);
-      });
-    } else {
-      tozashMessage(title, message, option, done);
-    }
-
-    function tozashMessage(title, message, option, done) {
-      const {
-        icon,
-        time,
-        position,
-        transitionIn,
-        transitionOut,
-        messageColor,
-        titleColor,
-        backgroundColor,
-        zindex,
-        displayMode
-      } = option;
-      iziToast.show({
-        layout: '2',
-        icon: 'Fontawesome',
-        closeOnEscape: 'true',
-        displayMode: displayMode || 'replace',
-        transitionIn: transitionIn || 'bounceInLeft',
-        transitionOut: transitionOut || 'fadeOutRight',
-        messageColor: messageColor || 'var(--color-text)',
-        titleColor: titleColor || 'var(--color-text)',
-        backgroundColor: backgroundColor || 'var(--color-card)',
-        zindex: zindex || '2147483647',
-        icon: icon || 'fas fa-info-circle light-blue',
-        timeout: time || '5000',
-        position: position || 'topRight',
-        title: title,
-        message: message,
-        onClosed: () => {
-          if(done) done();
-        },
-      });
-    }
-  };
-
-  volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
-    if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606465690')
-      volantis.js('/js/thirdparty/message.js?time=1641606465690', () => {
-        tozashQuestion(title, message, option, success, cancel, done);
-      });
-    } else {
-      tozashQuestion(title, message, option, success, cancel, done);
-    }
-
-    function tozashQuestion(title, message, option, success, cancel, done) {
-      const {
-        icon,
-        time,
-        position,
-        transitionIn,
-        transitionOut,
-        messageColor,
-        titleColor,
-        backgroundColor,
-        zindex
-      } = option;
-      iziToast.question({ 
-        id: 'question',
-        icon: 'Fontawesome',
-        close: false,
-        overlay: true,
-        displayMode: 'once',
-        position: 'center',
-        messageColor: messageColor || 'var(--color-text)',
-        titleColor: titleColor || 'var(--color-text)',
-        backgroundColor: backgroundColor || 'var(--color-card)',
-        zindex: zindex || '2147483647',
-        icon: icon || 'fas fa-question-circle light-blue',
-        timeout: time || '20000',
-        title: title,
-        message: message,
-        buttons: [
-          ['<button><b>是</b></button>', (instance, toast) => {
-            instance.hide({ transitionOut: transitionOut || 'fadeOut' }, toast, 'button');
-            if(success) success(instance, toast)
-          }],
-          ['<button><b>否</b></button>', (instance, toast) => {
-            instance.hide({ transitionOut: transitionOut || 'fadeOut' }, toast, 'button');
-            if(cancel) cancel(instance, toast)
-          }]
-        ],
-        onClosed: (instance, toast, closedBy) => {
-          if(done) done(instance, toast, closedBy);
-        }
-      });
-    }
-  }
-
-  volantis.hideMessage = (done = null) => {
-    const toast = document.querySelector('.iziToast');
-    if (!toast) {
-      if(done) done()
-      return;
-    }
-    
-    if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641606465690')
-      volantis.js('/js/thirdparty/message.js?time=1641606465690', () => {
-        hideMessage(done);
-      });
-    } else {
-      hideMessage(done);
-    }
-
-    function hideMessage(done) {
-      iziToast.hide({}, toast);
-      if(done) done();
-    }
-  }
-
-  volantis.messageCopyright = {
-    enable: 'true' === 'true' ? true : false,
-    title: '知识共享许可协议',
-    message: '请遵守 CC BY-NC-SA 4.0 协议。',
-    icon: 'far fa-copyright light-blue'
-  }
-
-  volantis.messageRightMenu = {
-    enable: 'true' === 'true' ? true : false,
-  }
-
-  if(volantis.messageCopyright.enable) {
-    document.body.oncopy = function(){
-      volantis.message(volantis.messageCopyright.title, volantis.messageCopyright.message, {
-        icon: volantis.messageCopyright.icon
-      });
-    }; 
-  }
-</script>
-
+<script src="/js/app.js"></script>
 
 
 
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "color-scheme";
+const rootElementDarkModeAttributeName = "color-scheme";
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+  getCustomDarkMode();
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+/**
+ * get target mode
+ */
+ const getCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  if(currentSetting=="dark"){
+    volantis.dark.mode="light";
+  }else{
+    volantis.dark.mode="dark";
+  }
+  // console.log(volantis.dark.mode)
+};
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+/**
+ * 暗黑模式触发器
+ */
+volantis.dark.toggle=()=>{
+  const mode = toggleCustomDarkMode();
+  applyCustomDarkModeSettings(mode);
+  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
+  volantis.dark.method.toggle.start();
+}
+/**
+ * bind event for toggle button
+ */
+
+function bindToggleButton() {
+  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
+  btn.forEach(function (e) {
+    volantis.dom.$(e).on('click',volantis.dark.toggle);
+  })
+}
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", ()=>{
+  volantis.requestAnimationFrame(bindToggleButton)
+});
+volantis.pjax.push(bindToggleButton);
+
+const darkModelListeners={
+  dark:(mediaQueryList )=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "dark";
+    }
+    volantis.dark.method.toggle.start();
+  },
+  light:(mediaQueryList)=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "light";
+    }
+    volantis.dark.method.toggle.start();
+  }
+}
+window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
+window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
+</script>
+
 
 
 
@@ -3365,19 +3722,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641606465690")
+        volantis.js("/js/plugins/tags/sites.js")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641606465690")
+        volantis.js("/js/plugins/tags/friends.js")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641606465690")
+        volantis.js("/js/plugins/tags/contributors.js")
       }
     
   };
@@ -3391,7 +3748,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+  <script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.1.0/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -3430,156 +3787,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 	hoverDelay: 0
   };
 </script>
-<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1660614606622/libs/flying-pages/flying-pages.min.js"></script>
 
 
 
 
 
-   <script type="text/javascript">
-  function pjax_scrollrebeal() {
-    ScrollReveal().reveal("#l_main .reveal", {
-      distance: "32px",
-      duration: "800",
-      interval: "20",
-      scale: "1",
-      easing: "ease-out",
-    });
-  }
-  function init_scrollrebeal() {
-    if (typeof ScrollReveal == "undefined") {
-      volantis.requestAnimationFrame(init_scrollrebeal);
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
     } else {
-      pjax_scrollrebeal();
+      volantis.giscus.Theme = 'light';
     }
+
+    return document.getElementById("giscus_container");
   }
-  volantis.js("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js");
-  document.addEventListener("DOMContentLoaded", init_scrollrebeal);
-  volantis.pjax.push(
-    pjax_scrollrebeal,
-    "pjax_scrollrebeal",
-    (setRequestAnimationFrame = false)
-  );
-</script>
 
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"}},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
 
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
 
-
-  <script>
-  volantis.APlayerController = {}; // 音乐播放控制 - All
-  volantis.APlayerController.id = '3175833810';  // 设定全局音乐播放ID
-  volantis.APlayerController.volume = '0.7';
-  volantis.css("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css");
-  (async () => {
-    // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/js/APlayer.mini.js")
-    await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-  
-  })();
-
-  function SetAPlayerPlugin(){
-    let Metings = document.querySelectorAll('meting-js');
-    if (Metings.length === 0) {
-      volantis.APlayerController.status = undefined;
-      
-      return;
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
     };
-    if (Metings[0].aplayer && Metings[0].aplayer.on) {
-      // improve the accessibility https://web.dev/button-name/
-      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
-        e.setAttribute("aria-label","Aplayer Menu")
-      })
-      // message see: /layout/_plugins/message/script.ejs
-      
-    }else{
-      volantis.requestAnimationFrame(SetAPlayerPlugin)
-    }
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
   }
-
-  document.addEventListener("DOMContentLoaded", ()=>{
-    SetAPlayerPlugin();
-  });
-  volantis.pjax.push(SetAPlayerPlugin);
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
 </script>
 
-
-
-
-  <script>
-  volantis.layoutHelper("comments",`<div id="valine_container"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div>`)
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-  function pjax_valine() {
-    if(!document.querySelectorAll("#valine_container")[0])return;
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
-    let path = pdata.commentPath;
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-    var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"3fv8zfzEurgJNikugTkLvK4N-gzGzoHsz","appKey":"Ltp7stMByJNyVnbPWECrbkgx","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
-      el: '#valine_container',
-      path: path,
-      placeholder: pagePlaceholder,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps,
-    }),pdata.commentConfig))
-    fancybox_valine()
-  }
-  function fancybox_valine() {
-    if(typeof VolantisFancyBox === "undefined") {
-      const checkFancyBox = setInterval(() => {
-        if(typeof VolantisFancyBox === "undefined") return;
-        clearInterval(checkFancyBox);
-        VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
-      })
-    } else {
-      VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
-    }
-  }
-  volantis.js('/js/thirdparty/valine.js?time=1641606465690').then(pjax_valine)
-  volantis.pjax.push(pjax_valine);
-</script>
+    
 
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
-
-
-
-<script src="/js/app.js?time=1641606465690.js"></script>
+  <script defer src="https://cdn.dusays.com/bsz.js" data-pjax></script>
 
 
 <!-- optional -->
 
   <script>
-  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/")
-    ? "/" || "/"
-    : "//" || "/";
-  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
-
-  function loadSearchScript() {
-    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641606465690");
+  async function loadSearchScript() {
+    
+        
+    
+    return volantis.js("/js/search/hexo.js");
   }
 
   function loadSearchService() {
@@ -3587,14 +3868,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     document.querySelectorAll(".input.u-search-input").forEach((e) => {
       e.removeEventListener("focus", loadSearchService, false);
     });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
   }
 
   // 打开并搜索 字符串 s
   function OpenSearch(s) {
-    loadSearchScript().then(() => {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
       SearchService.setQueryText(s);
       SearchService.search();
-    });
+    }
   }
 
   // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
@@ -3613,9 +3905,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-
   
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
 
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function () {
@@ -3631,10 +3922,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
-
-
 
 
   <script>
@@ -3646,7 +3933,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".article pre code"))) {
       return;
     }
-    VolantisApp.copyCode(".highlight .code pre, .article pre code")
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
   }
   volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
   volantis.pjax.push(pjax_highlightjs_copyCode)
@@ -3656,274 +3943,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'K2RVtHi7RnmoN6dovlDKafn8-gzGzoHsz',
-    app_key: 'Qxmil0oqPFdDUyyIp2i1Xikt',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'http://www.sivan.tech' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'http://www.sivan.tech' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'http://www.sivan.tech' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
 
 
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-
-
-
-
-  <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/8OaDRFBBzjY.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/Ar5FGfHXwMU.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/(null).jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JWiZ_bxne7M.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/-XbckezAe-o.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/psYs8v_MGn8.jpg","https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/h24WdfmRni4.jpg"];
-  let index = 0;
-  let IntervalParallax = null;
-
-  function parallax(){
-    let ParallaxWindow = document.querySelector("#parallax-window");
-    
-    Parallax.window = ParallaxWindow;
-    Parallax.options.fade = 1500;
-    Parallax.cache = 1;
-    next_parallax();
-    Parallax.init();
-    if (imgs.length>1) {
-      IntervalParallax = setInterval(function () {
-        next_parallax();
-      }, '10000');
-    }
-  }
-
-  function next_parallax() {
-    if (typeof Parallax == "undefined") {
-      return
-    }
-    
-      if (!document.querySelector("#full")&&!document.querySelector("#half")) {
-        return
-      }
-    
-    if (imgs.length>=1) {
-      Parallax.options.src = imgs[index % imgs.length];
-      Parallax.start();
-      index++;
-      if (Parallax.cache) {
-        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
-        if (index == imgs.length) {
-          Parallax.cache = 0;
-        }
-      }
-    }
-  }
-  var runningOnBrowser = typeof window !== "undefined";
-  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
-  if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1641606465690').then(()=>{
-      parallax()
-    })
-    volantis.pjax.send(()=>{
-      clearInterval(IntervalParallax)
-    },"clearIntervalParallax");
-    volantis.pjax.push(parallax);
-  }
-</script>
 
 
 
@@ -3931,8 +3952,8 @@ document.addEventListener("DOMContentLoaded", function () {
   <script>
   function load_swiper() {
     if (!document.querySelectorAll(".swiper-container")[0]) return;
-    volantis.css("https://unpkg.com/swiper@6/swiper-bundle.min.css");
-    volantis.js("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+    volantis.css("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css");
+    volantis.js("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js").then(() => {
       pjax_swiper();
     });
   }
@@ -3967,32 +3988,54 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+
+  <script>
+  volantis.js("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js").then(() => {
+    Pace.options.restartOnPushState = false;
+    volantis.pjax.send(Pace.restart);
+  })
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.min.css");
+  // 阅读进度
+  volantis.scroll.push(() => {
+    Pace.stop();
+    Pace.trigger('start');
+    Pace.bar.update(volantis.scroll.progress() * 100);
+  },"阅读进度")
+  // todo：配置项开关, 哪些页面添加阅读进度
+</script>
+
+
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
 </pjax>
 
 <script>
-  function listennSidebarTOC() {
+  function listenSidebarTOC() {
     const navItems = document.querySelectorAll(".toc li");
     if (!navItems.length) return;
-    const sections = [...navItems].map((element) => {
+    const targets = []
+    const sections = Array.from(navItems).forEach((element) => {
       const link = element.querySelector(".toc-link");
       const target = document.getElementById(
-        decodeURI(link.getAttribute("href")).replace("#", "")
+        link.getAttribute("href") ? decodeURI(link.getAttribute("href")).replace("#", "") : link.getAttribute("toc-action").split("toc-")[1] // 兼容 hexo-blog-encrypt
       );
+      targets.push(target)
       // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
-      link.setAttribute("onclick","return false;")
-      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
-      link.setAttribute("href","/")
+      if (link.getAttribute("href")) {
+        link.setAttribute("toc-action", "toc-" + decodeURI(link.getAttribute("href")).replace("#", ""))
+        link.removeAttribute("href")
+      }
       // 配置 点击 触发新的锚点定位
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        // 这里的 addTop 是通过错位使得 toc 自动展开.
-        volantis.scroll.to(target,{addTop: 5, observer:false})
-        // Anchor id
-        history.pushState(null, document.title, "#" + target.id);
-      });
+      if (target && target.id) {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          // 这里的 addTop 是通过错位使得 toc 自动展开.
+          volantis.scroll.to(target, { addTop: 5, observer: true })
+          // Anchor id
+          history.pushState(null, document.title, "#" + target.id);
+        });
+      }
       return target;
     });
 
@@ -4010,154 +4053,103 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    function findIndex(entries) {
-      let index = 0;
-      let entry = entries[index];
-      if (entry.boundingClientRect.top > 0) {
-        index = sections.indexOf(entry.target);
-        return index === 0 ? 0 : index - 1;
-      }
-      for (; index < entries.length; index++) {
-        if (entries[index].boundingClientRect.top <= 0) {
-          entry = entries[index];
+    // 方案一：
+    volantis.activateNavIndex = 0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    if (targets[0]) {
+      volantis.scroll.push(() => {
+        if (targets[0].getBoundingClientRect().top >= 0) {
+          volantis.activateNavIndex = 0
+        } else if (targets[targets.length - 1].getBoundingClientRect().top < 0) {
+          volantis.activateNavIndex = targets.length - 1
         } else {
-          return sections.indexOf(entry.target);
-        }
-      }
-      return sections.indexOf(entry.target);
-    }
-
-    function createIntersectionObserver(marginTop) {
-      marginTop = Math.floor(marginTop + 10000);
-      let intersectionObserver = new IntersectionObserver(
-        (entries, observe) => {
-          let scrollHeight = document.documentElement.scrollHeight;
-          if (scrollHeight > marginTop) {
-            observe.disconnect();
-            createIntersectionObserver(scrollHeight);
-            return;
+          for (let index = 0; index < targets.length; index++) {
+            const target0 = targets[index];
+            const target1 = targets[(index + 1) % targets.length];
+            if (target0.getBoundingClientRect().top < 0 && target1.getBoundingClientRect().top >= 0) {
+              volantis.activateNavIndex = index
+              break;
+            }
           }
-          let index = findIndex(entries);
-          activateNavByIndex(navItems[index]);
-        }, {
-          rootMargin: marginTop + "px 0px -100% 0px",
-          threshold: 0,
         }
-      );
-      sections.forEach((element) => {
-        element && intersectionObserver.observe(element);
-      });
+        activateNavByIndex(navItems[volantis.activateNavIndex])
+      })
     }
 
-    createIntersectionObserver(document.documentElement.scrollHeight);
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
   }
 
-  document.addEventListener("DOMContentLoaded", ()=>{
-    volantis.requestAnimationFrame(listennSidebarTOC)
+  document.addEventListener("DOMContentLoaded", () => {
+    volantis.requestAnimationFrame(listenSidebarTOC)
   });
-  document.addEventListener("pjax:success", ()=>{
-    volantis.requestAnimationFrame(listennSidebarTOC)
-  });
+  volantis.pjax.push(listenSidebarTOC);
 </script>
+
+
+
+
 
 <script>
-  // https://web.dev/content-visibility/
-  // https://www.caniuse.com/?search=content-visibility
-  // https://infrequently.org/2020/12/content-visibility-scroll-fix/
-  // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
-
-  // 备注 目前已知的问题:
-  // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
-  // scrollreveal 插件潜在问题 目前尚不明确
-
-  let eqIsh = (a, b, fuzz = 2) => {
-    return Math.abs(a - b) <= fuzz;
-  };
-
-  let rectNotEQ = (a, b) => {
-    return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
-  };
-
-  // Keep a map of elements and the dimensions of
-  // their place-holders, re-setting the element's
-  // intrinsic size when we get updated measurements
-  // from observers.
-  let spaced = new WeakMap();
-
-  // Only call this when known cheap, post layout
-  let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
-    let old = spaced.get(el);
-    // Set intrinsic size to prevent jumping on un-painting:
-    //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
-    if (!old || rectNotEQ(old, rect)) {
-      spaced.set(el, rect);
-      el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
-    }
-  };
-
-  let iObs = new IntersectionObserver(
-    (entries, o) => {
-      entries.forEach((entry) => {
-        // We don't care if the element is intersecting or
-        // has been laid out as our page structure ensures
-        // they'll get the right width.
-        reserveSpace(entry.target, entry.boundingClientRect);
-      });
-    },
-    { rootMargin: "500px 0px 500px 0px" }
-  );
-
-  let rObs = new ResizeObserver((entries, o) => {
-    entries.forEach((entry) => {
-      reserveSpace(entry.target, entry.contentRect);
-    });
-  });
-
-  let resizeResilientDeferredRendering = (Selector) => {
-    let articles = document.querySelectorAll(Selector);
-
-    if (articles.length) {
-      articles.forEach((el) => {
-        iObs.observe(el);
-        rObs.observe(el);
-      });
-
-      // Workaround for Chrome bug, part 2.
-      //
-      // Re-enable browser management of rendering for the
-      // first article after the first paint. Double-rAF
-      // to ensure we get called after a layout.
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          articles[0].style["content-visibility"] = "auto";
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
         });
-      });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
     }
-  };
-
-  let contentVisibilityScrollFix = () => {
-    if (!("content-visibility" in document.documentElement.style)) {
-      return;
-    }
-    resizeResilientDeferredRendering(".post-story");
-    resizeResilientDeferredRendering("article");
-    resizeResilientDeferredRendering(".post-wrapper");
-  };
-  contentVisibilityScrollFix();
-  volantis.pjax.push(contentVisibilityScrollFix);
+  }
 </script>
 
 
-
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/02/10/go底层汇编学习/","name":"go底层汇编学习"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"go底层汇编学习","description":"","datePublished":"2021-02-10T09:53:33.000Z","dateModified":"2022-01-08T01:46:42.490Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/","wordCount":0,"image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
-
-
-<!-- more -->
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":"123"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.sivan.tech/2021/02/10/go底层汇编学习/","name":"go底层汇编学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"123","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":"123"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"go底层汇编学习","description":"123","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.sivan.tech/2021/02/10/go%E5%BA%95%E5%B1%82%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2021-02-10T09:53:33.000Z","dateModified":"2022-09-24T07:53:05.576Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
       
-        <!-- 
+        <!--
   pjax重载区域接口：
   1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
   2.  script[data-pjax]
@@ -4167,25 +4159,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
+<script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
 
 <script>
     var pjax;
     document.addEventListener('DOMContentLoaded', function () {
       pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        // 这里的 selectors 需要保证每个页面都含有相同的数目
         selectors: [
           "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
           
           "#l_main",
           "#pjax-header-nav-list",
           ".pjax",
           "pjax", // <pjax></pjax> 标签
-          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
         ],
         cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
+        timeout: 5000,
+        
       });
     });
 
@@ -4195,9 +4189,9 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
+        var excludeList = [""];
+        if (excludeList[0] != "") {
+          excludeList.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
               window.location.href = targetUrl;
             }
@@ -4210,21 +4204,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener('pjax:complete', function () {
+      // 这里的 script 不需要保证每个页面都含有相同的数目
+      document.querySelectorAll('script[data-pjax], .pjax-reload script').forEach(e=>{
+        const code = e.text || e.textContent || e.innerHTML || '';
+        const script = document.createElement('script');
+        Object.keys(e.attributes).forEach(i=>{
+          script.setAttribute(e.attributes[i].nodeName,e.attributes[i].nodeValue)
+        })
+        if (code) {
+          script.appendChild(document.createTextNode(code));
+        }
+        e.parentNode.replaceChild(script, e);
+      });
+
       // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
       volantis.pjax.method.complete.start();
     });
 
     document.addEventListener('pjax:error', function (e) {
-      // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
-      volantis.pjax.method.error.start();
-      window.location.href = e.triggerElement.href;
+      if(volantis.debug === "pjax") {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
     });
 </script>
 
       
     </div>
-  <!-- Custom Files bodyEnd begin-->
-  
-  <!-- Custom Files bodyEnd end-->
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
   </body>
 </html>
