@@ -1,5 +1,7 @@
 'use strict';
 
+const { version } = require('../../../package.json');
+
 function isObject(item) {
   return item && typeof item === 'object' && !Array.isArray(item);
 }
@@ -43,7 +45,7 @@ module.exports = hexo => {
     hexo.config.relative_link = false;
   }
   hexo.config.meta_generator = false;
-
+  hexo.theme.config.getStartTime = Date.now();
   // Custom languages support. Introduced in NexT v6.3.0.
   if (data.languages) {
     var { language } = hexo.config;
@@ -61,4 +63,5 @@ module.exports = hexo => {
       mergeLang(language);
     }
   }
+  hexo.theme.config.info.theme_version = version;
 };
