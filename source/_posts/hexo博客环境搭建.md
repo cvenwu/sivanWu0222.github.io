@@ -4,11 +4,6 @@ author: yirufeng
 pin: false
 toc: true
 mathjax: false
-sidebar:
-  - blogger
-  - webinfo
-  - tagcloud
-  - category
 categories:
   - blog
 tags:
@@ -51,6 +46,8 @@ summary:
 ● nvm ls  列出所有安装的版本
 ● nvm alias default <version>  如： nvm alias default v11.1.0
 ```
+
+<!-- more -->
 
 ## 第二步：卸载原来的hexo
 1. 删除原来的hexo：`npm uninstall -g hexo-cli`

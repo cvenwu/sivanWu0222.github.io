@@ -4,11 +4,6 @@ author: yirufeng
 pin: false
 toc: true
 mathjax: false
-sidebar:
-  - blogger
-  - webinfo
-  - tagcloud
-  - category
 categories:
   - 微服务
 tags:
@@ -17,9 +12,6 @@ tags:
 date: 2021-05-17 08:54:06
 summary:
 ---
-
-
-
 ## consul环境搭建
 
 ### 方法一：docker安装consul集群

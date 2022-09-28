@@ -1,3 +1,9 @@
 [submodule "themes/themes/volantis"]
 	path = themes/themes/volantis
 	url = git@github.com:volantis-x/hexo-theme-volantis.git
+[submodule "themes/themes/stellar"]
+	path = themes/themes/stellar
+	url = https://github.com/xaoxuu/hexo-theme-stellar.git
+[submodule "themes/stellar"]
+	path = themes/stellar
+	url = https://github.com/xaoxuu/hexo-theme-stellar.git
