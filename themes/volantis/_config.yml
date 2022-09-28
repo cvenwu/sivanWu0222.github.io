@@ -172,7 +172,10 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+  background: https://i0.hippopx.com/photos/948/341/65/woodland-road-falling-leaf-natural-2abf5b5eaaf82c04b1c49efdadec41e1.jpg
+  # background: https://i0.hippopx.com/photos/678/338/324/clock-wall-clock-watch-time-48d66de830e0ec7810fc416e38b2b43a.jpg
+  # background: https://i0.hippopx.com/photos/1013/240/839/clouds-moon-sky-day-58ecc94e1f04a28d521f5d67c51de644.jpg
+  # background: https://i0.hippopx.com/photos/27/812/1024/landscape-autumn-fog-village-42f4efd6951ee385d7725cc289d7090f.jpg
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png
   title: ''
