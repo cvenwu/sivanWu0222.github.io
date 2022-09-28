@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://www.sivan.tech/tags/centos/"/>
+  <link rel="canonical" href="http://www.sivan.tech/tags/c-c/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,13 +33,13 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>标签：Centos - 逸如风的个人博客</title>
+  <title>标签：C/C++ - 逸如风的个人博客</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="123 - yirufeng - 逸如风的个人博客">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="逸如风的个人博客">
-<meta property="og:url" content="http://www.sivan.tech/tags/Centos/index.html">
+<meta property="og:url" content="http://www.sivan.tech/tags/C-C/index.html">
 <meta property="og:site_name" content="逸如风的个人博客">
 <meta property="og:description" content="123">
 <meta property="og:locale" content="zh_CN">
@@ -2741,7 +2741,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2021/03/30/centos7安装docker/">
+  <link itemprop="mainEntityOfPage" href="http://www.sivan.tech/2022/09/28/c语言中日期字符串转换为时间戳/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="逸如风的个人博客">
   </span>
@@ -2759,31 +2759,54 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/"  itemprop="url">
-        centos7安装docker
+      <a href="/2022/09/28/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/"  itemprop="url">
+        c语言中日期字符串转换为时间戳
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <div class="note warning"><p>系统要求：docker支持64位Centos7，并且要求内核版本(查看Linux系统内核版本：<code>uname -r</code>)不低于3.10</p></div>
-
-<h2 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h2><h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><details green><summary> 卸载旧版本 </summary>
+      <h2 id="字符串与时间戳的转换"><a href="#字符串与时间戳的转换" class="headerlink" title="字符串与时间戳的转换"></a>字符串与时间戳的转换</h2><h3 id="日期字符串转换为时间戳"><a href="#日期字符串转换为时间戳" class="headerlink" title="日期字符串转换为时间戳"></a>日期字符串转换为时间戳</h3><p>思路：</p>
+<ol>
+<li>将日期字符串转换为时间结构体</li>
+<li>将时间结构体转换为对应的时间戳(<code>time_t</code>类型，其实是<code>long</code>类型的别名)</li>
+</ol>
+<details cyan open><summary> 日期字符串转换为时间戳 </summary>
               <div class='content'>
-              <div class="note info"><p>旧版本的docker称为docker或docker-engine，使用如下命令卸载旧版本</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+              <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">time_t</span> <span class="title">convertDateToTimestamp</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;date)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 首先在后面添加时间</span></span><br><span class="line">    <span class="keyword">char</span> dateTimeBuf[<span class="number">64</span>];</span><br><span class="line">    <span class="built_in">snprintf</span>(dateTimeBuf, <span class="keyword">sizeof</span>(dateTimeBuf), <span class="string">&quot;%s 00:00:00&quot;</span>, date.c_str());</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">tm</span> <span class="title">dateTM</span>;</span></span><br><span class="line">    strptime(dateTimeBuf, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, &amp;dateTM);</span><br><span class="line">    <span class="keyword">return</span> mktime(&amp;dateTM);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
             </details>
 
-
-<details green><summary> 安装方式一：使用yum安装 </summary>
+<h3 id="日期时间字符串转换为时间戳"><a href="#日期时间字符串转换为时间戳" class="headerlink" title="日期时间字符串转换为时间戳"></a>日期时间字符串转换为时间戳</h3><p>思路：</p>
+<ol>
+<li>将日期字符串转换为时间结构体</li>
+<li>将时间结构体转换为对应的时间戳(<code>time_t</code>类型，其实是<code>long</code>类型的别名)</li>
+</ol>
+<details green><summary> 日期时间字符串转换为时间戳 </summary>
               <div class='content'>
-              <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure><div class="note info"><p>如果执行之后返回的是没有可用软件包，此时我们需要安装必要的软件依赖以及更新增加docker-ce yum源</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>执行完这两条命令之后我们便可以重新执行`sudo yum install docker-ce`进行安装
+              <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 日期时间字符串转换为对应的时间戳</span></span><br><span class="line"><span class="function"><span class="keyword">time_t</span> <span class="title">convertDatetimeToTimestamp</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;date_time)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">tm</span> <span class="title">dtTM</span>;</span></span><br><span class="line">    strptime(date_time.c_str(), <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, &amp;dtTM);</span><br><span class="line">    <span class="keyword">return</span> mktime(&amp;dtTM);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
             </details>
 
-<details green><summary> 安装方式二：使用脚本安装 </summary>
+<h3 id="时间戳转换为日期字符串"><a href="#时间戳转换为日期字符串" class="headerlink" title="时间戳转换为日期字符串"></a>时间戳转换为日期字符串</h3><p>思路：</p>
+<ol>
+<li>将时间戳转换为<code>struct tm</code>类型的时间：使用<code>localtime_r</code>函数或者<code>localtime</code>函数</li>
+<li>然后将<code>struct tm</code>类型的时间按照给定格式化串格式化为字符串：使用<code>strftime</code>函数</li>
+</ol>
+<details green><summary> 时间戳转换为日期字符串 </summary>
               <div class='content'>
-              <div class="note info"><p>在测试或开发环境中docker官方为了简化安装流程，提供了一套便捷的安装脚本，centos系统上可以使用这套脚本进行安装</p></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>执行完这个命令之后，系统会自动将一切工作准备好，并把docker ce的Edge版本安装在系统中
+              <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间戳转换为日期</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">convertTimestampToDate</span><span class="params">(<span class="keyword">time_t</span> timestamp, <span class="built_in">string</span> &amp;date)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 1. 将时间戳转换为struct tm类型:</span></span><br><span class="line">    <span class="comment">// localtime是不可重入函数，非线程安全，但是localtime_r是可重入函数，线程安全的</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">tm</span> <span class="title">dateTm</span>;</span></span><br><span class="line">    localtime_r(&amp;timestamp, &amp;dateTm);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d-%d-%d\n&quot;</span>, dateTm.tm_year + <span class="number">1900</span>, dateTm.tm_mon + <span class="number">1</span>,</span><br><span class="line">           dateTm.tm_mday);</span><br><span class="line">    <span class="comment">// 2. 将struct tm类型转换为自定义格式化字符串</span></span><br><span class="line">    <span class="keyword">char</span> dateBuf[<span class="number">16</span>];</span><br><span class="line">    strftime(dateBuf, <span class="keyword">sizeof</span>(dateBuf), <span class="string">&quot;%Y-%m-%d&quot;</span>, &amp;dateTm);</span><br><span class="line">    date = dateBuf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h3 id="时间戳转换为日期时间字符串"><a href="#时间戳转换为日期时间字符串" class="headerlink" title="时间戳转换为日期时间字符串"></a>时间戳转换为日期时间字符串</h3><p>思路：</p>
+<ol>
+<li>将时间戳转换为<code>struct tm</code>类型的时间：使用<code>localtime_r</code>函数或者<code>localtime</code>函数</li>
+<li>然后将<code>struct tm</code>类型的时间按照给定格式化串格式化为字符串：使用<code>strftime</code>函数</li>
+</ol>
+<details green><summary> 时间戳转换为日期时间字符串 </summary>
+              <div class='content'>
+              <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间戳转换为日期时间</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">convertTimestampToDatetime</span><span class="params">(<span class="keyword">time_t</span> timestamp, <span class="built_in">string</span> &amp;date_time)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 1. 将时间戳转换为struct tm类型:</span></span><br><span class="line">    <span class="comment">// localtime是不可重入函数，非线程安全，但是localtime_r是可重入函数，线程安全的</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">tm</span> <span class="title">dateTimeTm</span>;</span></span><br><span class="line">    localtime_r(&amp;timestamp, &amp;dateTimeTm);</span><br><span class="line">    <span class="comment">// 2. 将struct tm类型转换为自定义格式化字符串</span></span><br><span class="line">    <span class="keyword">char</span> dateTimeBuf[<span class="number">32</span>];</span><br><span class="line">    strftime(dateTimeBuf, <span class="keyword">sizeof</span>(dateTimeBuf), <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>,</span><br><span class="line">             &amp;dateTimeTm);</span><br><span class="line">    date_time = dateTimeBuf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
             </details>
     
@@ -2800,20 +2823,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-03-30T10:14:34+00:00">2021-03-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-28T10:44:14+00:00">2022-09-28</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/docker/">docker</a>
+          <a class="category-link" href="/categories/C-C/">C/C++</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/docker/" itemprop="url"><span itemprop="name">docker</span></a>
+              <a href="/categories/C-C/" itemprop="url"><span itemprop="name">C/C++</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/' itemprop="url">
+          <a class='readmore' href='/2022/09/28/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3792,7 +3815,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":"123"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/Centos/","name":"Centos"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"123","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":"123"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"123","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","sameAs":["https://github.com/volantis-x"],"description":"123"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.sivan.tech/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.sivan.tech/tags/C/C++/","name":"C/C++"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.sivan.tech/","keywords":null,"description":"123","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/","description":"123"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.sivan.tech/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.sivan.tech?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"123","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.sivan.tech/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
