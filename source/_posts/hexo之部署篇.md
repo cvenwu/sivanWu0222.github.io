@@ -27,6 +27,22 @@ summary:
 
 ## 腾讯云轻量应用服务器
 
+> 默认已经安装了git
+
+### 创建用户并进行配置
+1. `adduser git`
+2. `chmod 740 /etc/sudoers`
+3. `vim /etc/sudoers` 并在`root    ALL=(ALL)       ALL`下面一行加入：`git     ALL=(ALL)       ALL`
+4. `chmod 400 /etc/sudoers`
+5. 设置密码: `sudo passwd git`
+6. `su git`
+7. `mkdir ~/.ssh`
+8. 本地机器上执行命令：`ssh-keygen -t rsa -C "邮箱"`生成ssh文件，注意一定要指定生成的ssh文件名否则会覆盖之前的ssh文件（另需要注意的是ssh的时候）
+9. 远程机器上执行：`vim ~/.ssh/authorized_keys` 将公钥文件的内容拷贝进去
+10. 本地机器上执行：`ssh -v git@机器地址 -i 公钥文件名`发现可以登录到机器上
+11. 
+
+
 
 ## 部署流程
 
@@ -139,193 +155,3 @@ jobs:
 1. [手动部署到腾讯云轻量应用服务器](https://yyyzyyyz.cn/posts/45dafe31d273/)
 2. 
 
-
-[文章头部frot-matter编写参考](https://xaoxuu.com/wiki/volantis/page-settings/front-matter/)
-
-
-所有样式来源于：https://xaoxuu.com/wiki/volantis/tag-plugins/
-
-
-## 相册
-
-### 一行一图
-{% gallery %}
-![图片描述](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
-{% endgallery %}
-
-### 一行多图
-
-{% gallery %}
-![图片描述](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg)
-![图片描述](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg)
-![图片描述](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg)
-{% endgallery %}
-
-### 多行多图
-
-{% gallery stretch, 4 %}
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/250662D4-5A21-4AAA-BB63-CD25CF97CFF1.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/10A0FCE5-36A1-4AD0-8CF0-019259A89E03.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/250662D4-5A21-4AAA-BB63-CD25CF97CFF1.jpeg)
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/10A0FCE5-36A1-4AD0-8CF0-019259A89E03.jpeg)
-{% endgallery %}
-
-
-## github卡片标签
-
-| {% ghcard xaoxuu %}                | {% ghcard xaoxuu, theme=vue %}             |
-| ---------------------------------- | ------------------------------------------ |
-| {% ghcard xaoxuu, theme=buefy %}   | {% ghcard xaoxuu, theme=solarized-light %} |
-| {% ghcard xaoxuu, theme=onedark %} | {% ghcard xaoxuu, theme=solarized-dark %}  |
-| {% ghcard xaoxuu, theme=algolia %} | {% ghcard xaoxuu, theme=calm %}            |
-
-
-| {% ghcard volantis-x/hexo-theme-volantis %}                | {% ghcard volantis-x/hexo-theme-volantis, theme=vue %}             |
-| ---------------------------------------------------------- | ------------------------------------------------------------------ |
-| {% ghcard volantis-x/hexo-theme-volantis, theme=buefy %}   | {% ghcard volantis-x/hexo-theme-volantis, theme=solarized-light %} |
-| {% ghcard volantis-x/hexo-theme-volantis, theme=onedark %} | {% ghcard volantis-x/hexo-theme-volantis, theme=solarized-dark %}  |
-| {% ghcard volantis-x/hexo-theme-volantis, theme=algolia %} | {% ghcard volantis-x/hexo-theme-volantis, theme=calm %}            |
-
-## 分栏标签
-
-{% tabs tab-id %}
-
-<!-- tab 栏目1 -->
-
-。。。
-
-<!-- endtab -->
-
-<!-- tab 栏目2 -->
-
-！！！
-
-<!-- endtab -->
-
-{% endtabs %}
-
-## 引用标签
-
-
-{% note, 可以在配置文件中设置默认样式，为简单的一句话提供最的简便写法。 %}
-{% note quote, note quote 适合引用一段话 %}
-{% note info, note info 默认主题色，适合中性的信息 %}
-{% note warning, note warning 默认黄色，适合警告性的信息 %}
-{% note danger, note error/danger 默认红色，适合危险性的信息 %}
-{% note success, note done/success 默认绿色，适合正确操作的信息 %}
-
-
-{% note radiation, note radiation 默认样式 %}
-{% note radiation yellow, note radiation yellow 可以加上颜色 %}
-{% note bug red, note bug red 说明还存在的一些故障 %}
-{% note link green, note link green 可以放置一些链接 %}
-{% note paperclip blue, note paperclip blue 放置一些附件链接 %}
-{% note todo, note todo 待办事项 %}
-{% note guide clear, note guide clear 可以加上一段向导 %}
-{% note download, note download 可以放置下载链接 %}
-{% note message gray, note message gray 一段消息 %}
-{% note up, note up 可以说明如何进行更新 %}
-{% note undo light, note undo light 可以说明如何撤销或者回退 %}
-
-## 引用块标签
-
-{% noteblock, 标题（可选） %}
-
-Windows 10不是為所有人設計,而是為每個人設計
-
-{% noteblock done %}
-嵌套测试： 请坐和放宽，我正在帮你搞定一切...
-{% endnoteblock %}
-
-{% folding yellow, Folding 测试： 点击查看更多 %}
-
-{% note warning, 不要说我们没有警告过你 %}
-{% noteblock bug red %}
-我们都有不顺利的时候
-{% endnoteblock %}
-
-{% endfolding %}
-{% endnoteblock %}
-
-## 单选列表
-{% radio 纯文本测试 %}
-{% radio checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
-{% radio red, 支持自定义颜色 %}
-{% radio green, 绿色 %}
-{% radio yellow, 黄色 %}
-{% radio cyan, 青色 %}
-{% radio blue, 蓝色 %}
-
-## 多选列表
-
-{% checkbox 纯文本测试 %}
-{% checkbox checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
-{% checkbox red, 支持自定义颜色 %}
-{% checkbox green checked, 绿色 + 默认选中 %}
-{% checkbox yellow checked, 黄色 + 默认选中 %}
-{% checkbox cyan checked, 青色 + 默认选中 %}
-{% checkbox blue checked, 蓝色 + 默认选中 %}
-{% checkbox plus green checked, 增加 %}
-{% checkbox minus yellow checked, 减少 %}
-{% checkbox times red checked, 叉 %}
-
-
-## 时间线
-
-{% timeline 时间线标题（可选） %}
-
-{% timenode 时间节点（标题） %}
-
-正文内容
-
-{% endtimenode %}
-
-{% timenode 时间节点（标题） %}
-
-正文内容
-
-{% endtimenode %}
-
-{% endtimeline %}
-
-
-{% folding 查看图片测试 %}
-
-![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
-
-{% endfolding %}
-
-{% folding cyan open, 查看默认打开的折叠框 %}
-
-这是一个默认打开的折叠框。
-
-{% endfolding %}
-
-{% folding green, 查看代码测试 %}
-
-{% endfolding %}
-
-{% folding yellow, 查看列表测试 %}
-
-- haha
-- hehe
-
-{% endfolding %}
-
-{% folding red, 查看嵌套测试 %}
-
-{% folding blue, 查看嵌套测试2 %}
-
-{% folding 查看嵌套测试3 %}
-
-hahaha <span><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png' style='height:24px'></span>
-
-{% endfolding %}
-
-{% endfolding %}
-
-{% endfolding %}
