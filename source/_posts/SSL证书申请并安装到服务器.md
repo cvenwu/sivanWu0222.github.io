@@ -1,3 +1,13 @@
+<!--
+ * @Author: cvenwu cvenwu@tencent.com
+ * @Date: 2022-10-13 23:49:55
+ * @LastEditors: cvenwu cvenwu@tencent.com
+ * @LastEditTime: 2022-10-15 10:11:01
+ * @FilePath: /sivanWu0222.github.io/source/_posts/SSL证书申请并安装到服务器.md
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by cvenwu cvenwu@tencent.com, All Rights Reserved. 
+-->
 ---
 title: SSL证书申请并安装到服务器
 author: yirufeng
@@ -22,7 +32,6 @@ summary:
 ## 步骤
 
 {% note info, 环境：服务器在腾讯云，域名放在阿里云 %}
-
 
 SSL证书申请并安装到服务器：
 1. 申请证书：![TiqMiv](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/TiqMiv.png)

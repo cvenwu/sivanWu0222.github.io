@@ -5,7 +5,7 @@ pin: false
 toc: true
 mathjax: false
 categories:
-  - blog
+  - 网站搭建
 tags:
   - hexo
   - blog

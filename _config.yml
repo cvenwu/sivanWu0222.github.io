@@ -104,4 +104,6 @@ theme: volantis
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: yirufeng@43.154.207.212:/home/git/blog.git
+  branch: master

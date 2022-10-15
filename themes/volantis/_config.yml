@@ -172,7 +172,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://i0.hippopx.com/photos/948/341/65/woodland-road-falling-leaf-natural-2abf5b5eaaf82c04b1c49efdadec41e1.jpg
+  background: https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/woodland-road-falling-leaf-natural-2abf5b5eaaf82c04b1c49efdadec41e1.jpg
   # background: https://i0.hippopx.com/photos/678/338/324/clock-wall-clock-watch-time-48d66de830e0ec7810fc416e38b2b43a.jpg
   # background: https://i0.hippopx.com/photos/1013/240/839/clouds-moon-sky-day-58ecc94e1f04a28d521f5d67c51de644.jpg
   # background: https://i0.hippopx.com/photos/27/812/1024/landscape-autumn-fog-village-42f4efd6951ee385d7725cc289d7090f.jpg
@@ -573,10 +573,10 @@ sidebar:
       subtitle: 忠于自己，披星戴月奔向理想和你!
       jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
-        - icon: fas fa-rss
-          url: /atom.xml
+        # - icon: fas fa-rss
+          # url: /atom.xml
         - icon: fas fa-envelope
-          url: yirufeng@foxmail.com
+          url: mailto:yirufeng@foxmail.com
         - icon: fab fa-github
           url: https://github.com/sivanWu0222/
     # ---------------------------------------
