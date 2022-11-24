@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>SSL证书申请并安装到服务器</title>
-      <link href="/2022/10/13/SSL%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E5%B9%B6%E5%AE%89%E8%A3%85%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-      <url>/2022/10/13/SSL%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E5%B9%B6%E5%AE%89%E8%A3%85%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><div class="note info"><p>环境：服务器在腾讯云，域名放在阿里云</p></div><p>SSL证书申请并安装到服务器：</p><ol><li>申请证书：<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/TiqMiv.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/TiqMiv.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="TiqMiv"></li><li>按照要求在域名购买的地方添加一条解析记录来进行验证：<img src="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JijxJG.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/JijxJG.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="JijxJG"></li><li>证书颁发之后开始安装部署到服务器上进行使用：<a href="https://cloud.tencent.com/document/product/400/4143">参考文章</a></li></ol><span id="more"></span>]]></content>
-      
-      
-      <categories>
-          
-          <category> 网站搭建 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 网站搭建 </tag>
-            
-            <tag> ssl证书 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>好文推荐</title>
       <link href="/2022/10/10/%E5%A5%BD%E6%96%87%E6%8E%A8%E8%8D%90/"/>
       <url>/2022/10/10/%E5%A5%BD%E6%96%87%E6%8E%A8%E8%8D%90/</url>
