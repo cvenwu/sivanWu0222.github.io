@@ -14,7 +14,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://www.sivan.tech
+url: http://www.yirufeng.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -105,5 +105,6 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: yirufeng@43.154.207.212:/home/git/blog.git
+  # repository: yirufeng@43.154.207.212:/home/git/blog.git
+  repository: git@43.139.72.111:/var/repo/hexo.git
   branch: master
