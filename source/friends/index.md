@@ -3,6 +3,9 @@ title: 我的朋友们 # 可选，这是友链页的标题
 layout: friends
 index: true
 ---
+### 朋友
+1. [杰哥的博客](http://learn1024.com/)
+2. [假哥的博客](https://zhangge.net/)
 
 ### 一些课程推荐
 1. 极客时间的《Go进阶训练营》

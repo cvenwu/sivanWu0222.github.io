@@ -7,27 +7,32 @@ valine:
   placeholder: 有什么想对我说的呢？
 ---
 
-🐶浪开发者，坐标武汉
+- 坐标深圳
+- 技能：C/C++ & Java & Golang & Python 选手
 
-广埠屯断水停电大学在读研究生
-
-爱好电子设备以及电音
 
 {% gallery %}
-![ecLGa6](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG)
+![568a15631ld18f8e4e13c6ad838a65a4](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/568a15631ld18f8e4e13c6ad838a65a4.JPG)
+
 {% endgallery %}
 
-### 关于我
-{% gallery %}
-![IMG_1414](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1414.JPG)
-![IMG_1415](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1415.JPG)
-![IMG_1416](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1416.JPG)
-{% endgallery %}
+<!-- ### 关于我 
+ {% gallery %} 
+ ![ecLGa6](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1966.JPG)
+ ![IMG_1414](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1414.JPG) 
+![IMG_1415](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1415.JPG) 
+![IMG_1416](https://cdn.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/IMG_1416.JPG) 
+ {% endgallery %} -->
 
-### 实践经历
+<!-- ### 实践经历 -->
 {% timeline 实践经历  %}
 
-{% timenode 2021.05 - now %}
+
+{% timenode 2022.06 - now %}
+腾讯科技有限公司 - 网络基础建设
+{% endtimenode %}
+
+{% timenode 2021.05 - 2021.10 %}
 阿里云计算有限公司 - 云网络
 {% endtimenode %}
 
