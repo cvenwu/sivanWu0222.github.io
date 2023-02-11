@@ -106,5 +106,5 @@ theme: volantis
 deploy:
   type: git
   # repository: yirufeng@43.154.207.212:/home/git/blog.git
-  repository: git@43.139.72.111:/var/repo/hexo.git
+  repository: 
   branch: master
