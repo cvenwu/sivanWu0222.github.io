@@ -27,7 +27,6 @@ valine:
 <!-- ### 实践经历 -->
 {% timeline 实践经历  %}
 
-
 {% timenode 2022.06 - now %}
 腾讯科技有限公司 - 网络基础建设
 {% endtimenode %}

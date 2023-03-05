@@ -27,12 +27,12 @@ post:
 
 footer:
   license: '博客內容遵循 [姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW)'
-  use: 本站使用
-  theme: 作為主題
-  total_views: 總訪問量為
-  total_visitors: 總訪客量為
-  times: 次
-  site_views: 總訪問量約為 %s 次，訪問人數約為 %s 人。
+  # use: 本站使用
+  # theme: 作為主題
+  # total_views: 總訪問量為
+  # total_visitors: 總訪客量為
+  # times: 次
+  # site_views: 總訪問量約為 %s 次，訪問人數約為 %s 人。
 
 symbol:
   comma: "，"

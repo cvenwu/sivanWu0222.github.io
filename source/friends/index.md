@@ -7,6 +7,10 @@ index: true
 1. [杰哥的博客](http://learn1024.com/)
 2. [假哥的博客](https://zhangge.net/)
 
+### 博客推荐
+1. [博客集合](https://github.com/timqian/chinese-independent-blogs)
+2. [Tw93](https://tw93.fun/)
+
 ### 一些课程推荐
 1. 极客时间的《Go进阶训练营》
 2. [一些技术团队博客汇总](https://bitseatech.com/t/2302?p=1)

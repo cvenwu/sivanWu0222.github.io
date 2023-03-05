@@ -266,7 +266,7 @@
   dependencies:
     "readable-stream" "~1.0.26"
 
-"bluebird@^3.2.2", "bluebird@^3.4.0", "bluebird@^3.5.1", "bluebird@^3.5.2", "bluebird@^3.5.5":
+"bluebird@^3.2.2", "bluebird@^3.4.0", "bluebird@^3.5.0", "bluebird@^3.5.1", "bluebird@^3.5.2", "bluebird@^3.5.5":
   "integrity" "sha1-nyKcFb4nJFT/qXOs4NvueaGww28="
   "resolved" "https://registry.npm.taobao.org/bluebird/download/bluebird-3.7.2.tgz"
   "version" "3.7.2"
@@ -1262,6 +1262,18 @@
     "resolve" "^1.11.0"
     "tildify" "^2.0.0"
 
+"hexo-deployer-git@^3.0.0":
+  "integrity" "sha512-U2Xewjab+rvUDNTcuYYnOxitkDXL3f5VMUH32jKDHs3OC4YFVGRoEaTTDVHskqr3KRi78Wohjc6BSRHOoG3oxA=="
+  "resolved" "https://registry.npmjs.org/hexo-deployer-git/-/hexo-deployer-git-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "bluebird" "^3.5.0"
+    "chalk" "^4.0.0"
+    "hexo-fs" "^3.0.1"
+    "hexo-util" "^2.1.0"
+    "moment" "^2.18.0"
+    "nunjucks" "^3.2.1"
+
 "hexo-front-matter@^2.0.0":
   "integrity" "sha1-A/Oanu2xbFRI27O+x9/yxOIkAGw="
   "resolved" "https://registry.npm.taobao.org/hexo-front-matter/download/hexo-front-matter-2.0.0.tgz"
@@ -2084,7 +2096,7 @@
   dependencies:
     "moment" ">= 2.9.0"
 
-"moment@^2.19.1", "moment@^2.22.2", "moment@^2.8.4", "moment@>= 2.9.0", "moment@latest":
+"moment@^2.18.0", "moment@^2.19.1", "moment@^2.22.2", "moment@^2.8.4", "moment@>= 2.9.0", "moment@latest":
   "integrity" "sha1-zf5zzgEyfO5lN7D6+sLg8hojfXU="
   "resolved" "https://registry.npm.taobao.org/moment/download/moment-2.28.0.tgz"
   "version" "2.28.0"

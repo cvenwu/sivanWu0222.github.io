@@ -31,11 +31,11 @@ post:
 
 footer:
   license: 'Blog content follows the [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)'
-  total_views: total visits
-  total_visitors: total visitors
-  times: times
-  site_source: Uses %s as theme. You can find [source](%s) in %s.
-  site_views: The visits is about %s, and the visitors is about %s.
+  # total_views: total visits
+  # total_visitors: total visitors
+  # times: times
+  # site_source: Uses %s as theme. You can find [source](%s) in %s.
+  # site_views: The visits is about %s, and the visitors is about %s.
 
 symbol:
   comma: ", "
