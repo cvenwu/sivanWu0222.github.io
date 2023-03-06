@@ -198,12 +198,12 @@ cover:
       icon: fas fa-book
       # src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"
       # img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4bb.svg
-      url: http://www.sivan.tech/AlgoBook/
-    # - name: 面试
-      # icon: far fa-paper-plane
+      url: http://algo.yirufeng.top
+    - name: 面试
+      icon: far fa-paper-plane
       # src="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg"
       # img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4bb.svg
-      # url: http://www.sivan.tech/BasicCompu/
+      url: http://basic.yirufeng.top
     - name: 项目
       icon: fas fa-tags
       # img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
