@@ -47,7 +47,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-31T22:38:49.000Z">
-<meta property="article:modified_time" content="2023-03-06T11:53:08.143Z">
+<meta property="article:modified_time" content="2023-03-06T11:57:20.914Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="Influxdb">
 <meta property="article:tag" content="Go">
@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678103599396),
+    lastupdate: new Date(1678103856455),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2705,11 +2705,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               <i class='fab fa-github fa-fw'></i><p>Github</p>
             </a>
           
-            <a target="_blank" rel="noopener" href="http://www.sivan.tech/AlgoBook/"
+            <a target="_blank" rel="noopener" href="http://algo.yirufeng.top"
               
               
-              active-action="action-http:wwwsivantechAlgoBook">
+              active-action="action-http:algoyirufengtop">
               <i class='fas fa-book fa-fw'></i><p>算法</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="http://basic.yirufeng.top"
+              
+              
+              active-action="action-http:basicyirufengtop">
+              <i class='far fa-paper-plane fa-fw'></i><p>面试</p>
             </a>
           
             <a href="/projects/"
@@ -2900,7 +2907,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-06T11:53:08+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-06T11:57:20+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年3月6日</p>
@@ -4081,7 +4088,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","sameAs":["https://github.com/volantis-x"],"description":"123"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.yirufeng.top/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.yirufeng.top/categories/Influxdb/","name":"Influxdb"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.yirufeng.top/2023/01/31/Go对Influxdb进行统计/","name":"Go对Influxdb进行统计"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","keywords":null,"description":"123","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","description":"123"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.yirufeng.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Go对Influxdb进行统计","description":"\n需求背景：部门有大量的数据使用Influxdb进行存储，在这个过程中，我们往往需要对存储的数据做一些指标的统计，比如数据占用的磁盘空间，存储了多少条记录等等，但是部分操作需要大量的Influxdb Sql太费时，于是写了一个简单的程序进行统计\n","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.yirufeng.top/2023/01/31/Go%E5%AF%B9Influxdb%E8%BF%9B%E8%A1%8C%E7%BB%9F%E8%AE%A1/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.yirufeng.top/2023/01/31/Go%E5%AF%B9Influxdb%E8%BF%9B%E8%A1%8C%E7%BB%9F%E8%AE%A1/","wordCount":123,"datePublished":"2023-01-31T22:38:49.000Z","dateModified":"2023-03-06T11:53:08.143Z","articleSection":"Influxdb","keywords":"Influxdb,Go","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","sameAs":["https://github.com/volantis-x"],"description":"123"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.yirufeng.top/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.yirufeng.top/categories/Influxdb/","name":"Influxdb"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.yirufeng.top/2023/01/31/Go对Influxdb进行统计/","name":"Go对Influxdb进行统计"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","keywords":null,"description":"123","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","description":"123"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.yirufeng.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Go对Influxdb进行统计","description":"\n需求背景：部门有大量的数据使用Influxdb进行存储，在这个过程中，我们往往需要对存储的数据做一些指标的统计，比如数据占用的磁盘空间，存储了多少条记录等等，但是部分操作需要大量的Influxdb Sql太费时，于是写了一个简单的程序进行统计\n","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.yirufeng.top/2023/01/31/Go%E5%AF%B9Influxdb%E8%BF%9B%E8%A1%8C%E7%BB%9F%E8%AE%A1/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.yirufeng.top/2023/01/31/Go%E5%AF%B9Influxdb%E8%BF%9B%E8%A1%8C%E7%BB%9F%E8%AE%A1/","wordCount":123,"datePublished":"2023-01-31T22:38:49.000Z","dateModified":"2023-03-06T11:57:20.914Z","articleSection":"Influxdb","keywords":"Influxdb,Go","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
