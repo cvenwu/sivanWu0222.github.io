@@ -718,7 +718,7 @@ site_footer:
   # site copyright
   copyright: '[Copyright © since 2017 yirufeng](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  icp: '备案号'
+  # icp: '备案号'
   # br: '<br>'
 ############################### Site Footer ############################### > end
 
