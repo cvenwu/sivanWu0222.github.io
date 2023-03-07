@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.0'>
-  <meta name="generator" content="Hexo 5.4.2">
-  <meta name="Volantis" content="6.0.0-alpha.0">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1'>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -44,8 +44,8 @@
 <meta property="og:description" content="第一道题">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2020-11-28T20:28:09.000Z">
-<meta property="article:modified_time" content="2023-03-06T12:00:22.237Z">
+<meta property="article:published_time" content="2020-11-28T12:28:09.000Z">
+<meta property="article:modified_time" content="2023-03-07T13:50:02.970Z">
 <meta property="article:author" content="yirufeng">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="LeetCode">
@@ -1869,24 +1869,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   window.volantis = {}; // volantis 全局变量
   volantis.debug = "env"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
-  /******************** volantis.EventListener ********************************/
-  // 事件监听器 see: /source/js/app.js
-  volantis.EventListener = {}
-  // 这里存放pjax切换页面时将被移除的事件监听器
-  volantis.EventListener.list = []
-  //构造方法
-  function volantisEventListener(type, f, ele) {
-    this.type = type
-    this.f = f
-    this.ele = ele
-  }
-  // 移除事件监听器
-  volantis.EventListener.remove = () => {
-    volantis.EventListener.list.forEach(function (i) {
-      i.ele.removeEventListener(i.type, i.f, false)
-    })
-    volantis.EventListener.list = []
-  }
   /******************** volantis.dom.$ ********************************/
   // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
   function volantisDom(ele) {
@@ -1919,12 +1901,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       return this.ele
     }
     // ==============================================================
-    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
-    this.ele.on = (c, f, r = 1) => {
+    this.ele.on = (c, f) => {
       this.ele.addEventListener(c, f, false)
-      if (r) {
-        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
-      }
       return this.ele
     }
     this.ele.click = (f, r) => {
@@ -1999,22 +1977,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       };
     }
   }
-  /******************** Pjax ********************************/
-  // /layout/_plugins/pjax/index.ejs
-  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
-  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
-  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
-  volantis.pjax = {};
-  volantis.pjax.method = {
-    complete: new RunItem(),
-    error: new RunItem(),
-    send: new RunItem(),
-  };
-  volantis.pjax = Object.assign(volantis.pjax, {
-    push: volantis.pjax.method.complete.push,
-    error: volantis.pjax.method.error.push,
-    send: volantis.pjax.method.send.push,
-  });
   /******************** RightMenu ********************************/
   // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
   // 可在 volantis.mouseEvent 处获取右键事件
@@ -2122,7 +2084,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   }
   /************************ layoutHelper *****************************************/
   volantis.layoutHelper = (helper, html, opt) => {
-    opt = Object.assign({ clean: false, pjax: true }, opt)
+    opt = Object.assign({ clean: false}, opt)
     function myhelper(helper, html, clean) {
       volantis.tempDiv = document.createElement("div");
       volantis.tempDiv.innerHTML = html;
@@ -2135,11 +2097,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     }
     myhelper(helper, html, opt.clean)
-    if (opt.pjax) {
-      volantis.pjax.push(() => {
-        myhelper(helper, html, opt.clean)
-      }, "layoutHelper-" + helper)
-    }
   }
   /****************************** 滚动事件处理 ****************************************/
   volantis.scroll = {
@@ -2203,9 +2160,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     volantis.requestAnimationFrame(loop)
   }
   volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
   // 触发页面滚动至目标元素位置
   volantis.scroll.to = (ele, option = {}) => {
     if (!ele) return;
+    volantis.scroll.ele = ele;
     // 默认配置
     opt = {
       top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
@@ -2232,6 +2191,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // option.observer = false
     if (option.observer) {
       setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
         volantis.scroll.unengine.push(() => {
           let me = ele.getBoundingClientRect().top
           if (!(me >= -option.observerDic && me <= option.observerDic)) {
@@ -2268,12 +2230,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   }
   /******************************************************************************/
 </script>
+
 <script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
   volantis.GLOBAL_CONFIG ={
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678104033072),
+    lastupdate: new Date(1678197019339),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2281,7 +2249,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       fancybox_js: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js'
     },
     sidebar: {
-      for_page: ["blogger","webinfo","feedback","category","tagcloud"],
+      for_page: ["blogger","webinfo","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
       webinfo: {
         lastupd: {
@@ -2296,11 +2264,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     },
     plugins: {
       message: {"enable":true,"icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
-      
-      aplayer: {
-        id: 3175833810,
-        enable:true
-      },
       
       
     },
@@ -2340,7 +2303,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+      <ul class='switcher nav-list-h m-phone'>
         <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" title="comment"></a></li>
         
           <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" title="toc"></a></li>
@@ -2670,70 +2633,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
-    
-      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post featured' style="display: none;">
-        
-  <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/woodland-road-falling-leaf-natural-2abf5b5eaaf82c04b1c49efdadec41e1.jpg"></div>
-
-<div class='cover-body'>
-  <div class='top'>
-    
-      <img no-lazy class='logo' src='https://gcore.jsdelivr.net/gh/sivanWu0222/ImageHosting@master/uPic/diugai.com-16005176665088_gaitubao_293x115.png'/>
-    
-    
-    
-  </div>
-  <div class='bottom'>
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="/"
-              
-              
-              active-action="action-home">
-              <i class='fas fa-blog fa-fw'></i><p>博客</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://github.com/sivanWu0222"
-              
-              
-              active-action="action-https:githubcomsivanWu0222">
-              <i class='fab fa-github fa-fw'></i><p>Github</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="http://algo.yirufeng.top"
-              
-              
-              active-action="action-http:algoyirufengtop">
-              <i class='fas fa-book fa-fw'></i><p>算法</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="http://basic.yirufeng.top"
-              
-              
-              active-action="action-http:basicyirufengtop">
-              <i class='far fa-paper-plane fa-fw'></i><p>面试</p>
-            </a>
-          
-            <a href="/projects/"
-              
-              
-              active-action="action-projects">
-              <i class='fas fa-tags fa-fw'></i><p>项目</p>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
-      </div>
-    
-  
 </div>
 
       <div id="safearea">
@@ -2747,7 +2646,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="逸如风的个人博客">
-    <meta itemprop="description" content="123">
+    <meta itemprop="description" content="这是逸如风的个人博客">
   </span>
   
 
@@ -2802,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-11-28T20:28:09+00:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-11-28T20:28:09+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2020年11月28日</p>
@@ -2850,7 +2749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <details green><summary> 代码 </summary>
               <div class='content'>
-              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//✅</span></span><br><span class="line"><span class="comment">//核心：如何做到每次从后面的选择，并且不会重复呢？如果后面选择某个元素，我们就把该元素交换到我们已经选择完的下一个元素</span></span><br><span class="line"><span class="comment">//index表示下次从nums中的哪个位置元素开始，因为之前的都已经选好了</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">backtrack</span><span class="params">(ret *[][]<span class="keyword">int</span>, path []<span class="keyword">int</span>, index <span class="keyword">int</span>, nums []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(path) == <span class="built_in">len</span>(nums) &#123;</span><br><span class="line">		<span class="comment">//将当前路径加入到结果中</span></span><br><span class="line">		temp := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="built_in">len</span>(path))</span><br><span class="line">		<span class="built_in">copy</span>(temp, path)</span><br><span class="line">		*ret = <span class="built_in">append</span>(*ret, temp)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//开始进入选择</span></span><br><span class="line">	<span class="keyword">for</span> i := index; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="comment">//利用交换，让我们每次选择的都放置到上次选择的后面那个相邻元素</span></span><br><span class="line">		nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line">		<span class="comment">//下次我们将index位置的元素加入路径</span></span><br><span class="line">		path = <span class="built_in">append</span>(path, nums[index])</span><br><span class="line">		<span class="comment">//进入下一层</span></span><br><span class="line">		backtrack(ret, path, index+<span class="number">1</span>, nums)</span><br><span class="line">		<span class="comment">//从路径中撤销</span></span><br><span class="line">		path = path[:<span class="built_in">len</span>(path)<span class="number">-1</span>]</span><br><span class="line">		<span class="comment">//撤销交换</span></span><br><span class="line">		nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">permute</span><span class="params">(nums []<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> ret [][]<span class="keyword">int</span></span><br><span class="line">	backtrack(&amp;ret, []<span class="keyword">int</span>&#123;&#125;, <span class="number">0</span>, nums)</span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//✅</span></span><br><span class="line"><span class="comment">//核心：如何做到每次从后面的选择，并且不会重复呢？如果后面选择某个元素，我们就把该元素交换到我们已经选择完的下一个元素</span></span><br><span class="line"><span class="comment">//index表示下次从nums中的哪个位置元素开始，因为之前的都已经选好了</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">backtrack</span><span class="params">(ret *[][]<span class="type">int</span>, path []<span class="type">int</span>, index <span class="type">int</span>, nums []<span class="type">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(path) == <span class="built_in">len</span>(nums) &#123;</span><br><span class="line">		<span class="comment">//将当前路径加入到结果中</span></span><br><span class="line">		temp := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>(path))</span><br><span class="line">		<span class="built_in">copy</span>(temp, path)</span><br><span class="line">		*ret = <span class="built_in">append</span>(*ret, temp)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//开始进入选择</span></span><br><span class="line">	<span class="keyword">for</span> i := index; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="comment">//利用交换，让我们每次选择的都放置到上次选择的后面那个相邻元素</span></span><br><span class="line">		nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line">		<span class="comment">//下次我们将index位置的元素加入路径</span></span><br><span class="line">		path = <span class="built_in">append</span>(path, nums[index])</span><br><span class="line">		<span class="comment">//进入下一层</span></span><br><span class="line">		backtrack(ret, path, index+<span class="number">1</span>, nums)</span><br><span class="line">		<span class="comment">//从路径中撤销</span></span><br><span class="line">		path = path[:<span class="built_in">len</span>(path)<span class="number">-1</span>]</span><br><span class="line">		<span class="comment">//撤销交换</span></span><br><span class="line">		nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">permute</span><span class="params">(nums []<span class="type">int</span>)</span></span> [][]<span class="type">int</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> ret [][]<span class="type">int</span></span><br><span class="line">	backtrack(&amp;ret, []<span class="type">int</span>&#123;&#125;, <span class="number">0</span>, nums)</span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
             </details>
 
@@ -2863,7 +2762,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <details green><summary> 代码 </summary>
               <div class='content'>
-              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//✅</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">permuteUnique</span><span class="params">(nums []<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> ret [][]<span class="keyword">int</span></span><br><span class="line">	backtrack(nums, &amp;ret, <span class="number">0</span>, []<span class="keyword">int</span>&#123;&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">backtrack</span><span class="params">(nums []<span class="keyword">int</span>, ret *[][]<span class="keyword">int</span>, index <span class="keyword">int</span>, path []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="built_in">len</span>(path) &#123;</span><br><span class="line">		temp := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="built_in">len</span>(nums))</span><br><span class="line">		<span class="built_in">copy</span>(temp, path)</span><br><span class="line">		*ret = <span class="built_in">append</span>(*ret, temp)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	visited := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">bool</span>)</span><br><span class="line">	<span class="keyword">for</span> i := index; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//如果没有被访问过</span></span><br><span class="line">		<span class="keyword">if</span> !visited[nums[i]] &#123;</span><br><span class="line">			nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line"></span><br><span class="line">			<span class="comment">//加入路径以及visited中</span></span><br><span class="line">			path = <span class="built_in">append</span>(path, nums[index])</span><br><span class="line">			visited[nums[index]] = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//进入到下一层</span></span><br><span class="line">			backtrack(nums, ret, index+<span class="number">1</span>, path)</span><br><span class="line"></span><br><span class="line">			<span class="comment">//撤销加入路径以及撤销加入visited中</span></span><br><span class="line">			path = path[:<span class="built_in">len</span>(path)<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">			<span class="comment">//❌</span></span><br><span class="line">			<span class="comment">//下面这一行代码是不需要的，因为当前可选的数字如果选了加入到visited下次我们就不可以再选了，所以不可以再撤销了</span></span><br><span class="line">			<span class="comment">//delete(visited, nums[index])</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//撤销交换</span></span><br><span class="line">			nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+              <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//✅</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">permuteUnique</span><span class="params">(nums []<span class="type">int</span>)</span></span> [][]<span class="type">int</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> ret [][]<span class="type">int</span></span><br><span class="line">	backtrack(nums, &amp;ret, <span class="number">0</span>, []<span class="type">int</span>&#123;&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">backtrack</span><span class="params">(nums []<span class="type">int</span>, ret *[][]<span class="type">int</span>, index <span class="type">int</span>, path []<span class="type">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="built_in">len</span>(path) &#123;</span><br><span class="line">		temp := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>(nums))</span><br><span class="line">		<span class="built_in">copy</span>(temp, path)</span><br><span class="line">		*ret = <span class="built_in">append</span>(*ret, temp)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	visited := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">bool</span>)</span><br><span class="line">	<span class="keyword">for</span> i := index; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//如果没有被访问过</span></span><br><span class="line">		<span class="keyword">if</span> !visited[nums[i]] &#123;</span><br><span class="line">			nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line"></span><br><span class="line">			<span class="comment">//加入路径以及visited中</span></span><br><span class="line">			path = <span class="built_in">append</span>(path, nums[index])</span><br><span class="line">			visited[nums[index]] = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//进入到下一层</span></span><br><span class="line">			backtrack(nums, ret, index+<span class="number">1</span>, path)</span><br><span class="line"></span><br><span class="line">			<span class="comment">//撤销加入路径以及撤销加入visited中</span></span><br><span class="line">			path = path[:<span class="built_in">len</span>(path)<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">			<span class="comment">//❌</span></span><br><span class="line">			<span class="comment">//下面这一行代码是不需要的，因为当前可选的数字如果选了加入到visited下次我们就不可以再选了，所以不可以再撤销了</span></span><br><span class="line">			<span class="comment">//delete(visited, nums[index])</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//撤销交换</span></span><br><span class="line">			nums[i], nums[index] = nums[index], nums[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
               </div>
             </details>
   </div>
@@ -2875,37 +2774,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
        <!-- 相关文章 -->
       
-        
-  <div class="related_posts">
-    <section class='header'>
-      <i class="fa-solid fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
-    </section>
-    <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/2020/11/18/golang中刷题关于切片的一些坑/" title="Golang中刷题关于切片的一些坑" rel="bookmark "><img src="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">Golang中刷题关于切片的一些坑</span><span class="excerpt">问题1问题描述：递归的过程中，传递了一个切片作为参数，每次我们都需要对切片切取首元素，之后递归回来的时候发现切片中的元素还...</span></a><a class="item" href="/2020/09/26/不基于找到数组排序后的最大差值/" title="不基于比较的排序找到数组排序后的最大差值" rel="bookmark "><img src="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">不基于比较的排序找到数组排序后的最大差值</span><span class="excerpt">题目描述给定一个数组，求如果排序之后，相邻两数的最大差值，要求时 间复杂度O(N)，且要求不能用非基于比较的排序
-
-注意不...</span></a><a class="item" href="/2020/11/18/二叉树的序列化与反序列化/" title="二叉树的序列化与反序列化" rel="bookmark "><img src="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">二叉树的序列化与反序列化</span><span class="excerpt">前言序列化：二叉树被记录成文件的过程叫做序列化
-反序列化：通过文件内容重建原来二叉树的过程叫做反序列化</span></a><a class="item" href="/2020/09/10/冒泡排序以及优化/" title="冒泡排序以及优化" rel="bookmark "><img src="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">冒泡排序以及优化</span><span class="excerpt">冒泡排序思路：从左向右每次两两比较相邻元素，如果前一个元素大于后一个元素，那么就交换这两个元素，一趟下来肯定有一个元素放到...</span></a><a class="item" href="/2022/10/09/剑指offer专项突破版/" title="剑指offer专项突破版" rel="bookmark "><img src="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">剑指offer专项突破版</span><span class="excerpt">链表
-一个操作可能产生新的头节点，则可以尝试在链表的最前面添加一个哨兵节点来简化代码逻辑，降低代码出现问题的可能性。
-双指...</span></a></div></section></div>
-      
       <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="http://www.yirufeng.top/2020/11/28/两个全排列的题目/">http://www.yirufeng.top/2020/11/28/两个全排列的题目/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
       
       <!-- 打赏组件 -->
       
@@ -2919,10 +2788,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-06T12:00:22+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-07T13:50:02+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年3月6日</p>
+    <p>更新于：2023年3月7日</p>
   </a>
 </div>
 
@@ -3005,12 +2874,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/03/30/centos7%E5%AE%89%E8%A3%85docker/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>centos7安装docker</p>
-          <p class='content'>系统要求：docker支持64位Centos7，并且要求内核版本(查看Linux系统内核版本：uname -r)不低于3.10
+        <a class='prev' href='/2021/02/15/BFPRT%E7%AE%97%E6%B3%95-Golang/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>BFPRT算法-Golang</p>
+          <p class='content'>
+这个BFPRT算法找逻辑Bug找了两天
 
-卸载旧版本安装docker 卸载旧版本 
-           ...</p>
+注意点：
+
+在找中位数的时候对传入的数组进行排序，这里使用直接插入排序，因为元素个数最多为5，插排常数项极低
+注意：这里不是nums[j] &gt; ...</p>
         </a>
       
       
@@ -3067,14 +2939,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-<div class="widget-sticky pjax">
+<div class="widget-sticky">
 
   
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
   <header>
     
       <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
@@ -3082,45 +2954,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </header>
 
 
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%81%93%E9%A2%98"><span class="toc-text">第一道题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%81%93%E9%A2%98"><span class="toc-text">第二道题</span></a></li></ol>
-    </div>
-  </section>
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%81%93%E9%A2%98"><span class="toc-text">第一道题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%81%93%E9%A2%98"><span class="toc-text">第二道题</span></a></li></ol>
+  </div>
+</section>
 
   
 
 </div>
-
-
-<!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <!-- Custom Files side begin -->
   
@@ -3129,34 +2970,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-          <!--此文件用来存放一些不方便取值的变量-->
-<!--思路大概是将值藏到重加载的区域内-->
-
-<pjax>
-<script>
-  window.pdata={}
-  pdata.ispage=true;
-  pdata.commentPath="";
-  pdata.commentPlaceholder="";
-  pdata.commentConfig={};
-  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
-  
-    // header
-    var l_header=document.getElementById("l_header");
-    
-    l_header.classList.add("show");
-    
-    
-      // cover
-      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
-      var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
-      scroll_down.style.display="none";
-    
-  
-</script>
-</pjax>
         </div>
         
   
@@ -3164,25 +2977,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <br><br>
     
       
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
         <br>
         <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
           
             
-              <a href="https://www.github.com/sivanWu0222"
-                class="social fa-brands fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
           
             
-              <a href="https://www.github.com/sivanWu0222"
-                class="social fa-brands fa-weixin flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
+          
             
           
         </div>
@@ -3194,6 +3003,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
         
       
     
@@ -3240,10 +3054,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 <!-- required -->
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 
 
 <!-- internal -->
@@ -3350,7 +3160,6 @@ applyCustomDarkModeSettings();
 document.addEventListener("DOMContentLoaded", ()=>{
   volantis.requestAnimationFrame(bindToggleButton)
 });
-volantis.pjax.push(bindToggleButton);
 
 const darkModelListeners={
   dark:(mediaQueryList )=>{
@@ -3395,10 +3204,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
   };
   loadIssuesJS()
-  volantis.pjax.push(()=>{
-    loadIssuesJS();
-  })
-
 </script>
 
 
@@ -3425,9 +3230,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   document.addEventListener('DOMContentLoaded', function () {
     lazyLoadInstance.update();
   });
-  document.addEventListener('pjax:complete', function () {
-    lazyLoadInstance.update();
-  });
 </script>
 
 
@@ -3449,106 +3251,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-   <script type="text/javascript">
-  function pjax_scrollrebeal() {
-    ScrollReveal().reveal("#l_main .reveal", {
-      distance: "32px",
-      duration: "800",
-      interval: "20",
-      scale: "1",
-      easing: "ease-out",
-    });
-  }
-  function init_scrollrebeal() {
-    if (typeof ScrollReveal == "undefined") {
-      volantis.requestAnimationFrame(init_scrollrebeal);
-    } else {
-      pjax_scrollrebeal();
-    }
-  }
-  volantis.js("https://cdn.bootcdn.net/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js");
-  document.addEventListener("DOMContentLoaded", init_scrollrebeal)
-  volantis.pjax.push(
-    pjax_scrollrebeal,
-    "pjax_scrollrebeal",
-    (setRequestAnimationFrame = false)
-  );
-</script>
-
-
-
-
-  <script>
-  volantis.css("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css");
-  (async () => {
-    // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js")
-    await volantis.js("https://unpkg.com/meting@2/dist/Meting.min.js")
-  
-  })();
-
-  function SetAPlayerPlugin(){
-    let Metings = document.querySelectorAll('meting-js');
-    if (Metings.length === 0) {return;};
-    if (Metings[0].aplayer && Metings[0].aplayer.on) {
-      // improve the accessibility https://web.dev/button-name/
-      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
-        e.setAttribute("aria-label","Aplayer Menu")
-      })
-      // message see: /layout/_plugins/message/script.ejs
-      
-        try {
-          setTimeout(() => {
-            Metings.forEach((item, index) => {
-              const aplayerItem = item.aplayer; if(!aplayerItem) return;
-              const rightAplayerCheck = 'true' === 'true'
-                && item.meta.id === '3175833810';
-              if(rightAplayerCheck) RightMenuAplayer.checkAPlayer();
-              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
-                aplayerItem.on('play', function messagePlay() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                      icon: 'fa-solid fa-play',
-                      transitionIn: 'flipInX',
-                      transitionOut: 'flipOutX'
-                    });
-                  }, 100)
-                });
-              }
-              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
-                aplayerItem.on('pause', function messagePause() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
-                    if(aplayerItem.paused) {
-                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                        icon: 'fa-solid fa-pause',
-                        transitionIn: 'flipInX',
-                        transitionOut: 'flipOutX'
-                      });
-                    }
-                  }, 100)
-                });
-              }
-            });
-          }, 500)
-        } catch (error) { console.error(error); }
-      
-    }else{
-      volantis.requestAnimationFrame(SetAPlayerPlugin)
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", ()=>{
-    SetAPlayerPlugin();
-  });
-  volantis.pjax.push(SetAPlayerPlugin);
-</script>
 
 
 
@@ -3568,10 +3270,10 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     return document.getElementById("giscus_container");
   }
 
-  function pjax_giscus() {
+  function p_giscus() {
     const HEAD = check_giscus();
     if (!HEAD) return;
-    let cfg = Object.assign({"repo":"sivanWu0222/sivanWu0222.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkyOTY4MzY1MDY=","category":"Q&A","category-id":"DIC_kwDOEbFdms4CRrLu","mapping":"title","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN","theme":{"light":"light","dark":"dark"}},pdata.commentConfig)
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"sivanWu0222/sivanWu0222.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkyOTY4MzY1MDY=","category":"Q&A","category-id":"DIC_kwDOEbFdms4CRrLu","mapping":"title","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
     const script = document.createElement('script');
     script.setAttribute('src', 'https://giscus.app/client.js');
     Object.keys(cfg).forEach(k=>{
@@ -3596,8 +3298,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     const giscusIframe = document.querySelector('iframe.giscus-frame');
     giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
   }
-  pjax_giscus();
-  volantis.pjax.push(pjax_giscus);
+  p_giscus();
   volantis.dark.push(dark_giscus);
 </script>
 
@@ -3606,7 +3307,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script defer src="https://cdn.dusays.com/bsz.js" data-pjax></script>
+  <script defer src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
 
 
 <!-- optional -->
@@ -3684,15 +3385,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  function pjax_highlightjs_copyCode(){
+  function p_highlightjs_copyCode(){
     if (!(document.querySelector(".highlight .code pre") ||
       document.querySelector(".article pre code"))) {
       return;
     }
     VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
   }
-  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
-  volantis.pjax.push(pjax_highlightjs_copyCode)
+  volantis.requestAnimationFrame(p_highlightjs_copyCode)
 
 </script>
 
@@ -3710,13 +3410,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.querySelectorAll(".swiper-container")[0]) return;
     volantis.css("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css");
     volantis.js("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js").then(() => {
-      pjax_swiper();
+      p_swiper();
     });
   }
 
   load_swiper();
 
-  function pjax_swiper() {
+  function p_swiper() {
     volantis.swiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 8,
@@ -3733,38 +3433,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  volantis.pjax.push(() => {
-    if (!document.querySelectorAll(".swiper-container")[0]) return;
-    if (typeof volantis.swiper === "undefined") {
-      load_swiper();
-    } else {
-      pjax_swiper();
-    }
-  });
 </script>
 
 
 
   <script>
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.min.css");
   volantis.js("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js").then(() => {
     Pace.options.restartOnPushState = false;
-    volantis.pjax.send(Pace.restart);
+    // 阅读进度
+    volantis.scroll.push(() => {
+      Pace.stop();
+      Pace.trigger('start');
+      Pace.bar.update(volantis.scroll.progress() * 100);
+      document.body.className = document.body.className.replaceAll("pace-running ","");
+    },"阅读进度")
+    // todo：配置项开关, 哪些页面添加阅读进度
   })
-  volantis.css("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.min.css");
-  // 阅读进度
-  volantis.scroll.push(() => {
-    Pace.stop();
-    Pace.trigger('start');
-    Pace.bar.update(volantis.scroll.progress() * 100);
-  },"阅读进度")
-  // todo：配置项开关, 哪些页面添加阅读进度
 </script>
 
 
-<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
-<pjax>
 
-</pjax>
 
 <script>
   function listenSidebarTOC() {
@@ -3877,7 +3566,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("DOMContentLoaded", () => {
     volantis.requestAnimationFrame(listenSidebarTOC)
   });
-  volantis.pjax.push(listenSidebarTOC);
 </script>
 
 
@@ -3900,96 +3588,10 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","sameAs":["https://github.com/volantis-x"],"description":"123"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.yirufeng.top/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.yirufeng.top/categories/LeetCode/","name":"LeetCode"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.yirufeng.top/categories/LeetCode/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.yirufeng.top/2020/11/28/两个全排列的题目/","name":"两个全排列的题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","keywords":null,"description":"123","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","description":"123"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.yirufeng.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"两个全排列的题目","description":"第一道题","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.yirufeng.top/2020/11/28/%E4%B8%A4%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E9%A2%98%E7%9B%AE/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.yirufeng.top/2020/11/28/%E4%B8%A4%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E9%A2%98%E7%9B%AE/","wordCount":4,"datePublished":"2020-11-28T20:28:09.000Z","dateModified":"2023-03-06T12:00:22.237Z","articleSection":"LeetCode","keywords":"算法,LeetCode","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","sameAs":["https://github.com/volantis-x"],"description":"这是逸如风的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://www.yirufeng.top/","name":"逸如风的个人博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.yirufeng.top/categories/LeetCode/","name":"LeetCode"}},{"@type":"ListItem","position":2,"item":{"@id":"http://www.yirufeng.top/categories/LeetCode/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"http://www.yirufeng.top/2020/11/28/两个全排列的题目/","name":"两个全排列的题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","keywords":null,"description":"这是逸如风的个人博客","author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/","description":"这是逸如风的个人博客"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","url":"http://www.yirufeng.top/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://www.yirufeng.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"两个全排列的题目","description":"第一道题","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.yirufeng.top/2020/11/28/%E4%B8%A4%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E9%A2%98%E7%9B%AE/"},"author":{"@type":"Person","name":"yirufeng","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://www.yirufeng.top/"},"publisher":{"@type":"Organization","name":"逸如风的个人博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://www.yirufeng.top/2020/11/28/%E4%B8%A4%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E9%A2%98%E7%9B%AE/","wordCount":4,"datePublished":"2020-11-28T12:28:09.000Z","dateModified":"2023-03-07T13:50:02.970Z","articleSection":"LeetCode","keywords":"算法,LeetCode","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
-      
-        <!--
-  pjax重载区域接口：
-  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
-  2.  script[data-pjax]
-  3.  .pjax-reload script
-  4.  .pjax
--->
-
-
-
-<script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
-
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
-        // 这里的 selectors 需要保证每个页面都含有相同的数目
-        selectors: [
-          "head title",
-          "head meta[name=keywords]",
-          "head meta[name=description]",
-          
-          "#l_main",
-          "#pjax-header-nav-list",
-          ".pjax",
-          "pjax", // <pjax></pjax> 标签
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000,
-        
-      });
-    });
-
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
-
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var excludeList = [""];
-        if (excludeList[0] != "") {
-          excludeList.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
-
-      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
-      volantis.pjax.method.send.start();
-    });
-
-    document.addEventListener('pjax:complete', function () {
-      // 这里的 script 不需要保证每个页面都含有相同的数目
-      document.querySelectorAll('script[data-pjax], .pjax-reload script').forEach(e=>{
-        const code = e.text || e.textContent || e.innerHTML || '';
-        const script = document.createElement('script');
-        Object.keys(e.attributes).forEach(i=>{
-          script.setAttribute(e.attributes[i].nodeName,e.attributes[i].nodeValue)
-        })
-        if (code) {
-          script.appendChild(document.createTextNode(code));
-        }
-        e.parentNode.replaceChild(script, e);
-      });
-
-      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
-      volantis.pjax.method.complete.start();
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-      if(volantis.debug === "pjax") {
-        console.error(e);
-        console.log('pjax error: \n' + JSON.stringify(e));
-      }else{
-        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
-        volantis.pjax.method.error.start();
-        window.location.href = e.triggerElement.href;
-      }
-    });
-</script>
-
-      
     </div>
     <!-- import body_end begin-->
     <!-- import body_end end-->
