@@ -1,0 +1,40 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install --force
+          npm run build
+        env:
+          CI: false
+      
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: master # The branch the action should deploy to.
+          FOLDER: public # The folder the action should deploy.
+      
+      # 2022-10-15
+      # 使用 rsync 将 public 文件夹传输至至服务器
+      # - name: rsync deployments
+      #   uses: burnett01/rsync-deployments@4.1
+      #   with:
+      #     # 这里是 rsync 的参数 switches: -avzh --delete --exclude="" --include="" --filter=""
+      #     switches: -avzr --delete
+      #     # 要同步的文件夹
+      #     path: public/
+      #     # 服务器传输至的目录，上文中的 /home/baoxuebin/my-hexo-project/public
+      #     remote_path: ${{ secrets.REMOTE_PATH }} 
+      #     remote_host: ${{ secrets.USER_HOST }} 
+      #     remote_user: ${{ secrets.USER_NAME }} 
+      #     # 密钥作为敏感信息，请勿直接使用；可以在 Github 仓库页面>>Settings>>secrets 添加
+      #     remote_key: ${{ secrets.TENCENT_CLOUD_PRIVATE_KEY }}
